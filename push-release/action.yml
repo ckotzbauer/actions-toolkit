@@ -29,13 +29,13 @@ runs:
         git commit -m "chore: release ${{ inputs.version }}" -a
 
     - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
+      uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6
       with:
         github_token: ${{ inputs.pat }}
         branch: ${{ inputs.branch }}
 
     - name: Create release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@1e07f4398721186383de40550babbdf2b84acfc5
       with:
         name: ${{ inputs.version }}
         tag_name: ${{ inputs.version }}

@@ -26,7 +26,7 @@ runs:
   using: "composite"
   steps:
     - name: Generate provenance
-      uses: philips-labs/slsa-provenance-action@v0.4.0
+      uses: philips-labs/slsa-provenance-action@33ba3da2213c83ce02df0f2f6ba925ec79037f9d
       with:
         artifact_path: ${{ inputs.artifact-path }}
         output_path: ${{ inputs.output }}

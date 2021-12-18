@@ -28,7 +28,7 @@ runs:
   steps:
     - name: Setup Syft
       id: setup
-      uses: anchore/sbom-action/download-syft@v0
+      uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
 
     - name: Generate SBOM
       run: syft ${{ inputs.image }} -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
