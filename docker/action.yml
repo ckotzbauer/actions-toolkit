@@ -35,7 +35,6 @@ inputs:
   registry-password:
     description: "Password of the container registry."
     required: true
-    default: ${{ secrets.DOCKER_PASSWORD }}
   # signing parameters
   sign:
     description: "Sign image with cosign"
@@ -43,8 +42,7 @@ inputs:
     default: 'false'
   cosign-password:
     description: "Cosign password"
-    required: true
-    default: ${{ secrets.COSIGN_PASSWORD }}
+    required: false
 runs:
   using: "composite"
   steps:
@@ -84,5 +82,5 @@ runs:
       run: echo "${{ inputs.tags }}" | while read -r a; do echo cosign sign --key cosign.key -f -r $a; done
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"

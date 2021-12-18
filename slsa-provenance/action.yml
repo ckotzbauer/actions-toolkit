@@ -21,8 +21,7 @@ inputs:
     default: 'false'
   cosign-password:
     description: "Cosign password"
-    required: true
-    default: ${{ secrets.COSIGN_PASSWORD }}
+    required: false
 runs:
   using: "composite"
   steps:
@@ -37,7 +36,7 @@ runs:
       run: cosign sign-blob --key cosign.key --output ${{ inputs.output }}.sig ${{ inputs.output }}
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"
 
     - name: Attest image with Provenance
@@ -45,5 +44,5 @@ runs:
       run: cosign attest --key cosign.key -f --predicate ${{ inputs.output }} ${{ inputs.image }}
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"
