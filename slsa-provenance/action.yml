@@ -1,6 +1,9 @@
 name: 'Generate SLSA Provenance'
 description: 'Generate SLSA Provenance from artifacts'
 inputs:
+  action-sha:
+    description: "SHA of this action used (needed for extra material)."
+    required: true
   image:
     description: "Full image path to generate provenance for."
     required: true
@@ -25,11 +28,18 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Create additional material
+      shell: bash
+      run: |
+        echo "[{\"uri\": \"git+https://github.com/ckotzbauer/actions-toolkit\",\"digest\": {\"sha1\": \"${{ inputs.action-sha }}\"}}]" > material.json
+
     - name: Generate provenance
       uses: philips-labs/slsa-provenance-action@33ba3da2213c83ce02df0f2f6ba925ec79037f9d
       with:
         artifact_path: ${{ inputs.artifact-path }}
         output_path: ${{ inputs.output }}
+        extra_materials: |
+          material.json
 
     - name: Sign Provenance
       if: ${{ inputs.sign == 'true' }}
