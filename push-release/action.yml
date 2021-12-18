@@ -40,7 +40,6 @@ runs:
         name: ${{ inputs.version }}
         tag_name: ${{ inputs.version }}
         body_path: commits.md
-        prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(version, 'rc') }}
         files: ${{ inputs.files }}
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
