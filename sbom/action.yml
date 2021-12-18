@@ -1,0 +1,52 @@
+name: 'Generate SBOM'
+description: 'Generate SBOM from an oci image'
+inputs:
+  image:
+    description: "Full image path to generate SBOM for."
+    required: true
+  output:
+    description: "Output file"
+    required: false
+    default: "sbom.json"
+  format:
+    description: "SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table)"
+    required: false
+    default: "json"
+  sign:
+    description: "Sign SBOM with cosign"
+    required: false
+    default: 'false'
+  attest:
+    description: "Attest the image with the generated SBOM"
+    required: false
+    default: 'false'
+  cosign-password:
+    description: "Cosign password"
+    required: true
+    default: ${{ secrets.COSIGN_PASSWORD }}
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Syft
+      id: setup
+      uses: anchore/sbom-action/download-syft@v0
+
+    - name: Generate SBOM
+      run: syft ${{ inputs.image }} -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
+      shell: sh
+
+    - name: Sign SBOM
+      if: ${{ inputs.sign == 'true' }}
+      run: cosign sign-blob --key cosign.key --output ${{ inputs.output }}.sig ${{ inputs.output }}
+      shell: sh
+      env:
+        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_EXPERIMENTAL: "1"
+
+    - name: Attest image with SBOM
+      if: ${{ inputs.attest == 'true' }}
+      run: cosign attest --key cosign.key -f --type spdx --predicate ${{ inputs.output }} ${{ inputs.image }}
+      shell: sh
+      env:
+        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_EXPERIMENTAL: "1"

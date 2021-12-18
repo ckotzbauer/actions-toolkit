@@ -1,0 +1,49 @@
+name: 'Generate SLSA Provenance'
+description: 'Generate SLSA Provenance from artifacts'
+inputs:
+  image:
+    description: "Full image path to generate provenance for."
+    required: true
+  artifact-path:
+    description: "Path of artifacts"
+    required: true
+  output:
+    description: "Output file"
+    required: false
+    default: "provenance.json"
+  sign:
+    description: "Sign provenance with cosign"
+    required: false
+    default: 'false'
+  attest:
+    description: "Attest the image with the generated provenance"
+    required: false
+    default: 'false'
+  cosign-password:
+    description: "Cosign password"
+    required: true
+    default: ${{ secrets.COSIGN_PASSWORD }}
+runs:
+  using: "composite"
+  steps:
+    - name: Generate provenance
+      uses: philips-labs/slsa-provenance-action@v0.4.0
+      with:
+        artifact_path: ${{ inputs.artifact-path }}
+        output_path: ${{ inputs.output }}
+
+    - name: Sign Provenance
+      if: ${{ inputs.sign == 'true' }}
+      run: cosign sign-blob --key cosign.key --output ${{ inputs.output }}.sig ${{ inputs.output }}
+      shell: sh
+      env:
+        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_EXPERIMENTAL: "1"
+
+    - name: Attest image with Provenance
+      if: ${{ inputs.attest == 'true' }}
+      run: cosign attest --key cosign.key -f --predicate ${{ inputs.output }} ${{ inputs.image }}
+      shell: sh
+      env:
+        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_EXPERIMENTAL: "1"

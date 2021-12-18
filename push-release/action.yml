@@ -1,0 +1,46 @@
+name: 'Push release'
+description: 'Push changes and create GitHub Release'
+inputs:
+  github-token:
+    description: "GitHub Token used to authenticate against a repository for Git context"
+    default: ${{ github.token }}
+    required: false
+  version:
+    description: "Release version."
+    required: true
+  branch:
+    description: "Git branch."
+    default: main
+    required: false
+  pat:
+    description: "PAT with repo-access"
+    required: true
+  files:
+    description: "Files to upload for the release"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: Commit files
+      shell: sh
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "chore: release ${{ inputs.version }}" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ inputs.pat }}
+        branch: ${{ inputs.branch }}
+
+    - name: Create release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ inputs.version }}
+        tag_name: ${{ inputs.version }}
+        body_path: commits.md
+        prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(version, 'rc') }}
+        files: ${{ inputs.files }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}

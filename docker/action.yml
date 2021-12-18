@@ -1,0 +1,88 @@
+name: 'Docker image creation'
+description: 'Build, push and sign docker images'
+inputs:
+  github-token:
+    description: "GitHub Token used to authenticate against a repository for Git context"
+    default: ${{ github.token }}
+    required: false
+  # docker params from docker/build-push-action
+  push:
+    description: "Push is a shorthand for --output=type=registry"
+    required: false
+    default: 'false'
+  platforms:
+    description: "List of target platforms for build"
+    required: false
+  context:
+    description: "Build's context is the set of files located in the specified PATH or URL"
+    required: false
+  file:
+    description: "Path to the Dockerfile"
+    required: false
+  labels:
+    description: "List of metadata for an image"
+    required: false
+  load:
+    description: "Load is a shorthand for --output=type=docker"
+    required: false
+    default: 'false'
+  build-args:
+    description: "List of build-time variables"
+    required: false
+  tags:
+    description: "List of tags"
+    required: true
+  registry-password:
+    description: "Password of the container registry."
+    required: true
+    default: ${{ secrets.DOCKER_PASSWORD }}
+  # signing parameters
+  sign:
+    description: "Sign image with cosign"
+    required: false
+    default: 'false'
+  cosign-password:
+    description: "Cosign password"
+    required: true
+    default: ${{ secrets.COSIGN_PASSWORD }}
+runs:
+  using: "composite"
+  steps:
+    - name: Set up QEMU
+      id: qemu
+      uses: docker/setup-qemu-action@v1
+      with:
+        image: tonistiigi/binfmt:latest
+        platforms: all
+
+    - name: Set up Docker Buildx
+      id: buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: GHCR Login
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ inputs.registry-password }}
+
+    - name: Build image
+      uses: docker/build-push-action@v2
+      with:
+        github-token: ${{ inputs.github-token }}
+        push: ${{ inputs.push }}
+        platforms: ${{ inputs.platforms }}
+        context: ${{ inputs.context }}
+        file: ${{ inputs.file }}
+        labels: ${{ inputs.labels }}
+        load: ${{ inputs.load }}
+        build-args: ${{ inputs.build-args }}
+        tags: ${{ inputs.tags }}
+
+    - name: Sign image
+      if: ${{ inputs.sign == 'true' }}
+      run: echo "${{ inputs.tags }}" | while read -r a; do echo cosign sign --key cosign.key -f -r $a; done
+      shell: sh
+      env:
+        COSIGN_PASSWORD: ${{ input.cosign-password }}
+        COSIGN_EXPERIMENTAL: "1"
