@@ -70,7 +70,7 @@ jobs:
           go-version: ${{ inputs.go-version }}
 
       - name: Setup Cosign
-        if: ${{ inputs.sign == "true" }}
+        if: ${{ inputs.sign == true }}
         uses: ../../setup-cosign@main
         with:
           private-key: ${{ secrets.cosign-private-key }}
@@ -103,7 +103,7 @@ jobs:
             ghcr.io/${{ inputs.docker-path }}:latest
 
       - name: Generate SBOM
-        if: ${{ inputs.sbom == "true" }}
+        if: ${{ inputs.sbom == true }}
         uses: ../../sbom@main
         with:
           image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
@@ -112,7 +112,7 @@ jobs:
           cosign-password: ${{ secrets.cosign-password }}
 
       - name: Generate Provenance
-        if: ${{ inputs.provenance == "true" }}
+        if: ${{ inputs.provenance == true }}
         uses: ../../slsa-provenance@main
         with:
           action-sha: 10fbe1ab0d7315c37d4736f38e73355107a034d1
