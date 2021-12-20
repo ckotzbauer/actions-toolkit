@@ -64,87 +64,87 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.pat }}
 
-      - name: Setup Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: ${{ inputs.go-version }}
+      # - name: Setup Go
+      #   uses: actions/setup-go@v2
+      #   with:
+      #     go-version: ${{ inputs.go-version }}
 
-      - name: Setup Cosign
-        if: ${{ inputs.sign == true }}
-        uses: ../../setup-cosign@main
-        with:
-          private-key: ${{ secrets.cosign-private-key }}
+      # - name: Setup Cosign
+      #   if: ${{ inputs.sign == true }}
+      #   uses: ../../setup-cosign@main
+      #   with:
+      #     private-key: ${{ secrets.cosign-private-key }}
 
-      - name: Verify base-image
-        run: cosign verify --key https://github.com/GoogleContainerTools/distroless/raw/main/cosign.pub gcr.io/distroless/base
+      # - name: Verify base-image
+      #   run: cosign verify --key https://github.com/GoogleContainerTools/distroless/raw/main/cosign.pub gcr.io/distroless/base
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
-        with:
-          version: "v1.1.0"
-          args: release --rm-dist ${{ inputs.goreleaser-args }}
-        env:
-          GORELEASER_CURRENT_TAG: ${{ inputs.version }}
-          GITHUB_TOKEN: ${{ secrets.token }}
-          COSIGN_PASSWORD: ${{ secrets.cosign-password }}
-          COSIGN_EXPERIMENTAL: 1
+      # - name: Run GoReleaser
+      #   uses: goreleaser/goreleaser-action@v2
+      #   with:
+      #     version: "v1.1.0"
+      #     args: release --rm-dist ${{ inputs.goreleaser-args }}
+      #   env:
+      #     GORELEASER_CURRENT_TAG: ${{ inputs.version }}
+      #     GITHUB_TOKEN: ${{ secrets.token }}
+      #     COSIGN_PASSWORD: ${{ secrets.cosign-password }}
+      #     COSIGN_EXPERIMENTAL: 1
 
-      - name: Build and push image
-        uses: ../../docker@main
-        with:
-          registry-password: ${{ secrets.registry-password }}
-          context: .
-          push: true
-          sign: ${{ inputs.sign }}
-          cosign-password: ${{ secrets.cosign-password }}
-          platforms: ${{ inputs.docker-platforms }}
-          tags: |
-            ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
-            ghcr.io/${{ inputs.docker-path }}:latest
+      # - name: Build and push image
+      #   uses: ../../docker@main
+      #   with:
+      #     registry-password: ${{ secrets.registry-password }}
+      #     context: .
+      #     push: true
+      #     sign: ${{ inputs.sign }}
+      #     cosign-password: ${{ secrets.cosign-password }}
+      #     platforms: ${{ inputs.docker-platforms }}
+      #     tags: |
+      #       ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
+      #       ghcr.io/${{ inputs.docker-path }}:latest
 
-      - name: Generate SBOM
-        if: ${{ inputs.sbom == true }}
-        uses: ../../sbom@main
-        with:
-          image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
-          sign: ${{ inputs.sign }}
-          attest: ${{ inputs.attest }}
-          cosign-password: ${{ secrets.cosign-password }}
+      # - name: Generate SBOM
+      #   if: ${{ inputs.sbom == true }}
+      #   uses: ../../sbom@main
+      #   with:
+      #     image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
+      #     sign: ${{ inputs.sign }}
+      #     attest: ${{ inputs.attest }}
+      #     cosign-password: ${{ secrets.cosign-password }}
 
-      - name: Generate Provenance
-        if: ${{ inputs.provenance == true }}
-        uses: ../../slsa-provenance@main
-        with:
-          action-sha: 10fbe1ab0d7315c37d4736f38e73355107a034d1
-          image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
-          artifact-path: dist/
-          sign: ${{ inputs.sign }}
-          attest: ${{ inputs.attest }}
-          cosign-password: ${{ secrets.cosign-password }}
+      # - name: Generate Provenance
+      #   if: ${{ inputs.provenance == true }}
+      #   uses: ../../slsa-provenance@main
+      #   with:
+      #     action-sha: 10fbe1ab0d7315c37d4736f38e73355107a034d1
+      #     image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
+      #     artifact-path: dist/
+      #     sign: ${{ inputs.sign }}
+      #     attest: ${{ inputs.attest }}
+      #     cosign-password: ${{ secrets.cosign-password }}
 
-      - name: Generate Changelog
-        uses: ckotzbauer/changelog-generator@57d0586ed8013f55c58ad502b15b929e405ca37f
-        with:
-          release-version: ${{ inputs.version }}
-          github-handle: ${{ github.repository }}
-          commit-output: commits.md
+      # - name: Generate Changelog
+      #   uses: ckotzbauer/changelog-generator@57d0586ed8013f55c58ad502b15b929e405ca37f
+      #   with:
+      #     release-version: ${{ inputs.version }}
+      #     github-handle: ${{ github.repository }}
+      #     commit-output: commits.md
 
-      - name: Push release
-        uses: ../../push-release@main
-        with:
-          version: ${{ inputs.version }}
-          branch: ${{ inputs.branch }}
-          pat: ${{ secrets.pat }}
-          files: |
-            dist/*.tar.gz
-            dist/*.zip
-            dist/*.txt
-            dist/*.json
-            dist/*.sig
-            sbom.json
-            provenance.json
-            *.sig
+      # - name: Push release
+      #   uses: ../../push-release@main
+      #   with:
+      #     version: ${{ inputs.version }}
+      #     branch: ${{ inputs.branch }}
+      #     pat: ${{ secrets.pat }}
+      #     files: |
+      #       dist/*.tar.gz
+      #       dist/*.zip
+      #       dist/*.txt
+      #       dist/*.json
+      #       dist/*.sig
+      #       sbom.json
+      #       provenance.json
+      #       *.sig
 
-      - name: Delete cosign key
-        if: ${{ always() }}
-        run: rm cosign.key
+      # - name: Delete cosign key
+      #   if: ${{ always() }}
+      #   run: rm cosign.key
