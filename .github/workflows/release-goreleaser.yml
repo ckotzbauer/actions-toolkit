@@ -64,6 +64,13 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.pat }}
 
+      - name: Checkout actions-toolkit
+        uses: actions/checkout@v2
+        with:
+          repository: ckotzbauer/actions-toolkit
+          ref: main
+          path: .github/actions-toolkit
+
       - name: Setup Go
         uses: actions/setup-go@v2
         with:
@@ -71,7 +78,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: ./setup-cosign@main
+        uses: .github/actions-toolkit/setup-cosign
         with:
           private-key: ${{ secrets.cosign-private-key }}
 
