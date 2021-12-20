@@ -22,19 +22,19 @@ jobs:
         run: |
           LAST_TAG=$(git describe --abbrev=0 --tags)
           find .github/workflows/toolkit-*.yml | while read -r a; do
-              sed -i "s#@${LAST_TAG}#@${{ inputs.version }}#g" $a;
-              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${{ inputs.version }}\"#g" $a;
+              sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" $a;
+              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${{ github.event.inputs.version }}\"#g" $a;
           done
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@57d0586ed8013f55c58ad502b15b929e405ca37f
         with:
-          release-version: ${{ inputs.version }}
+          release-version: ${{ github.event.inputs.version }}
           github-handle: ${{ github.repository }}
           commit-output: commits.md
 
       - name: Push release
         uses: ckotzbauer/actions-toolkit/push-release@main
         with:
-          version: ${{ inputs.version }}
+          version: ${{ github.event.inputs.version }}
           pat: ${{ secrets.REPO_ACCESS }}
