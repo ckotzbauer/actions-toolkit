@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
         with:
           fetch-depth: 0
           token: ${{ secrets.REPO_ACCESS }}
@@ -34,7 +34,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@main
+        uses: ckotzbauer/actions-toolkit/push-release@0.0.3
         with:
           version: ${{ github.event.inputs.version }}
           pat: ${{ secrets.REPO_ACCESS }}
