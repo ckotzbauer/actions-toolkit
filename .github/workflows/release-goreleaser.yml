@@ -64,16 +64,16 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.pat }}
 
-      # - name: Setup Go
-      #   uses: actions/setup-go@v2
-      #   with:
-      #     go-version: ${{ inputs.go-version }}
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ inputs.go-version }}
 
-      # - name: Setup Cosign
-      #   if: ${{ inputs.sign == true }}
-      #   uses: ../../setup-cosign@main
-      #   with:
-      #     private-key: ${{ secrets.cosign-private-key }}
+      - name: Setup Cosign
+        if: ${{ inputs.sign == true }}
+        uses: ../../setup-cosign@main
+        with:
+          private-key: ${{ secrets.cosign-private-key }}
 
       # - name: Verify base-image
       #   run: cosign verify --key https://github.com/GoogleContainerTools/distroless/raw/main/cosign.pub gcr.io/distroless/base
