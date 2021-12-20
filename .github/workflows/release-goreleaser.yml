@@ -3,6 +3,9 @@ name: Release GoReleaser
 on:
   workflow_call:
     inputs:
+      workflow-revision:
+        required: true
+        type: string
       branch:
         required: false
         default: main
@@ -71,7 +74,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: ckotzbauer/actions-toolkit/setup-cosign@main
+        uses: ckotzbauer/actions-toolkit/setup-cosign@${{ inputs.workflow-revision }}
         with:
           private-key: ${{ secrets.cosign-private-key }}
 
@@ -90,7 +93,7 @@ jobs:
           COSIGN_EXPERIMENTAL: 1
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@main
+        uses: ckotzbauer/actions-toolkit/docker@${{ inputs.workflow-revision }}
         with:
           registry-password: ${{ secrets.registry-password }}
           context: .
@@ -104,7 +107,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@main
+        uses: ckotzbauer/actions-toolkit/sbom@${{ inputs.workflow-revision }}
         with:
           image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
           sign: ${{ inputs.sign }}
@@ -113,9 +116,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@main
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@${{ inputs.workflow-revision }}
         with:
-          action-sha: 10fbe1ab0d7315c37d4736f38e73355107a034d1
+          action-sha: ${{ inputs.workflow-revision }}
           image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
@@ -130,7 +133,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@main
+        uses: ckotzbauer/actions-toolkit/push-release@${{ inputs.workflow-revision }}
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}
