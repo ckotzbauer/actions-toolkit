@@ -3,9 +3,6 @@ name: Release GoReleaser
 on:
   workflow_call:
     inputs:
-      workflow-revision:
-        required: true
-        type: string
       branch:
         required: false
         default: main
