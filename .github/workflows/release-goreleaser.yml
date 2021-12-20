@@ -78,7 +78,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: .github/actions-toolkit/setup-cosign
+        uses: .github/actions-toolkit/setup-cosign@main
         with:
           private-key: ${{ secrets.cosign-private-key }}
 
