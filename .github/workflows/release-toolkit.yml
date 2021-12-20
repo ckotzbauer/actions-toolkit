@@ -1,4 +1,4 @@
-name: Release Toolkits
+name: Release Toolkit
 
 on:
   workflow_dispatch:
