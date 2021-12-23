@@ -10,6 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         module:
+          - sbom
           - slsa-provenance
     steps:
     - uses: actions/checkout@v2
@@ -23,11 +24,13 @@ jobs:
             - ".github/workflows/test-action.yml"
 
     - name: Setup Go
+      if: steps.changes.outputs.src == 'true'
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
 
     - name: Setup act
+      if: steps.changes.outputs.src == 'true'
       run: go install github.com/nektos/act@master
       shell: bash
 
