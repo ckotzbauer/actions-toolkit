@@ -1,0 +1,41 @@
+
+name: Test
+
+on:
+  push:
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup cosign
+        uses: sigstore/cosign-installer@v1.4.1
+
+      - name: Prepare action
+        shell: bash
+        run: |
+          cosign generate-key-pair
+        env:
+          COSIGN_PASSWORD: 123$
+
+      - name: GHCR Login
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ckotzbauer
+          password: ${{ secrets.GHCR_PASSWORD }}
+
+      - name: Run action
+        uses: ./sbom
+        with:
+          image: ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
+          sign: true
+          attest: true
+          cosign-password: 123$
+
+      - name: Verify action
+        shell: bash
+        run: |
+          cat sbom.json | jq -r '.source.target.userInput' | grep ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
+          cosign verify-blob --key cosign.pub --signature sbom.json.sig sbom.json
+          cosign verify-attestation --key cosign.pub ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
