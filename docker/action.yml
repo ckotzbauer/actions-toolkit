@@ -62,7 +62,7 @@ runs:
         password: ${{ inputs.registry-password }}
 
     - name: Build image
-      uses: docker/build-push-action@a66e35b9cbcf4ad0ea91ffcaf7bbad63ad9e0229
+      uses: docker/build-push-action@b1aeb1103e6b3b5648dbd6deaf0559919456ca6b
       with:
         github-token: ${{ inputs.github-token }}
         push: ${{ inputs.push }}
