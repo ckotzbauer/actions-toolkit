@@ -71,7 +71,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: ckotzbauer/actions-toolkit/setup-cosign@0.0.4
+        uses: ckotzbauer/actions-toolkit/setup-cosign@0.0.5
         with:
           private-key: ${{ secrets.cosign-private-key }}
 
@@ -90,7 +90,7 @@ jobs:
           COSIGN_EXPERIMENTAL: 1
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.0.4
+        uses: ckotzbauer/actions-toolkit/docker@0.0.5
         with:
           registry-password: ${{ secrets.registry-password }}
           context: .
@@ -104,7 +104,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.0.4
+        uses: ckotzbauer/actions-toolkit/sbom@0.0.5
         with:
           image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
           sign: ${{ inputs.sign }}
@@ -113,9 +113,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.0.4
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.0.5
         with:
-          action-sha: "0.0.4"
+          action-sha: "0.0.5"
           image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
@@ -130,7 +130,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.0.4
+        uses: ckotzbauer/actions-toolkit/push-release@0.0.5
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

@@ -1,3 +1,13 @@
+## Version 0.0.5 (2021-12-23)
+
+### Common changes
+
+* [[`141be876`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/141be876)] - **chore**: update changelog-action
+* [[`55af0138`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/55af0138)] - **chore**: remove automerge
+* [[`b2bace6f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b2bace6f)] - **chore**: Merge pull request #14 from ckotzbauer&#x2F;revert-11-renovate&#x2F;philips-labs-slsa-provenance-action-digest
+* [[`867b8f26`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/867b8f26)] - **revert &quot;deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 33a20a0&quot;
+
+
 ## Version 0.0.4 (2021-12-23)
 
 ### Dependency updates
