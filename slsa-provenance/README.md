@@ -3,7 +3,6 @@
 
 > Generates a provenance-file from artifacts.
 
-
 ## Inputs
 
 | Name | Description | Required | Default |
