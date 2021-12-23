@@ -36,7 +36,7 @@ runs:
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob --key cosign.key --output ${{ inputs.output }}.sig ${{ inputs.output }}
+      run: cosign sign-blob --key cosign.key --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
       shell: sh
       env:
         COSIGN_PASSWORD: ${{ inputs.cosign-password }}
