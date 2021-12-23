@@ -12,7 +12,7 @@ inputs:
     required: true
   output:
     description: "Output file"
-    required: false
+    required: true
     default: "provenance.json"
   sign:
     description: "Sign provenance with cosign"

@@ -6,11 +6,11 @@ inputs:
     required: true
   output:
     description: "Output file"
-    required: false
+    required: true
     default: "sbom.json"
   format:
     description: "SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table)"
-    required: false
+    required: true
     default: "json"
   sign:
     description: "Sign SBOM with cosign"
