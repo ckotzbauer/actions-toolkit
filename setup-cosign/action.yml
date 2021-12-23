@@ -8,7 +8,7 @@ runs:
   using: "composite"
   steps:
     - name: Setup cosign
-      uses: sigstore/cosign-installer@116dc6872c0a067bcb78758f18955414cdbf918f
+      uses: sigstore/cosign-installer@af5d18d7fedd27439eef3e2f7e5186e8f660e530
 
     - name: Store cosign key
       run: echo "$COSIGN_PRIVATE_KEY" > cosign.key
