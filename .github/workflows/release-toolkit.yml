@@ -27,7 +27,7 @@ jobs:
           done
 
       - name: Generate Changelog
-        uses: ckotzbauer/changelog-generator@57d0586ed8013f55c58ad502b15b929e405ca37f
+        uses: ckotzbauer/changelog-generator@f9174538ca28860c604fd00c68523a7bf6b8b27e
         with:
           release-version: ${{ github.event.inputs.version }}
           github-handle: ${{ github.repository }}
