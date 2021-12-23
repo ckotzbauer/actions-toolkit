@@ -20,6 +20,7 @@ jobs:
         filters: |
           src:
             - "${{ matrix.module }}/**"
+            - ".github/workflows/test-action.yml"
 
     - name: Setup Go
       uses: actions/setup-go@v2
@@ -34,4 +35,10 @@ jobs:
       if: steps.changes.outputs.src == 'true'
       shell: bash
       run: |
-        act -W __tests__ -j ${{ matrix.module }} --bind -s GITHUB_TOKEN=${{ secrets.REPO_ACCESS }} -s GHCR_PASSWORD=${{ secrets.GHCR_PASSWORD }}
+        act \
+          -W __tests__ \
+          -j ${{ matrix.module }} \
+          --bind \
+          -s GITHUB_TOKEN=${{ secrets.REPO_ACCESS }} \
+          -s GHCR_PASSWORD=${{ secrets.GHCR_PASSWORD }} \
+          -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
