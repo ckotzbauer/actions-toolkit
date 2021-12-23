@@ -21,6 +21,15 @@ jobs:
           src:
             - "${{ matrix.module }}/**"
 
+    - name: Setup Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Setup act
+      run: go install github.com/nektos/act@master
+      shell: bash
+
     - name: Run test
       if: steps.changes.outputs.src == 'true'
       shell: bash
