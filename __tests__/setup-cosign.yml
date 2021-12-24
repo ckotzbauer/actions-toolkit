@@ -1,0 +1,20 @@
+
+name: Test
+
+on:
+  push:
+
+jobs:
+  setup-cosign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run action
+        uses: ./setup-cosign
+        with:
+          private-key: "aaaaabbbbbccccc"
+
+      - name: Verify action
+        shell: bash
+        run: |
+          cat cosign.key
+          cosign version
