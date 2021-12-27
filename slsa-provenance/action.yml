@@ -38,7 +38,7 @@ runs:
       with:
         command: generate
         subcommand: files
-        arguments: --artifact-path ${{ inputs.artifact-path }} --extra-materials material.json --output-path ${{ inputs.output }}
+        arguments: -d --artifact-path ${{ inputs.artifact-path }} --extra-materials material.json --output-path ${{ inputs.output }}
 
 
     - name: Sign Provenance
