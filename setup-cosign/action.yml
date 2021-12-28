@@ -1,19 +1,7 @@
 name: 'Setup Cosign'
 description: 'Setup Cosign'
-inputs:
-  private-key:
-    description: "Private key for cosign"
-    required: false
-    default: ""
 runs:
   using: "composite"
   steps:
     - name: Setup cosign
       uses: sigstore/cosign-installer@af5d18d7fedd27439eef3e2f7e5186e8f660e530
-
-    - name: Store cosign key
-      if: ${{ inputs.private-key }}
-      run: echo "$COSIGN_PRIVATE_KEY" > cosign.key
-      shell: bash
-      env:
-        COSIGN_PRIVATE_KEY: ${{ inputs.private-key }}
