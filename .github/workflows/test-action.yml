@@ -5,6 +5,8 @@ on:
 
 jobs:
   test-action:
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -43,6 +45,6 @@ jobs:
           -W __tests__ \
           -j ${{ matrix.module }} \
           --bind \
-          -s GITHUB_TOKEN=${{ secrets.REPO_ACCESS }} \
+          -s GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
           -s GHCR_PASSWORD=${{ secrets.GHCR_PASSWORD }} \
           -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
