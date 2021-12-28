@@ -17,9 +17,6 @@ jobs:
           mkdir -p dist/
           echo "Test asset 1" > dist/asset1.txt
           echo "Test asset 2" > dist/asset2.txt
-          cosign generate-key-pair
-        env:
-          COSIGN_PASSWORD: 123$
 
       - name: GHCR Login
         uses: docker/login-action@v1
@@ -32,15 +29,17 @@ jobs:
         uses: ./slsa-provenance
         with:
           action-sha: "aaaaabbbbbccccc"
-          image: ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
+          images: |
+            ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
           artifact-path: dist/
           sign: true
           attest: true
-          cosign-password: 123$
 
       - name: Verify action
         shell: bash
         run: |
           cat provenance.json | jq -r '.predicate.materials[] | select(.digest.sha1=="aaaaabbbbbccccc") | .digest.sha1' | grep aaaaabbbbbccccc
-          cosign verify-blob --key cosign.pub --signature provenance.json.sig provenance.json
-          cosign verify-attestation --key cosign.pub ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
+          cosign verify-blob --signature provenance.json.sig provenance.json
+          cosign verify-attestation ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
+        env:
+          COSIGN_EXPERIMENTAL: "1"

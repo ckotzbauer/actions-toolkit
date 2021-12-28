@@ -16,5 +16,4 @@ jobs:
       - name: Verify action
         shell: bash
         run: |
-          cat cosign.key
           cosign version
