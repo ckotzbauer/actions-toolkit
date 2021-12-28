@@ -83,7 +83,7 @@ runs:
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.tags }}" | while read -r a; do cosign sign --oidc-issuer https://token.actions.githubusercontent.com -f -r $a; done
+      run: echo "${{ inputs.tags }}" | while read -r a; do cosign sign --oidc-issuer=https://token.actions.githubusercontent.com -f -r $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"

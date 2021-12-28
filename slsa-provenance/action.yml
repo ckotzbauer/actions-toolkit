@@ -40,14 +40,14 @@ runs:
 
     - name: Sign Provenance
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob --oidc-issuer https://token.actions.githubusercontent.com --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
+      run: cosign sign-blob --oidc-issuer=https://token.actions.githubusercontent.com --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
 
     - name: Attest images with Provenance
       if: ${{ inputs.attest == 'true' }}
-      run: echo "${{ inputs.images }}" | while read -r a; do cosign attest --oidc-issuer https://token.actions.githubusercontent.com -f --predicate ${{ inputs.output }} $a; done
+      run: echo "${{ inputs.images }}" | while read -r a; do cosign attest --oidc-issuer=https://token.actions.githubusercontent.com -f --predicate ${{ inputs.output }} $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
