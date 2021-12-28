@@ -8,4 +8,4 @@
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `private-key` | Private key for cosign. | `true` | `` |
+| `private-key` | Private key for cosign. | `false` | `` |
