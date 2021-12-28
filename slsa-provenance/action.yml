@@ -4,8 +4,8 @@ inputs:
   action-sha:
     description: "SHA of this action used (needed for extra material)."
     required: true
-  image:
-    description: "Full image path to generate provenance for."
+  images:
+    description: "Full image paths to generate provenances for."
     required: true
   artifact-path:
     description: "Path of artifacts"
@@ -22,9 +22,6 @@ inputs:
     description: "Attest the image with the generated provenance"
     required: false
     default: 'false'
-  cosign-password:
-    description: "Cosign password"
-    required: false
 runs:
   using: "composite"
   steps:
@@ -43,16 +40,14 @@ runs:
 
     - name: Sign Provenance
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob --key cosign.key --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
+      run: cosign sign-blob --oidc-issuer https://token.actions.githubusercontent.com --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"
 
-    - name: Attest image with Provenance
+    - name: Attest images with Provenance
       if: ${{ inputs.attest == 'true' }}
-      run: cosign attest --key cosign.key -f --predicate ${{ inputs.output }} ${{ inputs.image }}
+      run: echo "${{ inputs.images }}" | while read -r a; do cosign attest --oidc-issuer https://token.actions.githubusercontent.com -f --predicate ${{ inputs.output }} $a; done
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"
