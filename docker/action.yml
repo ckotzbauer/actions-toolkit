@@ -32,17 +32,21 @@ inputs:
   tags:
     description: "List of tags"
     required: true
-  registry-password:
-    description: "Password of the container registry."
-    required: true
+  # registry-auth parameters
+  ghcr-password:
+    description: "Password of ghcr.io."
+    required: false
+  dockerhub-user:
+    description: "User of DockerHub."
+    required: false
+  dockerhub-password:
+    description: "Password of DockerHub."
+    required: false
   # signing parameters
   sign:
     description: "Sign image with cosign"
     required: false
     default: 'false'
-  cosign-password:
-    description: "Cosign password"
-    required: false
 runs:
   using: "composite"
   steps:
@@ -55,11 +59,14 @@ runs:
       uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
 
     - name: GHCR Login
-      uses: docker/login-action@42d299face0c5c43a0487c477f595ac9cf22f1a7
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ inputs.registry-password }}
+      if: ${{ inputs.ghcr-password }}
+      run: docker login -u ${{ github.actor }} -p ${{ inputs.ghcr-password }} ghcr.io
+      shell: sh
+
+    - name: DockerHub Login
+      if: ${{ inputs.dockerhub-password }}
+      run: docker login -u ${{ inputs.dockerhub-user }} -p ${{ inputs.dockerhub-password }}
+      shell: sh
 
     - name: Build image
       uses: docker/build-push-action@b1aeb1103e6b3b5648dbd6deaf0559919456ca6b
@@ -76,8 +83,7 @@ runs:
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.tags }}" | while read -r a; do echo cosign sign --key cosign.key -f -r $a; done
+      run: echo "${{ inputs.tags }}" | while read -r a; do cosign sign --oidc-issuer=https://token.actions.githubusercontent.com -f -r $a; done
       shell: sh
       env:
-        COSIGN_PASSWORD: ${{ inputs.cosign-password }}
         COSIGN_EXPERIMENTAL: "1"

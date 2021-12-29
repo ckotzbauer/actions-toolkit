@@ -16,7 +16,7 @@ on:
       goreleaser-args:
         required: false
         type: string
-      docker-path:
+      docker-tags:
         required: true
         type: string
       docker-platforms:
@@ -44,18 +44,19 @@ on:
         required: true
       pat:
         required: true
-      cosign-private-key:
-        required: true
-      cosign-password:
-        required: true
-      registry-password:
-        required: true
+      ghcr-password:
+        required: false
+      dockerhub-user:
+        required: false
+      dockerhub-password:
+        required: false
 
 jobs:
   release:
     permissions:
       id-token: write
       contents: write
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -72,8 +73,9 @@ jobs:
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
         uses: ckotzbauer/actions-toolkit/setup-cosign@0.0.5
-        with:
-          private-key: ${{ secrets.cosign-private-key }}
+
+      - name: Setup Syft
+        uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
 
       - name: Verify base-image
         run: cosign verify --key https://github.com/GoogleContainerTools/distroless/raw/main/cosign.pub gcr.io/distroless/base
@@ -81,46 +83,42 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@5df302e5e9e4c66310a6b6493a8865b12c555af2
         with:
-          version: "v1.1.0"
+          version: "v1.2.2"
           args: release --rm-dist ${{ inputs.goreleaser-args }}
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.token }}
-          COSIGN_PASSWORD: ${{ secrets.cosign-password }}
           COSIGN_EXPERIMENTAL: 1
 
       - name: Build and push image
         uses: ckotzbauer/actions-toolkit/docker@0.0.5
         with:
-          registry-password: ${{ secrets.registry-password }}
+          ghcr-password: ${{ secrets.ghcr-password }}
+          dockerhub-user: ${{ secrets.dockerhub-user }}
+          dockerhub-password: ${{ secrets.dockerhub-password }}
           context: .
           push: true
           sign: ${{ inputs.sign }}
-          cosign-password: ${{ secrets.cosign-password }}
           platforms: ${{ inputs.docker-platforms }}
-          tags: |
-            ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
-            ghcr.io/${{ inputs.docker-path }}:latest
+          tags: ${{ inputs.docker-tags }}
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
         uses: ckotzbauer/actions-toolkit/sbom@0.0.5
         with:
-          image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
+          images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
-          cosign-password: ${{ secrets.cosign-password }}
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
         uses: ckotzbauer/actions-toolkit/slsa-provenance@0.0.5
         with:
           action-sha: "0.0.5"
-          image: ghcr.io/${{ inputs.docker-path }}:${{ inputs.version }}
+          images: ${{ inputs.docker-tags }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
-          cosign-password: ${{ secrets.cosign-password }}
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@f9174538ca28860c604fd00c68523a7bf6b8b27e
@@ -141,10 +139,7 @@ jobs:
             dist/*.txt
             dist/*.json
             dist/*.sig
-            sbom.json
+            dist/*.sbom
+            dist/*.pem
             provenance.json
-            *.sig
-
-      - name: Delete cosign key
-        if: ${{ always() }}
-        run: rm cosign.key
+            provenance.json.sig

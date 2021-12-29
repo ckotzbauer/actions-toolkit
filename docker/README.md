@@ -17,6 +17,7 @@
 | `load` | Load is a shorthand for --output=type=docker | `false` | `false` |
 | `build-args` | List of build-time variables | `false` | `""` |
 | `tags` | List of tags | `true` | `""` |
-| `registry-password` | Password of the container registry | `true` | `""` |
+| `ghcr-password` | Password of ghcr.io | `false` | `""` |
+| `dockerhub-user` | User of DockerHub | `false` | `""` |
+| `dockerhub-password` | Password of DockerHub | `false` | `""` |
 | `sign` | Sign image with cosign | `false` | `false` |
-| `cosign-password` | Cosign password | `false` | `""` |

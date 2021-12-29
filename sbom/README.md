@@ -1,16 +1,14 @@
 
 # SBOM-Action
 
-> Creates a SBOM from a OCI-Image.
+> Creates a SBOM from a OCI-Images.
 
 
 ## Inputs
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `image` | Full image path to generate SBOM for. | `true` | `` |
-| `output` | Output file. | `true` | `sbom.json` |
+| `images` | Full image paths to generate SBOMs for. | `true` | `` |
 | `format` | SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table) | `true` | `"json"` |
-| `sign` | Sign SBOM with cosign | `false` | `false` |
-| `attest` | Attest the image with the generated SBOM. | `false` | `false` |
-| `cosign-password` | Cosign password | `false` | `` |
+| `sign` | Sign SBOMs with cosign | `false` | `false` |
+| `attest` | Attest the images with the generated SBOM. | `false` | `false` |
