@@ -1,3 +1,37 @@
+## Version 0.1.0 (2021-12-29)
+
+### Dependency updates
+
+* [[`7130654b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7130654b)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.0.5
+* [[`55b0a6c9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/55b0a6c9)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to f917453
+
+### Common changes
+
+* [[`3ab34558`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3ab34558)] - **chore**: Merge pull request #19 from ckotzbauer&#x2F;feature&#x2F;keyless-goreleaser
+* [[`b2f8a592`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b2f8a592)] - **chore**: small fixes
+* [[`343a5fb3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/343a5fb3)] - **chore**: add permission
+* [[`db5d0629`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/db5d0629)] - **chore**: change test permissions
+* [[`d641231e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d641231e)] - **chore**: fix syntax
+* [[`61253a40`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/61253a40)] - **chore**: keyless signing support
+* [[`10ca6f02`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/10ca6f02)] - **chore**: adjusted tests
+* [[`003038e4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/003038e4)] - **chore**: removed private-key
+* [[`97db699a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/97db699a)] - **chore**: add dockerhub and keyless signing support
+* [[`731f13fc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/731f13fc)] - **chore**: support multiple images; keyless support
+* [[`924dd5ad`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/924dd5ad)] - **chore**: store private-key optionally
+* [[`e5f8c771`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e5f8c771)] - **chore**: Merge pull request #16 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+* [[`56ff5898`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/56ff5898)] - **chore**: Merge pull request #15 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-changelog-generator-digest
+* [[`688aa0a3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/688aa0a3)] - **chore**: add setup-cosign matrix
+* [[`1ded61d4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1ded61d4)] - **chore**: add setup-cosign test
+* [[`27a8fc8a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/27a8fc8a)] - **chore**: add module
+* [[`c4f18cf9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4f18cf9)] - **chore**: added sbom test
+* [[`ad18f182`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ad18f182)] - **chore**: fix deprecation warning
+* [[`87ba2b69`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/87ba2b69)] - **chore**: define env image
+* [[`c558e78b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c558e78b)] - **chore**: force build
+* [[`3f3b36b0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3f3b36b0)] - **chore**: setup act
+* [[`eb48dffb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eb48dffb)] - **chore**: add first action-test
+* [[`9eb7e455`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9eb7e455)] - **chore**: fix deprecation warning
+
+
 ## Version 0.0.5 (2021-12-23)
 
 ### Common changes
