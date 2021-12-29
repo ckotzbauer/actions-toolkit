@@ -6,6 +6,8 @@ on:
 
 jobs:
   slsa-provenance:
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Setup cosign
