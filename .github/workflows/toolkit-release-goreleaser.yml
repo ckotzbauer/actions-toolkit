@@ -39,6 +39,10 @@ on:
         required: false
         default: true
         type: boolean
+      cosign-repository:
+        required: false
+        default: ""
+        type: string
     secrets:
       token:
         required: true
@@ -89,6 +93,7 @@ jobs:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.token }}
           COSIGN_EXPERIMENTAL: 1
+          COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
         uses: ckotzbauer/actions-toolkit/docker@0.1.3
@@ -99,6 +104,7 @@ jobs:
           context: .
           push: true
           sign: ${{ inputs.sign }}
+          cosign-repository: ${{ inputs.cosign-repository }}
           platforms: ${{ inputs.docker-platforms }}
           tags: ${{ inputs.docker-tags }}
 
@@ -109,6 +115,7 @@ jobs:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
@@ -119,6 +126,7 @@ jobs:
           artifact-path: dist/
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@f9174538ca28860c604fd00c68523a7bf6b8b27e

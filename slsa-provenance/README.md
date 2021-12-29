@@ -13,3 +13,4 @@
 | `output` | Output file. | `true` | `provenance.json` |
 | `sign` | Sign provenance with cosign | `false` | `false` |
 | `attest` | Attest the images with the generated provenance. | `false` | `false` |
+| `cosign-repository` | Custom Cosign-Repository | `false` | `""` |

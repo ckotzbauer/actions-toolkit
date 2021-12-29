@@ -22,6 +22,10 @@ inputs:
     description: "Attest the image with the generated provenance"
     required: false
     default: 'false'
+  cosign-repository:
+    description: Custom cosign-repository
+    required: false
+    default: ""
 runs:
   using: "composite"
   steps:
@@ -44,6 +48,7 @@ runs:
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
+        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Attest images with Provenance
       if: ${{ inputs.attest == 'true' }}
@@ -51,3 +56,4 @@ runs:
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
+        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}

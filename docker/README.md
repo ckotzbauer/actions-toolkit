@@ -21,3 +21,4 @@
 | `dockerhub-user` | User of DockerHub | `false` | `""` |
 | `dockerhub-password` | Password of DockerHub | `false` | `""` |
 | `sign` | Sign image with cosign | `false` | `false` |
+| `cosign-repository` | Custom Cosign-Repository | `false` | `""` |
