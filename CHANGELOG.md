@@ -1,3 +1,18 @@
+## Version 0.2.0 (2021-12-29)
+
+### Dependency updates
+
+* [[`f9d2f56d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f9d2f56d)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.1.3
+* [[`b77078cc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b77078cc)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to eff0e5b
+
+### Common changes
+
+* [[`331c8d6f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/331c8d6f)] - **chore**: add support for custom cosign-repository
+* [[`775c149f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/775c149f)] - **chore**: also output certificates
+* [[`814164ba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/814164ba)] - **chore**: Merge pull request #21 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`4a704852`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4a704852)] - **chore**: Merge pull request #20 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+
+
 ## Version 0.1.3 (2021-12-29)
 
 ### Common changes
