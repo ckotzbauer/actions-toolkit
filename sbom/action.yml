@@ -47,7 +47,12 @@ runs:
 
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' }}
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest -f --type spdx --predicate ${{ inputs.output }} $a; done
+      run: |
+        echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; 
+        do 
+          cosign attest -f --type spdx --predicate ${{ inputs.output }} $a;
+          cosign attach sbom --type syft --sbom ${{ inputs.output }} $a;
+        done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
