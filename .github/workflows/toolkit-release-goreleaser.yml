@@ -141,7 +141,5 @@ jobs:
             dist/*.sig
             dist/*.sbom
             dist/*.pem
-            oci-sbom.json
-            oci-sbom.json.sig
-            provenance.json
-            provenance.json.sig
+            oci-sbom.json*
+            provenance.json*
