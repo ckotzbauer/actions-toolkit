@@ -1,3 +1,12 @@
+## Version 0.1.2 (2021-12-29)
+
+### Common changes
+
+* [[`a543c970`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a543c970)] - **chore**: remove setup-cosign action
+* [[`4dc8f52a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4dc8f52a)] - **chore**: reworked sbom action
+* [[`b1ce1040`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b1ce1040)] - **chore**: remove issuer as its set by gh-context
+
+
 ## Version 0.1.1 (2021-12-29)
 
 ### Common changes
