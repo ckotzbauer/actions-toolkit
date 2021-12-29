@@ -1,3 +1,10 @@
+## Version 0.1.1 (2021-12-29)
+
+### Common changes
+
+* [[`a50bf739`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a50bf739)] - **chore**: skip blank lines
+
+
 ## Version 0.1.0 (2021-12-29)
 
 ### Dependency updates
