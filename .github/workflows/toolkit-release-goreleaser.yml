@@ -72,7 +72,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: ckotzbauer/actions-toolkit/setup-cosign@0.1.1
+        uses: sigstore/cosign-installer@af5d18d7fedd27439eef3e2f7e5186e8f660e530
 
       - name: Setup Syft
         uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc

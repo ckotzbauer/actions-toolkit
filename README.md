@@ -24,5 +24,4 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | [Docker](docker/README.md)   | Creates a OCI-Image with multi-arch support. It can be signed with Cosign optionally. |
 | [Push-Release](push-release/README.md)   | Commits and pushes possible changes and creates a GitHub-Release. |
 | [SBOM](sbom/README.md)   | Creates SBOMs from OCI-Images. They can be optionally signed and attested with Cosign. |
-| [Setup-Cosign](setup-cosign/README.md)   | Run's the cosign-installer. |
 | [SLSA-Provenance](slsa-provenance/README.md)   | Generates a provenance-file from artifacts (SLSA Level 1). It can be optionally signed and attested with Cosign (SLSA Level 2). |

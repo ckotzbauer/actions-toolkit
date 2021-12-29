@@ -1,7 +1,0 @@
-name: 'Setup Cosign'
-description: 'Setup Cosign'
-runs:
-  using: "composite"
-  steps:
-    - name: Setup cosign
-      uses: sigstore/cosign-installer@af5d18d7fedd27439eef3e2f7e5186e8f660e530
