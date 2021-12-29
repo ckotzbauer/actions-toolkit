@@ -1,3 +1,10 @@
+## Version 0.1.3 (2021-12-29)
+
+### Common changes
+
+* [[`3e7264fa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3e7264fa)] - **chore**: fix
+
+
 ## Version 0.1.2 (2021-12-29)
 
 ### Common changes
