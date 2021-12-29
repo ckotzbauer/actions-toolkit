@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Run action
         uses: ./setup-cosign
-        with:
-          private-key: "aaaaabbbbbccccc"
 
       - name: Verify action
         shell: bash
