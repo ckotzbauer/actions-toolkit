@@ -8,6 +8,10 @@ inputs:
     description: "SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table)"
     required: true
     default: "json"
+  output:
+    description: "Output file"
+    required: true
+    default: "oci-sbom.json"
   sign:
     description: "Sign SBOM with cosign"
     required: false
@@ -24,19 +28,19 @@ runs:
       uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
 
     - name: Generate SBOM
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do syft $a -o ${{ inputs.format }} | jq --compact-output > $a; done
+      run: echo "${{ inputs.images }}" | head -n1 | syft $@ -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
       shell: sh
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign sign-blob --output-signature $a.sig $a; done
+      run: cosign sign-blob --output-signature ${{ inputs.output }}.sig ${{ inputs.output }}
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
 
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' }}
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest -f --type spdx --predicate $a $a; done
+      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest -f --type spdx --predicate ${{ inputs.output }} $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
