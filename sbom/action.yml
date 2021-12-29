@@ -29,14 +29,14 @@ runs:
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign sign-blob --oidc-issuer=https://token.actions.githubusercontent.com --output-signature $a.sig $a; done
+      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign sign-blob --output-signature $a.sig $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
 
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' }}
-      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest --oidc-issuer=https://token.actions.githubusercontent.com -f --type spdx --predicate $a $a; done
+      run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest -f --type spdx --predicate $a $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
