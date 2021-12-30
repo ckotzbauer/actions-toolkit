@@ -6,7 +6,8 @@ inputs:
     required: true
   images:
     description: "Full image paths to generate provenances for."
-    required: true
+    required: false
+    default: ""
   artifact-path:
     description: "Path of artifacts"
     required: true
@@ -51,7 +52,7 @@ runs:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Attest images with Provenance
-      if: ${{ inputs.attest == 'true' }}
+      if: ${{ inputs.attest == 'true' && inputs.images != '' }}
       run: echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; do cosign attest -f --predicate ${{ inputs.output }} $a; done
       shell: sh
       env:

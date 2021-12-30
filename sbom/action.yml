@@ -3,7 +3,12 @@ description: 'Generate SBOM from an oci images'
 inputs:
   images:
     description: "Full image paths to generate SBOMs for."
-    required: true
+    required: false
+    default: ""
+  scan-target:
+    description: "Scan-Target for Syft."
+    required: false
+    default: ""
   format:
     description: "SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table)"
     required: true
@@ -32,9 +37,16 @@ runs:
       uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
 
     - name: Generate SBOM
+      if: ${{ inputs.images != '' }}
       run: |
         NAME=$(echo "${{ inputs.images }}" | head -n1)
         syft $NAME -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
+      shell: sh
+
+    - name: Generate SBOM
+      if: ${{ inputs.scan-target != '' }}
+      run: |
+        syft ${{ inputs.scan-target }} -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
       shell: sh
 
     - name: Sign SBOM
@@ -46,7 +58,7 @@ runs:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Attest images with SBOM
-      if: ${{ inputs.attest == 'true' }}
+      if: ${{ inputs.attest == 'true' && inputs.images != '' }}
       run: |
         echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; 
         do 
