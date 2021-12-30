@@ -1,3 +1,19 @@
+## Version 0.2.1 (2021-12-30)
+
+### Dependency updates
+
+* [[`9c42b78a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9c42b78a)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 8eebefc
+* [[`00c99eba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/00c99eba)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.2.0
+* [[`03c96298`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/03c96298)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 061bed7
+
+### Common changes
+
+* [[`8e7e241a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8e7e241a)] - **chore**: Merge pull request #24 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`580f3001`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/580f3001)] - **chore**: Merge pull request #22 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-changelog-generator-digest
+* [[`2a3f7291`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2a3f7291)] - **chore**: Merge pull request #23 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+* [[`2a931a98`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2a931a98)] - **chore**: also attach sbom to image
+
+
 ## Version 0.2.0 (2021-12-29)
 
 ### Dependency updates
