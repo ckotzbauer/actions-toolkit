@@ -1,3 +1,10 @@
+## Version 0.3.1 (2021-12-30)
+
+### Common changes
+
+* [[`ee340dde`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ee340dde)] - **chore**: use single quotes
+
+
 ## Version 0.3.0 (2021-12-30)
 
 ### Common changes
