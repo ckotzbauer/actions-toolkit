@@ -1,3 +1,10 @@
+## Version 0.2.2 (2021-12-30)
+
+### Common changes
+
+* [[`b91335cd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b91335cd)] - **chore**: add prerelease flag
+
+
 ## Version 0.2.1 (2021-12-30)
 
 ### Dependency updates
