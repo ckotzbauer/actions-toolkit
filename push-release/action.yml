@@ -18,6 +18,10 @@ inputs:
   files:
     description: "Files to upload for the release"
     required: false
+  prerelease:
+    description: "Indicates if this is a pre-release."
+    required: false
+    default: "false"
 runs:
   using: "composite"
   steps:
@@ -41,5 +45,6 @@ runs:
         tag_name: ${{ inputs.version }}
         body_path: commits.md
         files: ${{ inputs.files }}
+        prerelease: ${{ inputs.prerelease }}
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}

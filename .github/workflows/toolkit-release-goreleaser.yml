@@ -141,6 +141,7 @@ jobs:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}
           pat: ${{ secrets.pat }}
+          prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(inputs.version, 'rc') }}
           files: |
             dist/*.tar.gz
             dist/*.zip

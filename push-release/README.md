@@ -13,3 +13,4 @@
 | `branch` | Git branch | `false` | `"main"` |
 | `pat` | PAT with repo-access | `true` | `` |
 | `files` | Files to upload for the release. | `false` | `` |
+| `prerelease` | Indicates if this is a pre-release. | `false` | `false` |
