@@ -97,7 +97,7 @@ jobs:
         run: ${{ inputs.build-commands }}
 
       - name: Build and push image
-        if: ${{ inputs.docker-tags != "" }}
+        if: ${{ inputs.docker-tags != '' }}
         uses: ckotzbauer/actions-toolkit/docker@0.3.0
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
