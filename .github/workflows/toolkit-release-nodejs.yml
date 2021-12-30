@@ -118,6 +118,7 @@ jobs:
           scan-target: "file:package-lock.json"
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
@@ -128,6 +129,7 @@ jobs:
           artifact-path: ${{ inputs.artifact-path }}
           sign: ${{ inputs.sign }}
           attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@061bed72c7a5d34f3c5704692e366c02ef7d150e
