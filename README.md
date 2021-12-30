@@ -15,6 +15,8 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | Name                                                                     | Description |
 | ------------------------------------------------------------------------ | ----------- |
 | [Release GoReleaser](.github/workflows/toolkit-release-goreleaser.yml)   | Releases a GoReleaser project with a OCI-Image, optional signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
+| [Release Node.js](.github/workflows/toolkit-release-nodejs.yml)          | Releases a Node.js project with an optional OCI-Image, optional signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
+
 
 
 ## Actions
