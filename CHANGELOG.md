@@ -1,3 +1,10 @@
+## Version 0.3.0 (2021-12-30)
+
+### Common changes
+
+* [[`b6e6b042`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b6e6b042)] - **chore**: first nodejs release workflow
+
+
 ## Version 0.2.2 (2021-12-30)
 
 ### Common changes
