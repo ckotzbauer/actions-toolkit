@@ -1,3 +1,11 @@
+## Version 0.3.2 (2021-12-30)
+
+### Common changes
+
+* [[`6fd3b10f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6fd3b10f)] - **chore**: docs
+* [[`e3d06ebe`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e3d06ebe)] - **chore**: fix cosign-repository
+
+
 ## Version 0.3.1 (2021-12-30)
 
 ### Common changes
