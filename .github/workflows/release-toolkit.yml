@@ -34,7 +34,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.2.0
+        uses: ckotzbauer/actions-toolkit/push-release@0.3.2
         with:
           version: ${{ github.event.inputs.version }}
           pat: ${{ secrets.REPO_ACCESS }}
