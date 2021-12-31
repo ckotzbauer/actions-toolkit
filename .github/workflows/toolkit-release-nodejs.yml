@@ -28,6 +28,10 @@ on:
         required: false
         default: linux/amd64
         type: string
+      npm:
+        required: false
+        default: false
+        type: boolean
       sign:
         required: false
         default: true
@@ -141,7 +145,7 @@ jobs:
           commit-output: commits.md
 
       - name: Publish NPM package
-        if: ${{ secrets.npm-token != '' }}
+        if: ${{ inputs.npm == true }}
         uses: JS-DevTools/npm-publish@0f451a94170d1699fd50710966d48fb26194d939
         with:
           token: ${{ secrets.npm-token }}
