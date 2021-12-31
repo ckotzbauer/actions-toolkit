@@ -1,3 +1,10 @@
+## Version 0.3.4 (2021-12-31)
+
+### Bug fixes
+
+* [[`ae2b8b24`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ae2b8b24)] - **fix**: add npm flag
+
+
 ## Version 0.3.3 (2021-12-31)
 
 ### Dependency updates
