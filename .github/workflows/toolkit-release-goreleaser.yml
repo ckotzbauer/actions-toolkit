@@ -96,7 +96,7 @@ jobs:
           COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.3.2
+        uses: ckotzbauer/actions-toolkit/docker@0.3.3
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -110,7 +110,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.3.2
+        uses: ckotzbauer/actions-toolkit/sbom@0.3.3
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -119,9 +119,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.3.2
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.3.3
         with:
-          action-sha: "0.3.2"
+          action-sha: "0.3.3"
           images: ${{ inputs.docker-tags }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
@@ -136,7 +136,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.3.2
+        uses: ckotzbauer/actions-toolkit/push-release@0.3.3
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

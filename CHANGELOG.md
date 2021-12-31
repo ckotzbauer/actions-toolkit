@@ -1,3 +1,15 @@
+## Version 0.3.3 (2021-12-31)
+
+### Dependency updates
+
+* [[`b3647e5c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b3647e5c)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.3.2
+
+### Common changes
+
+* [[`bfb55520`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bfb55520)] - **chore**: publish npm package
+* [[`6625b339`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6625b339)] - **chore**: Merge pull request #25 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+
+
 ## Version 0.3.2 (2021-12-30)
 
 ### Common changes
