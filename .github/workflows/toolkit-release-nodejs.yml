@@ -59,6 +59,8 @@ on:
         required: false
       dockerhub-password:
         required: false
+      npm-token:
+        required: false
 
 jobs:
   release:
@@ -138,7 +140,12 @@ jobs:
           github-handle: ${{ github.repository }}
           commit-output: commits.md
 
-      # TODO: Publish npm package - if any
+      - name: Publish NPM package
+        if: ${{ secrets.npm-token != '' }}
+        uses: JS-DevTools/npm-publish@0f451a94170d1699fd50710966d48fb26194d939
+        with:
+          token: ${{ secrets.npm-token }}
+          access: "public"
 
       - name: Push release
         uses: ckotzbauer/actions-toolkit/push-release@0.3.2
