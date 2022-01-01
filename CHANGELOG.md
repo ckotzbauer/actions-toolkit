@@ -1,3 +1,10 @@
+## Version 0.3.6 (2022-01-01)
+
+### Common changes
+
+* [[`3c90c7de`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3c90c7de)] - **chore**: use PAT again
+
+
 ## Version 0.3.5 (2022-01-01)
 
 ### Dependency updates
