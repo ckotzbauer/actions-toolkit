@@ -1,3 +1,19 @@
+## Version 0.3.5 (2022-01-01)
+
+### Dependency updates
+
+* [[`577ffed8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/577ffed8)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 50f243d
+* [[`620acb99`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/620acb99)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.3.4
+* [[`c20d073d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c20d073d)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to e9be433
+
+### Common changes
+
+* [[`228d0d71`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/228d0d71)] - **chore**: Merge pull request #35 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-changelog-generator-digest
+* [[`abeb92b5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/abeb92b5)] - **chore**: Merge pull request #34 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+* [[`db0b51b6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/db0b51b6)] - **chore**: Merge pull request #33 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-changelog-generator-digest
+* [[`ea77ea7c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ea77ea7c)] - **nodejs**: try to only use GITHUB_TOKEN
+
+
 ## Version 0.3.4 (2021-12-31)
 
 ### Bug fixes
