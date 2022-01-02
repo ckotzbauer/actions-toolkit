@@ -1,0 +1,127 @@
+name: Release OCI
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        required: false
+        default: main
+        type: string
+      version:
+        required: true
+        type: string
+      artifact-path:
+        required: false
+        default: ""
+        type: string
+      docker-tags:
+        required: false
+        type: string
+        default: ""
+      docker-platforms:
+        required: false
+        default: linux/amd64
+        type: string
+      sign:
+        required: false
+        default: true
+        type: boolean
+      attest:
+        required: false
+        default: true
+        type: boolean
+      sbom:
+        required: false
+        default: true
+        type: boolean
+      provenance:
+        required: false
+        default: true
+        type: boolean
+      cosign-repository:
+        required: false
+        default: ""
+        type: string
+    secrets:
+      token:
+        required: true
+      pat:
+        required: true
+      ghcr-password:
+        required: false
+      dockerhub-user:
+        required: false
+      dockerhub-password:
+        required: false
+
+jobs:
+  release:
+    permissions:
+      id-token: write
+      contents: write
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@230611dbd0eb52da1e1f4f7bc8bb0c3a339fc8b7
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.pat }}
+
+      - name: Setup Cosign
+        if: ${{ inputs.sign == true }}
+        uses: sigstore/cosign-installer@8eebefc599fed69797891797edc3bd4fb4f0db4f
+
+      - name: Setup Syft
+        uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
+
+      - name: Build and push image
+        uses: ckotzbauer/actions-toolkit/docker@0.3.6
+        with:
+          ghcr-password: ${{ secrets.ghcr-password }}
+          dockerhub-user: ${{ secrets.dockerhub-user }}
+          dockerhub-password: ${{ secrets.dockerhub-password }}
+          context: .
+          push: true
+          sign: ${{ inputs.sign }}
+          cosign-repository: ${{ inputs.cosign-repository }}
+          platforms: ${{ inputs.docker-platforms }}
+          tags: ${{ inputs.docker-tags }}
+
+      - name: Generate SBOM
+        if: ${{ inputs.sbom == true }}
+        uses: ckotzbauer/actions-toolkit/sbom@0.3.6
+        with:
+          images: ${{ inputs.docker-tags }}
+          sign: ${{ inputs.sign }}
+          attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
+
+      - name: Generate Provenance
+        if: ${{ inputs.provenance == true }}
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.3.6
+        with:
+          action-sha: "0.3.6"
+          images: ${{ inputs.docker-tags }}
+          artifact-path: ${{ inputs.artifact-path }}
+          sign: ${{ inputs.sign }}
+          attest: ${{ inputs.attest }}
+          cosign-repository: ${{ inputs.cosign-repository }}
+
+      - name: Generate Changelog
+        uses: ckotzbauer/changelog-generator@50f243db7c8614b7aaac37bffd721de1a2e67ff4
+        with:
+          release-version: ${{ inputs.version }}
+          github-handle: ${{ github.repository }}
+          commit-output: commits.md
+
+      - name: Push release
+        uses: ckotzbauer/actions-toolkit/push-release@0.3.6
+        with:
+          version: ${{ inputs.version }}
+          branch: ${{ inputs.branch }}
+          pat: ${{ secrets.pat }}
+          prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(inputs.version, 'rc') }}
+          files: |
+            oci-sbom.json*
+            provenance.json*
