@@ -1,3 +1,10 @@
+## Version 0.4.0 (2022-01-02)
+
+### Common changes
+
+* [[`4a2a4bdf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4a2a4bdf)] - **chore**: add oci-workflow
+
+
 ## Version 0.3.6 (2022-01-01)
 
 ### Common changes
