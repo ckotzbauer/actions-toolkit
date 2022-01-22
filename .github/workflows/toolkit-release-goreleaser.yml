@@ -87,7 +87,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@a80c8fd82d21711db1dd61f87fc80d31b495b1fd
         with:
-          version: "v1.2.2"
+          version: "v1.3.1"
           args: release --rm-dist ${{ inputs.goreleaser-args }}
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
@@ -146,7 +146,6 @@ jobs:
             dist/*.tar.gz
             dist/*.zip
             dist/*.txt
-            dist/*.json
             dist/*.sig
             dist/*.sbom
             dist/*.pem
