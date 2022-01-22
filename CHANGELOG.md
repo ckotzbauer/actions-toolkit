@@ -1,3 +1,38 @@
+## Version 0.5.0 (2022-01-22)
+
+### Features and improvements
+
+* [[`f0cec388`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f0cec388)] - **feat**: update goreleaser
+
+### Dependency updates
+
+* [[`f776c0e3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f776c0e3)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 353e21c
+* [[`7793bd8f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7793bd8f)] - **deps**: update docker&#x2F;build-push-action commit hash to 604f033
+* [[`41c9704b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/41c9704b)] - **deps**: update goreleaser&#x2F;goreleaser-action commit hash to a80c8fd
+* [[`bfa7940e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bfa7940e)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to dbb3160
+* [[`c360ba73`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c360ba73)] - **deps**: update docker&#x2F;build-push-action commit hash to 1814d3d
+* [[`7f3cef35`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f3cef35)] - **deps**: update actions&#x2F;setup-go commit hash to 44e2214
+* [[`235d0bab`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/235d0bab)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to fb055c0
+* [[`fe02cef2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fe02cef2)] - **deps**: update actions&#x2F;setup-node commit hash to f099707
+* [[`7f9e15a1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f9e15a1)] - **deps**: update actions&#x2F;setup-node commit hash to f658dc5
+* [[`f3d272f8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f3d272f8)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 12d5f6d
+* [[`81607043`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/81607043)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.4.0
+
+### Common changes
+
+* [[`7abdf20d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7abdf20d)] - **chore**: Merge pull request #45 from ckotzbauer&#x2F;renovate&#x2F;docker-build-push-action-digest
+* [[`2d84bcdd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2d84bcdd)] - **chore**: Merge pull request #46 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`a36e27db`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a36e27db)] - **chore**: Merge pull request #44 from ckotzbauer&#x2F;renovate&#x2F;goreleaser-goreleaser-action-digest
+* [[`46213109`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/46213109)] - **chore**: Merge pull request #43 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`1da17acc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1da17acc)] - **chore**: Merge pull request #42 from ckotzbauer&#x2F;renovate&#x2F;docker-build-push-action-digest
+* [[`bb474fe5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bb474fe5)] - **chore**: Merge pull request #41 from ckotzbauer&#x2F;renovate&#x2F;actions-setup-go-digest
+* [[`2cc746ad`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2cc746ad)] - **chore**: Merge pull request #40 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`57120996`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/57120996)] - **chore**: Merge pull request #39 from ckotzbauer&#x2F;renovate&#x2F;actions-setup-node-digest
+* [[`b3c0e132`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b3c0e132)] - **chore**: Merge pull request #38 from ckotzbauer&#x2F;renovate&#x2F;actions-setup-node-digest
+* [[`99c47e3a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/99c47e3a)] - **chore**: Merge pull request #37 from ckotzbauer&#x2F;renovate&#x2F;sigstore-cosign-installer-digest
+* [[`825ab287`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/825ab287)] - **chore**: Merge pull request #36 from ckotzbauer&#x2F;renovate&#x2F;ckotzbauer-actions-toolkit-0.x
+
+
 ## Version 0.4.0 (2022-01-02)
 
 ### Common changes
