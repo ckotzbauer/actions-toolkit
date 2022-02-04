@@ -1,3 +1,24 @@
+## Version 0.6.0 (2022-02-04)
+
+### Dependency updates
+
+* [[`a1ed79dd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a1ed79dd)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 51f8e5c
+* [[`f70b64a3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f70b64a3)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 5cc839e
+* [[`1550c984`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1550c984)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 4358940
+* [[`4d510c31`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4d510c31)] - **deps**: update docker&#x2F;build-push-action commit hash to 7f9d37f
+* [[`d5c066dd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d5c066dd)] - **deps**: update docker&#x2F;build-push-action commit hash to d8b0ca6
+* [[`d5197be3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d5197be3)] - **deps**: update docker&#x2F;build-push-action commit hash to 8c76bb7
+* [[`e838e936`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e838e936)] - **deps**: update docker&#x2F;build-push-action commit hash to 2533762
+* [[`073af281`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/073af281)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 47b6172
+* [[`7855261f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7855261f)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to b3b9ef9
+* [[`f640641c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f640641c)] - **deps**: update softprops&#x2F;action-gh-release commit hash to fe9a9bd
+* [[`75017637`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/75017637)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.5.0
+
+### Common changes
+
+* [[`65575a1a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/65575a1a)] - **chore**: Create FUNDING.yml
+
+
 ## Version 0.5.0 (2022-01-22)
 
 ### Features and improvements
