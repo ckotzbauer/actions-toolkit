@@ -36,8 +36,6 @@ runs:
     - name: Generate provenance
       uses: philips-labs/slsa-provenance-action@8f3f6a835ccfa2c0d5fb1d6dce15691a86575659
       with:
-        command: generate
-        subcommand: files
         arguments: -d --artifact-path ${{ inputs.artifact-path }} --extra-materials material.json --output-path ${{ inputs.output }}
 
     - name: Sign Provenance
