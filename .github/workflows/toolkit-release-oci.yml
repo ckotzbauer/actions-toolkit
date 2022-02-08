@@ -76,7 +76,7 @@ jobs:
         uses: anchore/sbom-action/download-syft@3626d7d7b13e87ee6c6f9ded3940dea05a3967bc
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.6.0
+        uses: ckotzbauer/actions-toolkit/docker@0.6.1-alpha.0
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -90,7 +90,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.6.0
+        uses: ckotzbauer/actions-toolkit/sbom@0.6.1-alpha.0
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -99,9 +99,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.6.0
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.6.1-alpha.0
         with:
-          action-sha: "0.6.0"
+          action-sha: "0.6.1-alpha.0"
           images: ${{ inputs.docker-tags }}
           artifact-path: ${{ inputs.artifact-path }}
           sign: ${{ inputs.sign }}
@@ -116,7 +116,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.6.0
+        uses: ckotzbauer/actions-toolkit/push-release@0.6.1-alpha.0
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

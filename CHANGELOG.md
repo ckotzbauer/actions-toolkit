@@ -1,3 +1,13 @@
+## Version 0.6.1-alpha.0 (2022-02-08)
+
+### Dependency updates
+
+* [[`221fed71`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/221fed71)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 7255811 (#18)
+* [[`c410206c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c410206c)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to e0b52f3
+* [[`3fb5b561`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3fb5b561)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to fbb87b5
+* [[`b40a206f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b40a206f)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.6.0
+
+
 ## Version 0.6.0 (2022-02-04)
 
 ### Dependency updates
