@@ -38,3 +38,4 @@ jobs:
         with:
           version: ${{ github.event.inputs.version }}
           pat: ${{ secrets.REPO_ACCESS }}
+          prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(inputs.version, 'rc') }}
