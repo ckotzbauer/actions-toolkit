@@ -90,7 +90,7 @@ jobs:
         uses: sigstore/cosign-installer@e0b52f38601a0c05e79f2531afffdffaab4a9c47
 
       - name: Setup Syft
-        uses: anchore/sbom-action/download-syft@10bd55683b8c3682da104788c36bf85eb6fef436
+        uses: anchore/sbom-action/download-syft@17b7169159fc655f813c60649a7b08ac0dbf8fc5
 
       # TODO: Verify base-image when Node.js images are signed
 
