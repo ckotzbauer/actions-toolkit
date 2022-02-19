@@ -76,7 +76,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: sigstore/cosign-installer@e0b52f38601a0c05e79f2531afffdffaab4a9c47
+        uses: sigstore/cosign-installer@d12dc20646336e3715c407b9ae0065682932397b
 
       - name: Setup Syft
         uses: anchore/sbom-action/download-syft@17b7169159fc655f813c60649a7b08ac0dbf8fc5
