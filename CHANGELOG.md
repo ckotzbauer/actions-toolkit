@@ -1,3 +1,39 @@
+## Version 0.7.0-beta.0 (2022-02-27)
+
+### Features and improvements
+
+* [[`7376779b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7376779b)] - **feat**: add grype action
+* [[`eb4b7867`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eb4b7867)] - **feat**: Add setup-syft action
+
+### Bug fixes
+
+* [[`58b44220`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/58b44220)] - **fix**: support prerelease
+
+### Dependency updates
+
+* [[`c4738c5c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4738c5c)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 77eaaa1 (#81)
+* [[`cb1651f4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cb1651f4)] - **deps**: update actions&#x2F;setup-go commit hash to 2bb2aab (#79)
+* [[`760e74dd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/760e74dd)] - **deps**: update actions&#x2F;setup-node commit hash to 9ced9a4 (#80)
+* [[`b5ab81c1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b5ab81c1)] - **deps**: update actions&#x2F;setup-node commit hash to 3e90744 (#78)
+* [[`eadd820c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eadd820c)] - **deps**: update actions&#x2F;setup-go commit hash to edcbc0c (#77)
+* [[`a0b9ecae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a0b9ecae)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 179e0f1 (#73)
+* [[`9354ff4f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9354ff4f)] - **deps**: update ad-m&#x2F;github-push-action commit hash to a3fd843 (#76)
+* [[`7a8ec1d5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7a8ec1d5)] - **deps**: update actions&#x2F;setup-go commit hash to fb9a043 (#75)
+* [[`f8ef5bdf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f8ef5bdf)] - **deps**: update actions&#x2F;setup-node commit hash to 28df918 (#74)
+* [[`21929dc6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/21929dc6)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to d12dc20 (#72)
+* [[`6350a553`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6350a553)] - **deps**: update ad-m&#x2F;github-push-action commit hash to 7257a3a (#70)
+* [[`3cc2dfb4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3cc2dfb4)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to b4a2cc8 (#71)
+* [[`de4ec014`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/de4ec014)] - **deps**: update anchore&#x2F;sbom-action commit hash to 17b7169 (#69)
+* [[`d304876e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d304876e)] - **deps**: update anchore&#x2F;sbom-action commit hash to 10bd556 (#68)
+* [[`62680dc2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/62680dc2)] - **deps**: update actions&#x2F;setup-go commit hash to 5b0ae0e (#67)
+* [[`be605c02`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/be605c02)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 91684f3 (#64)
+* [[`8567ae9f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8567ae9f)] - **deps**: update pascalgn&#x2F;size-label-action commit hash to a4655c4 (#66)
+* [[`d5b0b3b9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d5b0b3b9)] - **deps**: update anchore&#x2F;sbom-action commit hash to 5d61815 (#65)
+* [[`1d27283c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1d27283c)] - **deps**: update actions&#x2F;setup-go commit hash to bfdd357 (#63)
+* [[`c1e326d3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c1e326d3)] - **deps**: update docker&#x2F;build-push-action commit hash to fe02965 (#62)
+* [[`c3d92ad1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c3d92ad1)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 4ebaa6c (#61)
+
+
 ## Version 0.6.1-alpha.0 (2022-02-08)
 
 ### Dependency updates
