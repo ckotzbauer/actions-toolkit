@@ -90,7 +90,7 @@ jobs:
         uses: sigstore/cosign-installer@179e0f15e70e22ca2e7254fc12d68a9fbab35614
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.7.0-beta.0
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.7.0-beta.1
 
       # TODO: Verify base-image when Node.js images are signed
 
@@ -104,7 +104,7 @@ jobs:
 
       - name: Build and push image
         if: ${{ inputs.docker-tags != '' }}
-        uses: ckotzbauer/actions-toolkit/docker@0.7.0-beta.0
+        uses: ckotzbauer/actions-toolkit/docker@0.7.0-beta.1
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -118,7 +118,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.7.0-beta.0
+        uses: ckotzbauer/actions-toolkit/sbom@0.7.0-beta.1
         with:
           images: ${{ inputs.docker-tags }}
           scan-target: "file:package-lock.json"
@@ -128,9 +128,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.7.0-beta.0
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.7.0-beta.1
         with:
-          action-sha: "0.7.0-beta.0"
+          action-sha: "0.7.0-beta.1"
           images: ${{ inputs.docker-tags }}
           artifact-path: ${{ inputs.artifact-path }}
           sign: ${{ inputs.sign }}
@@ -152,7 +152,7 @@ jobs:
           access: "public"
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.7.0-beta.0
+        uses: ckotzbauer/actions-toolkit/push-release@0.7.0-beta.1
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

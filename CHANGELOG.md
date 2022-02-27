@@ -1,3 +1,11 @@
+## Version 0.7.0-beta.1 (2022-02-27)
+
+### Bug fixes
+
+* [[`1ffc0927`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1ffc0927)] - **fix**: small grype fixes
+* [[`3879fe4d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3879fe4d)] - **fix**: use correct variable [skip ci]
+
+
 ## Version 0.7.0-beta.0 (2022-02-27)
 
 ### Features and improvements
