@@ -32,10 +32,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Setup Syft
-      id: setup
-      uses: anchore/sbom-action/download-syft@17b7169159fc655f813c60649a7b08ac0dbf8fc5
-
     - name: Generate SBOM
       if: ${{ inputs.images != '' }}
       run: |

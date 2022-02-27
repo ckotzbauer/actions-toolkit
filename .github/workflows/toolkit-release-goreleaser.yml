@@ -79,7 +79,7 @@ jobs:
         uses: sigstore/cosign-installer@179e0f15e70e22ca2e7254fc12d68a9fbab35614
 
       - name: Setup Syft
-        uses: anchore/sbom-action/download-syft@17b7169159fc655f813c60649a7b08ac0dbf8fc5
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.6.1-alpha.0
 
       - name: Verify base-image
         run: cosign verify --key https://github.com/GoogleContainerTools/distroless/raw/main/cosign.pub gcr.io/distroless/base

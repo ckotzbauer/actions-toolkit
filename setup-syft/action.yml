@@ -1,0 +1,14 @@
+name: 'Setup Syft'
+description: 'Installs the Syft binary'
+inputs:
+  version:
+    description: "Syft version to install."
+    required: true
+    default: "v0.39.3"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Syft
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
+      shell: sh
