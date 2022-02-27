@@ -16,7 +16,7 @@ inputs:
   output:
     description: "Output file"
     required: true
-    default: "vulnerabilities.json"
+    default: ""
   format:
     description: "Output format [json table cyclonedx]"
     required: true
