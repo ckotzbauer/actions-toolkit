@@ -1,3 +1,11 @@
+## Version 0.7.0 (2022-02-27)
+
+### Features and improvements
+
+* [[`f786e8df`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f786e8df)] - **feat**: remove distroless verification
+* [[`c4dfadb0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4dfadb0)] - **feat**: update goreleaser
+
+
 ## Version 0.7.0-beta.1 (2022-02-27)
 
 ### Bug fixes
