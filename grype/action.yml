@@ -1,0 +1,45 @@
+name: 'Grype'
+description: 'Scan with Grype'
+inputs:
+  version:
+    description: "Grype version to install."
+    required: true
+    default: "v0.33.1"
+  install-only:
+    description: "Install the binary only."
+    required: true
+    default: "false"
+  fail-on:
+    description: "Fail the action when vulns with a severity >= where found [negligible low medium high critical]."
+    required: false
+    default: ""
+  output:
+    description: "Output file"
+    required: true
+    default: "vulnerabilities.json"
+  format:
+    description: "Output format [json table cyclonedx]"
+    required: true
+    default: "table"
+  config-file:
+    description: "Config-File"
+    required: false
+    default: ""
+  scan-target:
+    description: "Target to scan"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Grype
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
+      shell: sh
+
+    - name: Scan for vulnerabilities
+      if: ${{ inputs.install-only != 'true' }}
+      run: |
+        grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
+      shell: sh
+
+    # TODO: Optionally attest vulnerabilities (#29)

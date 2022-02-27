@@ -25,6 +25,7 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | Name                                                                     | Description |
 | ------------------------------------------------------------------------ | ----------- |
 | [Docker](docker/README.md)   | Creates a OCI-Image with multi-arch support. It can be signed with Cosign optionally. |
+| [Grype](grype/README.md)   | Scans a target for vulnerabilities with grype. |
 | [Push-Release](push-release/README.md)   | Commits and pushes possible changes and creates a GitHub-Release. |
 | [SBOM](sbom/README.md)   | Creates SBOMs from OCI-Images. They can be optionally signed and attested with Cosign. |
 | [Setup-Syft](setup-syft/README.md)   | Installs the syft binary. |
