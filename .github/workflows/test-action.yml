@@ -15,7 +15,7 @@ jobs:
           - sbom
           - slsa-provenance
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - uses: dorny/paths-filter@v2.10.2
       id: changes
