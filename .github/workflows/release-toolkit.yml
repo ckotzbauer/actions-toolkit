@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@8f9e05e482293f862823fcca12d9eddfb3723131
+        uses: actions/checkout@2d1c1198e79c30cca5c3957b1e3b65ce95b5356e
         with:
           fetch-depth: 0
           token: ${{ secrets.REPO_ACCESS }}
