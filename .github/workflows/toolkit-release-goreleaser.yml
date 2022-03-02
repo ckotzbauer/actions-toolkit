@@ -82,7 +82,7 @@ jobs:
         uses: ckotzbauer/actions-toolkit/setup-syft@0.7.0
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@b953231f81b8dfd023c58e0854a721e35037f28b
+        uses: goreleaser/goreleaser-action@221e84ac6ad67baf4c50075fe608fd59136dd8fd
         with:
           version: "v1.4.1"
           args: release --rm-dist ${{ inputs.goreleaser-args }}
