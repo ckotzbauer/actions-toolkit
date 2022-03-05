@@ -1,3 +1,36 @@
+## Version 0.8.0 (2022-03-05)
+
+### Features and improvements
+
+* [[`f786e8df`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f786e8df)] - **feat**: remove distroless verification
+* [[`c4dfadb0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4dfadb0)] - **feat**: update goreleaser
+
+### Dependency updates
+
+* [[`04e0f4a1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/04e0f4a1)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to 581838f (#99)
+* [[`36082974`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/36082974)] - **deps**: update docker&#x2F;build-push-action commit hash to 309fb91 (#98)
+* [[`eec28ca0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eec28ca0)] - **deps**: update docker&#x2F;setup-buildx-action commit hash to 766152f (#95)
+* [[`8d16a887`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8d16a887)] - **deps**: update docker&#x2F;setup-qemu-action commit hash to d2a6030 (#96)
+* [[`d9009a2a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d9009a2a)] - **deps**: update goreleaser&#x2F;goreleaser-action commit hash to 221e84a (#97)
+* [[`1d7b07dc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1d7b07dc)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 508e337 (#94)
+* [[`36a72aba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/36a72aba)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to db23432 (#90)
+* [[`6c30b0b5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6c30b0b5)] - **deps**: update actions&#x2F;checkout commit hash to 2d1c119 (#91)
+* [[`94d6a351`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/94d6a351)] - **deps**: update actions&#x2F;checkout action to v3 (#92)
+* [[`e04f8dd6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e04f8dd6)] - **deps**: update actions&#x2F;stale action to v5 (#93)
+* [[`e379aee5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e379aee5)] - **deps**: update actions&#x2F;setup-go commit hash to f6164bd (#84)
+* [[`d2bef2e0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d2bef2e0)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to b683690 (#89)
+* [[`21de5604`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/21de5604)] - **deps**: update actions&#x2F;setup-go action to v3 (#85)
+* [[`5ca1cc20`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5ca1cc20)] - **deps**: update goreleaser&#x2F;goreleaser-action commit hash to b953231 (#83)
+* [[`59b4d167`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/59b4d167)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 7e3251c (#86)
+* [[`21e73000`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/21e73000)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 1aa27a8 (#88)
+* [[`2ea234cb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2ea234cb)] - **deps**: update actions&#x2F;checkout commit hash to 8f9e05e (#87)
+* [[`8ad3da35`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8ad3da35)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.7.0 (#82)
+
+### Common changes
+
+* [[`5d5ee755`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5d5ee755)] - **chore**: release 0.7.0
+
+
 ## Version 0.7.0 (2022-02-27)
 
 ### Features and improvements
