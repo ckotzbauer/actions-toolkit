@@ -1,3 +1,25 @@
+## Version 0.9.0 (2022-03-11)
+
+### Features and improvements
+
+* [[`59a0ff82`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/59a0ff82)] - **feat**: update goreleaser
+
+### Dependency updates
+
+* [[`da61382e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/da61382e)] - **deps**: update actions&#x2F;setup-node commit hash to ed960c9 (#107)
+* [[`672cc640`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/672cc640)] - **deps**: update actions&#x2F;setup-go commit hash to 9a16260 (#106)
+* [[`19be6fad`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/19be6fad)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to 28fa884 (#105)
+* [[`63dad5fb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/63dad5fb)] - **deps**: update ckotzbauer&#x2F;changelog-generator commit hash to 333c4f6 (#102)
+* [[`ac0addb5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ac0addb5)] - **deps**: update philips-labs&#x2F;slsa-provenance-action commit hash to d515ccd (#103)
+* [[`41d93ca3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/41d93ca3)] - **deps**: update sigstore&#x2F;cosign-installer commit hash to b4f5574 (#104)
+* [[`aa21ec1f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/aa21ec1f)] - **deps**: update lannonbr&#x2F;issue-label-manager-action action to v3.0.1 (#100)
+* [[`910145dc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/910145dc)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.8.0 (#101)
+
+### Common changes
+
+* [[`ad78e7b5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ad78e7b5)] - **chore**: update syft
+
+
 ## Version 0.8.0 (2022-03-05)
 
 ### Features and improvements
