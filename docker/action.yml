@@ -56,7 +56,7 @@ runs:
   steps:
     - name: Set up QEMU
       id: qemu
-      uses: docker/setup-qemu-action@d2a60302b87194ce3bff607f8a9af18fe5ec1cdc
+      uses: docker/setup-qemu-action@95bd86577812b34f1db6d5e57b728cb63b9aa388
 
     - name: Set up Docker Buildx
       id: buildx
