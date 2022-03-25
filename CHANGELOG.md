@@ -1,3 +1,30 @@
+## Version 0.10.0 (2022-03-25)
+
+### Features and improvements
+
+* [[`6f5c0cba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6f5c0cba)] - **feat**: update grype to 0.34.7
+* [[`c76241b1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c76241b1)] - **feat**: update syft to 0.42.4
+* [[`5fece89e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5fece89e)] - **feat**: update goreleaser to 1.7.0
+
+### Dependency updates
+
+* [[`97655f13`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/97655f13)] - **deps**: update docker&#x2F;build-push-action digest to b5730d2 (#121)
+* [[`f7e66be4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f7e66be4)] - **deps**: update docker&#x2F;setup-qemu-action digest to 2d4bfe7 (#122)
+* [[`af94eb2c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/af94eb2c)] - **deps**: update docker&#x2F;setup-buildx-action digest to 20111c6 (#120)
+* [[`0872280e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0872280e)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 04b61d0 (#119)
+* [[`ea3b632f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ea3b632f)] - **deps**: update docker&#x2F;setup-qemu-action digest to 95bd865 (#118)
+* [[`38a399ed`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/38a399ed)] - **deps**: update docker&#x2F;setup-buildx-action digest to c62171c (#117)
+* [[`9c5daff5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9c5daff5)] - **deps**: update docker&#x2F;build-push-action digest to 34c1caa (#116)
+* [[`eb08c15a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eb08c15a)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 2146278 (#115)
+* [[`e8230582`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e8230582)] - **deps**: update ckotzbauer&#x2F;label-command-action action to v2 (#114)
+* [[`150cf465`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/150cf465)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 0110a4a (#113)
+* [[`f34d0069`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f34d0069)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to e213e8b (#112)
+* [[`0f5a8723`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0f5a8723)] - **deps**: update actions&#x2F;setup-go digest to 7572680 (#111)
+* [[`e2da55a0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e2da55a0)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 895ec46 (#110)
+* [[`e4fe9539`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e4fe9539)] - **deps**: update docker&#x2F;build-push-action digest to ac9327e (#109)
+* [[`7e8ebbb1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7e8ebbb1)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.9.0 (#108)
+
+
 ## Version 0.9.0 (2022-03-11)
 
 ### Features and improvements
