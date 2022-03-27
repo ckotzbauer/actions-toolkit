@@ -1,0 +1,17 @@
+name: Label issues
+
+on:
+  workflow_call:
+    secrets:
+      token:
+        required: true
+
+jobs:
+  label-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: label
+        uses: ckotzbauer/label-command-action@v2
+        env:
+          GITHUB_TOKEN: "${{ secrets.token }}"

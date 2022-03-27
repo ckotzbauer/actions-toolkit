@@ -1,0 +1,17 @@
+name: Size Label
+
+on:
+  workflow_call:
+    secrets:
+      token:
+        required: true
+
+jobs:
+  size-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: size-label
+        uses: pascalgn/size-label-action@a4655c448bb838e8d73b81e97fd0831bb4cbda1e
+        env:
+          GITHUB_TOKEN: "${{ secrets.token }}"
+          IGNORED: ".*\npackage-lock.json\ndist/**"
