@@ -1,3 +1,22 @@
+## Version 0.11.0-alpha.0 (2022-03-27)
+
+### Features and improvements
+
+* [[`de575a30`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/de575a30)] - **feat**: new maintenance workflows
+
+### Bug fixes
+
+* [[`ffb1aa0e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ffb1aa0e)] - **fix**: update ourselves
+
+### Dependency updates
+
+* [[`f919baa5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f919baa5)] - **deps**: update actions&#x2F;setup-go digest to 6577160 (#124)
+* [[`612e9c2e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/612e9c2e)] - **deps**: update actions&#x2F;setup-node digest to bed538b (#125)
+* [[`80ea2bb0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/80ea2bb0)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.10.0 (#127)
+* [[`bac7d552`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bac7d552)] - **deps**: update actions&#x2F;checkout digest to d50f8ea (#123)
+* [[`75531170`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/75531170)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to c1bb26c (#126)
+
+
 ## Version 0.10.0 (2022-03-25)
 
 ### Features and improvements
