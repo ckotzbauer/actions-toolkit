@@ -14,7 +14,6 @@ The same immutable git-tag is used for all actions and workflows when they are r
 
 | Name                                                                     | Description |
 | ------------------------------------------------------------------------ | ----------- |
-
 | [Create default labels](.github/workflows/toolkit-create-default-labels.yml)          | Creates a specified set of labels from a config-file. |
 | [Label issues](.github/workflows/toolkit-label-issues.yml)          | Labels issues and PRs by comment-commands. |
 | [Release OCI](.github/workflows/toolkit-release-oci.yml)                 | Releases a OCI-Image project with optional Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
