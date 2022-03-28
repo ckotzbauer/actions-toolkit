@@ -34,3 +34,16 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | [SBOM](sbom/README.md)   | Creates SBOMs from OCI-Images. They can be optionally signed and attested with Cosign. |
 | [Setup-Syft](setup-syft/README.md)   | Installs the syft binary. |
 | [SLSA-Provenance](slsa-provenance/README.md)   | Generates a provenance-file from artifacts (SLSA Level 1). It can be optionally signed and attested with Cosign (SLSA Level 2). |
+
+
+## Contributing
+
+Please refer to the [Contribution guildelines](https://github.com/ckotzbauer/.github/blob/main/CONTRIBUTING.md).
+
+## Code of conduct
+
+Please refer to the [Conduct guildelines](https://github.com/ckotzbauer/.github/blob/main/CODE_OF_CONDUCT.md).
+
+## Security
+
+Please refer to the [Security process](https://github.com/ckotzbauer/.github/blob/main/SECURITY.md).
