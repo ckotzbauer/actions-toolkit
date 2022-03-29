@@ -1,3 +1,23 @@
+## Version 0.10.1 (2022-03-29)
+
+### Documentation
+
+* [[`03e23d78`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/03e23d78)] - **doc**: fix format
+* [[`96c808ee`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/96c808ee)] - **doc**: add community-files
+
+### Dependency updates
+
+* [[`c73d3a67`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c73d3a67)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 02d0828 (#131)
+* [[`3997ff32`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3997ff32)] - **deps**: update actions&#x2F;setup-go digest to a5865a9 (#128)
+* [[`a45c55fc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a45c55fc)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 603c0ec (#129)
+* [[`73935715`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/73935715)] - **deps**: update docker&#x2F;setup-buildx-action digest to 2a6fbda (#130)
+
+### Common changes
+
+* [[`d31e078c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d31e078c)] - **chore**: fix version
+* [[`aa8a18f4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/aa8a18f4)] - **chore**: remove funding
+
+
 ## Version 0.11.0-alpha.0 (2022-03-27)
 
 ### Features and improvements
