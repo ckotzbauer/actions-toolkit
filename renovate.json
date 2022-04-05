@@ -1,5 +1,6 @@
 {
   "extends": [
     "github>ckotzbauer/renovate-config:default"
-  ]
+  ],
+  "automerge": false
 }
