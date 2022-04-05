@@ -126,7 +126,7 @@ jobs:
           cosign-repository: ${{ inputs.cosign-repository }}
 
       - name: Generate Changelog
-        uses: ckotzbauer/changelog-generator@fc9d8d4644cda16719d0ea2e2516c378e7f75365
+        uses: ckotzbauer/changelog-generator@0ce65956d6b801f02aa155b6350f7b20104bd9e9
         with:
           release-version: ${{ inputs.version }}
           github-handle: ${{ github.repository }}
