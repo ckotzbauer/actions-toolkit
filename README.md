@@ -19,6 +19,7 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | [Release OCI](.github/workflows/toolkit-release-oci.yml)                 | Releases a OCI-Image project with optional Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release GoReleaser](.github/workflows/toolkit-release-goreleaser.yml)   | Releases a GoReleaser project with a OCI-Image, optional signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release Node.js](.github/workflows/toolkit-release-nodejs.yml)          | Releases a Node.js project with an optional OCI-Image, NPM-Package, OCI-Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
+| [Scan Snyk](.github/workflows/toolkit-scan-snyk.yml)          | Scans a project with Snyk. |
 | [Size Label](.github/workflows/toolkit-size-label.yml)          | Assignes Size-Labels to PRs. |
 | [Stale](.github/workflows/toolkit-stale.yml)          | Closes stale issues and PRs. |
 

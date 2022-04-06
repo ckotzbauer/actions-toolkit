@@ -1,0 +1,58 @@
+name: scan-snyk
+
+on:
+  workflow_call:
+    inputs:
+      install-go:
+        required: true
+        default: false
+        type: boolean
+      go-version:
+        required: false
+        default: "1.18.0"
+        type: string
+      install-node:
+        required: true
+        default: false
+        type: boolean
+      node-version:
+        required: false
+        default: "16"
+        type: string
+      install-dotnet:
+        required: true
+        default: false
+        type: boolean
+      dotnet-version:
+        required: false
+        default: "6.0.x"
+        type: string
+      scan-commands:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
+jobs:
+  scan-snyk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Go
+        if: ${{ inputs.install-go == 'true' }}
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ inputs.go-version }}
+
+      - name: Setup Node
+        if: ${{ inputs.install-node == 'true' }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - uses: snyk/actions/setup@master
+      - name: Snyk monitor
+        env:
+          SNYK_TOKEN: ${{ secrets.token }}
+        run: ${{ inputs.scan-commands }}
