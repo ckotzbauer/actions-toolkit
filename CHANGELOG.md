@@ -1,3 +1,45 @@
+## Version 0.12.0 (2022-04-06)
+
+### Features and improvements
+
+* [[`62a4e11b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/62a4e11b)] - **feat**: add scan-snyk
+
+### Documentation
+
+* [[`03e23d78`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/03e23d78)] - **doc**: fix format
+* [[`96c808ee`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/96c808ee)] - **doc**: add community-files
+
+### Dependency updates
+
+* [[`ed850bbc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ed850bbc)] - **deps**: update actions&#x2F;checkout digest to add3486 (#147)
+* [[`d89b4c93`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d89b4c93)] - **deps**: update actions&#x2F;setup-node digest to 76d3665 (#146)
+* [[`7e3f6919`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7e3f6919)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 0ce6595 (#145)
+* [[`09280064`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/09280064)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 87a2efe (#144)
+* [[`b71fb27a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b71fb27a)] - **deps**: update docker&#x2F;build-push-action digest to f7a2a67 (#143)
+* [[`49511035`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/49511035)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 0e178a0 (#142)
+* [[`a72c4417`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a72c4417)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 7e40e09
+* [[`47d205fd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/47d205fd)] - **deps**: update sigstore&#x2F;cosign-installer digest to 9f7b96f
+* [[`0d3532b2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0d3532b2)] - **deps**: update actions&#x2F;setup-go digest to bf7ccf1 (#139)
+* [[`3de72d9d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3de72d9d)] - **deps**: update actions&#x2F;setup-node digest to 5b52f09 (#137)
+* [[`1cf4308f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1cf4308f)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to fc9d8d4 (#138)
+* [[`b0f9060e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b0f9060e)] - **deps**: update actions&#x2F;setup-go digest to dcb4ec9 (#135)
+* [[`ace44a6c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ace44a6c)] - **deps**: update actions&#x2F;setup-node digest to 546fd45 (#136)
+* [[`5d7f2a9e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5d7f2a9e)] - **deps**: update actions&#x2F;checkout digest to 5126516 (#134)
+* [[`dc612527`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/dc612527)] - **deps**: update actions&#x2F;setup-go digest to 341b20a (#133)
+* [[`ed9e6268`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ed9e6268)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to eaf296b (#132)
+* [[`c73d3a67`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c73d3a67)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 02d0828 (#131)
+* [[`3997ff32`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3997ff32)] - **deps**: update actions&#x2F;setup-go digest to a5865a9 (#128)
+* [[`a45c55fc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a45c55fc)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 603c0ec (#129)
+* [[`73935715`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/73935715)] - **deps**: update docker&#x2F;setup-buildx-action digest to 2a6fbda (#130)
+
+### Common changes
+
+* [[`bd0707df`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bd0707df)] - **chore**: disable automerge
+* [[`a26e17d9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a26e17d9)] - **chore**: release 0.10.1
+* [[`d31e078c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d31e078c)] - **chore**: fix version
+* [[`aa8a18f4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/aa8a18f4)] - **chore**: remove funding
+
+
 ## Version 0.10.1 (2022-03-29)
 
 ### Documentation
