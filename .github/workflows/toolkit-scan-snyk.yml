@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       install-go:
-        required: true
+        required: false
         default: false
         type: boolean
       go-version:
@@ -12,7 +12,7 @@ on:
         default: "1.18.0"
         type: string
       install-node:
-        required: true
+        required: false
         default: false
         type: boolean
       node-version:
@@ -20,7 +20,7 @@ on:
         default: "16"
         type: string
       install-dotnet:
-        required: true
+        required: false
         default: false
         type: boolean
       dotnet-version:
