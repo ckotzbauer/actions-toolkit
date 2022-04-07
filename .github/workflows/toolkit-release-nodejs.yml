@@ -87,7 +87,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: sigstore/cosign-installer@9f7b96f21107c0c5f4baf9536853b2554b4179f7
+        uses: sigstore/cosign-installer@d6a3abf1bdea83574e28d40543793018b6035605
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.12.0
