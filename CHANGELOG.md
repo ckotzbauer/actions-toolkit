@@ -1,3 +1,16 @@
+## Version 0.12.1 (2022-04-07)
+
+### Bug fixes
+
+* [[`ede45a1e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ede45a1e)] - **fix**: do not require all inputs
+
+### Dependency updates
+
+* [[`c0c520ac`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c0c520ac)] - **deps**: update sigstore&#x2F;cosign-installer digest to d6a3abf
+* [[`f761b715`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f761b715)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 1fe3c28 (#149)
+* [[`53d8cf24`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/53d8cf24)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 0acfd18 (#148)
+
+
 ## Version 0.12.0 (2022-04-06)
 
 ### Features and improvements
