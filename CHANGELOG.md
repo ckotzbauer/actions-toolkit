@@ -1,3 +1,16 @@
+## Version 0.13.0-alpha.0 (2022-04-10)
+
+### Features and improvements
+
+* [[`bf01bd94`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bf01bd94)] - **feat**: verify signatures
+
+### Dependency updates
+
+* [[`9b6eb7a5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9b6eb7a5)] - **deps**: update actions&#x2F;setup-go digest to 4a4352b (#155)
+* [[`8411f7ff`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8411f7ff)] - **deps**: update docker&#x2F;build-push-action digest to 9472e90 (#154)
+* [[`2768e88f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2768e88f)] - **deps**: update actions&#x2F;setup-go digest to 115d6e6 (#151)
+
+
 ## Version 0.12.1 (2022-04-07)
 
 ### Bug fixes

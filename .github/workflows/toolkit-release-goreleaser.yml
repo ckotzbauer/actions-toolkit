@@ -83,7 +83,7 @@ jobs:
         uses: sigstore/cosign-installer@d6a3abf1bdea83574e28d40543793018b6035605
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.12.1
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.13.0-alpha.0
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@1fe3c2886a7de26f53401d5e6c6ceaff158b257e
@@ -97,7 +97,7 @@ jobs:
           COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.12.1
+        uses: ckotzbauer/actions-toolkit/docker@0.13.0-alpha.0
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -111,7 +111,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.12.1
+        uses: ckotzbauer/actions-toolkit/sbom@0.13.0-alpha.0
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -121,9 +121,9 @@ jobs:
 
       - name: Generate Provenance
         if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.12.1
+        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.13.0-alpha.0
         with:
-          action-sha: "0.12.1"
+          action-sha: "0.13.0-alpha.0"
           images: ${{ inputs.docker-tags }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
@@ -139,7 +139,7 @@ jobs:
           commit-output: commits.md
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.12.1
+        uses: ckotzbauer/actions-toolkit/push-release@0.13.0-alpha.0
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}
