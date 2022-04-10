@@ -116,6 +116,7 @@ jobs:
           context: .
           push: true
           sign: ${{ inputs.sign }}
+          verify: ${{ inputs.verify }}
           cosign-repository: ${{ inputs.cosign-repository }}
           platforms: ${{ inputs.docker-platforms }}
           tags: ${{ inputs.docker-tags }}

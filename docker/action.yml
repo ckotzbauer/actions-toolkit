@@ -47,6 +47,10 @@ inputs:
     description: "Sign image with cosign"
     required: false
     default: 'false'
+  verify:
+    description: "Verify image with cosign"
+    required: false
+    default: 'false'
   cosign-repository:
     description: Custom cosign-repository
     required: false
@@ -88,6 +92,14 @@ runs:
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}
       run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign sign -f -r $a; done
+      shell: sh
+      env:
+        COSIGN_EXPERIMENTAL: "1"
+        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
+
+    - name: Verify image
+      if: ${{ inputs.verify == 'true' }}
+      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign verify $a; done
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
