@@ -27,6 +27,10 @@ on:
         required: false
         default: true
         type: boolean
+      verify:
+        required: false
+        default: true
+        type: boolean
       attest:
         required: false
         default: true
@@ -111,6 +115,7 @@ jobs:
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
+          verify: ${{ inputs.verify }}
           attest: ${{ inputs.attest }}
           cosign-repository: ${{ inputs.cosign-repository }}
 
@@ -122,6 +127,7 @@ jobs:
           images: ${{ inputs.docker-tags }}
           artifact-path: dist/
           sign: ${{ inputs.sign }}
+          verify: ${{ inputs.verify }}
           attest: ${{ inputs.attest }}
           cosign-repository: ${{ inputs.cosign-repository }}
 

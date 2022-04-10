@@ -23,6 +23,10 @@ inputs:
     description: "Attest the image with the generated provenance"
     required: false
     default: 'false'
+  verify:
+    description: "Verify provenance with cosign"
+    required: false
+    default: 'false'
   cosign-repository:
     description: Custom cosign-repository
     required: false
@@ -43,6 +47,14 @@ runs:
     - name: Sign Provenance
       if: ${{ inputs.sign == 'true' }}
       run: cosign sign-blob --output-signature ${{ inputs.output }}.sig --output-certificate ${{ inputs.output }}.pem ${{ inputs.output }}
+      shell: sh
+      env:
+        COSIGN_EXPERIMENTAL: "1"
+        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
+
+    - name: Verify Provenance
+      if: ${{ inputs.verify == 'true' }}
+      run: cosign verify-blob --signature ${{ inputs.output }}.sig --cert ${{ inputs.output }}.pem ${{ inputs.output }}
       shell: sh
       env:
         COSIGN_EXPERIMENTAL: "1"
