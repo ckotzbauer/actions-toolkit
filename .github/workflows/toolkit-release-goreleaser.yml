@@ -88,7 +88,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@c25888f15f074c90ee6bc1c24ec15d83b2094038
         with:
-          version: "v1.7.0"
+          version: "v1.8.3"
           args: release --rm-dist ${{ inputs.goreleaser-args }}
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
