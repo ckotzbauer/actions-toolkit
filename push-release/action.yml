@@ -33,7 +33,7 @@ runs:
         git commit -m "chore: release ${{ inputs.version }}" -a
 
     - name: Push changes
-      uses: ad-m/github-push-action@694e694af3c1751f83c030838b41be57e1fd851e
+      uses: ad-m/github-push-action@f43881ed8c9a327013bb727b6ab5942f0c8f4222
       with:
         github_token: ${{ inputs.pat }}
         branch: ${{ inputs.branch }}
