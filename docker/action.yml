@@ -77,7 +77,7 @@ runs:
       shell: sh
 
     - name: Build image
-      uses: docker/build-push-action@ba317382dcde9f7deb318467fc6cd7230d8b1714
+      uses: docker/build-push-action@fcd91249e5fa3d8dd25f0a6d707cd1aa263e59d3
       with:
         github-token: ${{ inputs.github-token }}
         push: ${{ inputs.push }}
