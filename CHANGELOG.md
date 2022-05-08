@@ -1,3 +1,14 @@
+## Version 0.14.1 (2022-05-08)
+
+### Bug fixes
+
+* [[`5f3da0b2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5f3da0b2)] - **fix**: snyk-action
+
+### Dependency updates
+
+* [[`b55f3006`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b55f3006)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 822d1bf
+
+
 ## Version 0.14.0 (2022-05-06)
 
 ### Features and improvements
