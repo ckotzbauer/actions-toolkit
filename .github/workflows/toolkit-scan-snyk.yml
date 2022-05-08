@@ -40,16 +40,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Go
-        if: ${{ inputs.install-go == 'true' }}
+        if: ${{ inputs.install-go == true }}
         uses: actions/setup-go@v3
         with:
           go-version: ${{ inputs.go-version }}
 
       - name: Setup Node
-        if: ${{ inputs.install-node == 'true' }}
+        if: ${{ inputs.install-node == true }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.node-version }}
+
+      - name: Setup Dotnet
+        if: ${{ inputs.install-dotnet == true }}
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
 
       - uses: snyk/actions/setup@master
       - name: Snyk monitor
