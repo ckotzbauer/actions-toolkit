@@ -1,3 +1,17 @@
+## Version 0.14.2 (2022-05-14)
+
+### Features and improvements
+
+* [[`f3427882`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f3427882)] - **feat**: update grype and syft
+* [[`1d267e32`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1d267e32)] - **feat**: downgrade configurable goreleaser version
+
+### Dependency updates
+
+* [[`0e371a96`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0e371a96)] - **deps**: update js-devtools&#x2F;npm-publish digest to e42e372
+* [[`b319555a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b319555a)] - **deps**: update actions&#x2F;setup-node digest to 17f8bd9
+* [[`7c9d61fa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7c9d61fa)] - **deps**: update actions&#x2F;setup-go digest to fcdc436 (#201)
+
+
 ## Version 0.14.1 (2022-05-08)
 
 ### Bug fixes
