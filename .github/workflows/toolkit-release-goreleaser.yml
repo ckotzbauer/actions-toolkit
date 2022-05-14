@@ -16,6 +16,10 @@ on:
       goreleaser-args:
         required: false
         type: string
+      goreleaser-version:
+        required: false
+        type: string
+        default: v1.7.0
       docker-tags:
         required: true
         type: string
@@ -88,7 +92,7 @@ jobs:
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@822d1bf019c8af9524b5052db93cac7b1f600710
         with:
-          version: "v1.8.3"
+          version: ${{ inputs.goreleaser-version }}
           args: release --rm-dist ${{ inputs.goreleaser-args }}
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
