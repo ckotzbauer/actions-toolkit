@@ -40,7 +40,7 @@ runs:
         echo "[{\"uri\": \"git+https://github.com/ckotzbauer/actions-toolkit\",\"digest\": {\"sha1\": \"${{ inputs.action-sha }}\"}}]" > material.json
 
     - name: Generate provenance
-      uses: philips-labs/slsa-provenance-action@780df15e2204e5dc6efae037b81e611812cd27a3
+      uses: philips-labs/slsa-provenance-action@e6df739f62ebde3d35e83e7ed84bef9ca0ae3086
       with:
         arguments: -d --artifact-path ${{ inputs.artifact-path }} --extra-materials material.json --output-path ${{ inputs.output }}
 
