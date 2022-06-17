@@ -1,3 +1,19 @@
+## Version 0.16.0 (2022-06-17)
+
+### Features and improvements
+
+* [[`167a8a0a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/167a8a0a)] - **feat**: update goreleaser to 1.9.2
+* [[`e2fb1cc2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e2fb1cc2)] - **feat**: update grype and syft
+
+### Dependency updates
+
+* [[`8b0cab9d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8b0cab9d)] - **deps**: update ad-m&#x2F;github-push-action digest to 492de90 (#233)
+* [[`255d98e7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/255d98e7)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to e6df739 (#232)
+* [[`871fd035`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/871fd035)] - **deps**: update ad-m&#x2F;github-push-action digest to e69c0c0 (#231)
+* [[`0da9f24a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0da9f24a)] - **deps**: update actions&#x2F;setup-node digest to b287e17 (#230)
+* [[`2d76dc40`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2d76dc40)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to aab65f3
+
+
 ## Version 0.15.0 (2022-06-09)
 
 ### Features and improvements
