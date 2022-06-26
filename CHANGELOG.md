@@ -1,3 +1,19 @@
+## Version 0.17.0 (2022-06-26)
+
+### Features and improvements
+
+* [[`3b2d33ee`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3b2d33ee)] - **feat**: update syft and grype
+* [[`7a73070b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7a73070b)] - **feat**: try restricted permissions
+
+### Dependency updates
+
+* [[`7b7ab651`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7b7ab651)] - **deps**: update ad-m&#x2F;github-push-action digest to 6195df7
+* [[`1adc8b3d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1adc8b3d)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 752766b (#237)
+* [[`f4d34d83`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f4d34d83)] - **deps**: update sigstore&#x2F;cosign-installer digest to 441a29e
+* [[`b96224fa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b96224fa)] - **deps**: update sigstore&#x2F;cosign-installer digest to 6679bb8
+* [[`f353547a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f353547a)] - **deps**: update actions&#x2F;setup-node digest to cdcc53e
+
+
 ## Version 0.16.0 (2022-06-17)
 
 ### Features and improvements
