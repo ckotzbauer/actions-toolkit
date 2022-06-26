@@ -6,6 +6,10 @@ on:
       token:
         required: true
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   size-label:
     runs-on: ubuntu-latest

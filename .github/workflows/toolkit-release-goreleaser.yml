@@ -63,12 +63,13 @@ on:
       dockerhub-password:
         required: false
 
+permissions:
+  id-token: write
+  contents: write
+  packages: write
+
 jobs:
   release:
-    permissions:
-      id-token: write
-      contents: write
-      packages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
