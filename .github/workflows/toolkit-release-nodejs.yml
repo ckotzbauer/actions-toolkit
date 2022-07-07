@@ -86,7 +86,7 @@ jobs:
           token: ${{ secrets.pat }}
 
       - name: Setup Node
-        uses: actions/setup-node@b3ca1ac971f58028968bf4f3199547ade2bb277d
+        uses: actions/setup-node@09ba51f18e18a3756fea1f54d09c6745c064491d
         with:
           node-version: ${{ inputs.node-version }}
 
