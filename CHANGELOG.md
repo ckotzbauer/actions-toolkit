@@ -1,3 +1,35 @@
+## Version 0.18.0 (2022-07-24)
+
+### Features and improvements
+
+* [[`15fc7efd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/15fc7efd)] - **feat**: update syft, grype and goreleaser
+
+### Dependency updates
+
+* [[`6fb13064`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6fb13064)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 1606b56 (#259)
+* [[`08ba8bc7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/08ba8bc7)] - **deps**: update actions&#x2F;setup-node digest to 2a814b5
+* [[`95a971b4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/95a971b4)] - **deps**: update docker&#x2F;build-push-action digest to 1cb9d22 (#258)
+* [[`3361f67e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3361f67e)] - **deps**: update docker&#x2F;build-push-action digest to a8d76c0
+* [[`520a1f76`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/520a1f76)] - **deps**: update actions&#x2F;setup-node digest to 2fddd88
+* [[`82deb55c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/82deb55c)] - **deps**: update actions&#x2F;setup-node digest to ad8542c (#255)
+* [[`c33e9194`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c33e9194)] - **deps**: update actions&#x2F;setup-node digest to 5b949b5 (#254)
+* [[`d06206a5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d06206a5)] - **deps**: update softprops&#x2F;action-gh-release digest to cd28b0f (#253)
+* [[`574cf85e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/574cf85e)] - **deps**: update actions&#x2F;setup-node digest to 09ba51f (#252)
+* [[`4889463b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4889463b)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 68d75e4 (#251)
+* [[`62bf2f20`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/62bf2f20)] - **deps**: update actions&#x2F;setup-node digest to b3ca1ac
+* [[`18327e09`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/18327e09)] - **deps**: update actions&#x2F;setup-node digest to 78faa55 (#249)
+* [[`193fcace`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/193fcace)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to e5f2562 (#248)
+* [[`62eef968`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/62eef968)] - **deps**: update actions&#x2F;setup-node digest to 0f15a51 (#247)
+* [[`88edd1c0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/88edd1c0)] - **deps**: update sigstore&#x2F;cosign-installer digest to 48866aa
+* [[`7d53ca93`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7d53ca93)] - **deps**: update actions&#x2F;setup-go digest to 84cbf80
+* [[`533befe7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/533befe7)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 251f207 (#244)
+* [[`d45f072c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d45f072c)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to fa25409 (#243)
+* [[`9e28cbb6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9e28cbb6)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 7f470e3 (#242)
+* [[`a6b8c6c5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a6b8c6c5)] - **deps**: update ad-m&#x2F;github-push-action digest to 9a46ba8 (#241)
+* [[`5bc196bd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5bc196bd)] - **deps**: update actions&#x2F;setup-node digest to 7d610f0
+* [[`8dfa04a6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8dfa04a6)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to f450c79 (#239)
+
+
 ## Version 0.17.0 (2022-06-26)
 
 ### Features and improvements
