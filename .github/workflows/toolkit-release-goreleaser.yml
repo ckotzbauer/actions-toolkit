@@ -79,7 +79,7 @@ jobs:
           token: ${{ secrets.pat }}
 
       - name: Setup Go
-        uses: actions/setup-go@1022489cb76babdbc0e2d9404883a4a3cacfc278
+        uses: actions/setup-go@f27981397569ab1d623dab1f29d3db81b75b5258
         with:
           go-version: ${{ inputs.go-version }}
 
