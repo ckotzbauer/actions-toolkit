@@ -1,3 +1,26 @@
+## Version 0.19.0 (2022-08-12)
+
+### Features and improvements
+
+* [[`b23871cb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b23871cb)] - **feat**: cosign, syft, grype and goreleaser update
+
+### Dependency updates
+
+* [[`af4327cf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/af4327cf)] - **deps**: update docker&#x2F;build-push-action digest to 1527803 (#274)
+* [[`ccb6f13d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ccb6f13d)] - **deps**: update actions&#x2F;setup-go digest to 268d8c0 (#273)
+* [[`2f4dfb98`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2f4dfb98)] - **deps**: update actions&#x2F;setup-node digest to 094c36e
+* [[`e095d40f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e095d40f)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to ad8dff9 (#270)
+* [[`defdaded`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/defdaded)] - **deps**: update actions&#x2F;setup-node digest to 348e008
+* [[`e2e82a53`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e2e82a53)] - **deps**: update actions&#x2F;setup-go digest to f279813 (#268)
+* [[`9dae1957`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9dae1957)] - **deps**: update docker&#x2F;build-push-action digest to c84f382
+* [[`25a23f70`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/25a23f70)] - **deps**: update sigstore&#x2F;cosign-installer digest to 5a02ebd
+* [[`c07192da`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c07192da)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 43e8894
+* [[`b433e1ea`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b433e1ea)] - **deps**: update actions&#x2F;setup-go digest to 1022489
+* [[`35c3ae3f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/35c3ae3f)] - **deps**: update docker&#x2F;build-push-action digest to 67af6dc
+* [[`7962e561`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7962e561)] - **deps**: update actions&#x2F;setup-go digest to f2e56d8
+* [[`e4658f92`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e4658f92)] - **deps**: update sigstore&#x2F;cosign-installer digest to 09a077b (#261)
+
+
 ## Version 0.18.0 (2022-07-24)
 
 ### Features and improvements
