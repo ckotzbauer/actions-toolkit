@@ -4,7 +4,7 @@ inputs:
   version:
     description: "Syft version to install."
     required: true
-    default: "v0.53.4"
+    default: "v0.55.0"
 runs:
   using: "composite"
   steps:
