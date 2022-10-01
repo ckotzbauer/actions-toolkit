@@ -43,10 +43,6 @@ on:
         required: false
         default: true
         type: boolean
-      provenance:
-        required: false
-        default: true
-        type: boolean
       cosign-repository:
         required: false
         default: ""
@@ -67,10 +63,13 @@ permissions:
   id-token: write
   contents: write
   packages: write
+  actions: read
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      hashes: ${{ steps.hash.outputs.hashes }}
     steps:
       - name: Checkout
         uses: actions/checkout@e6d535c99c374d0c3f6d8cd8086a57b43c6c700a
@@ -127,17 +126,41 @@ jobs:
           attest: ${{ inputs.attest }}
           cosign-repository: ${{ inputs.cosign-repository }}
 
-      - name: Generate Provenance
-        if: ${{ inputs.provenance == true }}
-        uses: ckotzbauer/actions-toolkit/slsa-provenance@0.20.0
+      - name: Generate hashes
+        shell: bash
+        id: hash
+        run: |
+          cd dist/
+          echo "::set-output name=hashes::$(find . -type f | xargs sha256sum | base64 -w0)"
+
+      - name: Upload assets
+        uses: actions/upload-artifact@v3
         with:
-          action-sha: "0.20.0"
-          images: ${{ inputs.docker-tags }}
-          artifact-path: dist/
-          sign: ${{ inputs.sign }}
-          verify: ${{ inputs.verify }}
-          attest: ${{ inputs.attest }}
-          cosign-repository: ${{ inputs.cosign-repository }}
+          retention-days: 1
+          name: assets
+          path: |
+            dist/
+            oci-sbom.json*
+
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.2.0
+    with:
+      base64-subjects: "${{ needs.build.outputs.hashes }}"
+
+  release:
+    needs: [build, provenance]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@e6d535c99c374d0c3f6d8cd8086a57b43c6c700a
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.pat }}
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@a6bf6b3df15e75d63525492ebfb412cc0ef43176
@@ -145,6 +168,15 @@ jobs:
           release-version: ${{ inputs.version }}
           github-handle: ${{ github.repository }}
           commit-output: commits.md
+
+      - name: Download artifacts
+        uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741
+        with:
+          path: output
+
+      - name: Output
+        run: |
+          ls -R output
 
       - name: Push release
         uses: ckotzbauer/actions-toolkit/push-release@0.20.0
@@ -154,11 +186,11 @@ jobs:
           pat: ${{ secrets.pat }}
           prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(inputs.version, 'rc') }}
           files: |
-            dist/*.tar.gz
-            dist/*.zip
-            dist/*.txt
-            dist/*.sig
-            dist/*.sbom
-            dist/*.pem
-            oci-sbom.json*
-            provenance.json*
+            output/assets/dist/*.tar.gz
+            output/assets/dist/*.zip
+            output/assets/dist/*.txt
+            output/assets/dist/*.sig
+            output/assets/dist/*.sbom
+            output/assets/dist/*.pem
+            output/assets/oci-sbom.json*
+            output/attestation.intoto.jsonl/attestation.intoto.jsonl

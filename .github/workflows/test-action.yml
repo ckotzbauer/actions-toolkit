@@ -13,7 +13,6 @@ jobs:
       matrix:
         module:
           - sbom
-          - slsa-provenance
     steps:
     - uses: actions/checkout@v3
 
