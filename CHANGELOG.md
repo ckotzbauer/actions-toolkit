@@ -1,3 +1,29 @@
+## Version 0.21.0 (2022-10-01)
+
+### Features and improvements
+
+* [[`2c35e767`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2c35e767)] - **feat**: update syft, grype, cosign and goreleaser
+* [[`80947f15`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/80947f15)] - **feat**: use slsa-framework for provenance
+
+### Dependency updates
+
+* [[`8322348b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8322348b)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to fef14fd (#286)
+* [[`e9d7aa18`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e9d7aa18)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to a6bf6b3 (#310)
+* [[`c7733057`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c7733057)] - **deps**: update actions&#x2F;setup-dotnet action to v3 (#308)
+* [[`67889e1a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/67889e1a)] - **deps**: update docker&#x2F;build-push-action digest to 83a00fb
+* [[`bfb9f195`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bfb9f195)] - **deps**: update actions&#x2F;checkout digest to e6d535c
+* [[`bf84ca5f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bf84ca5f)] - **deps**: update actions&#x2F;setup-node digest to 969bd26
+* [[`cc578d21`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cc578d21)] - **deps**: update sigstore&#x2F;cosign-installer digest to ced07f2
+* [[`e81c19a1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e81c19a1)] - **deps**: update docker&#x2F;setup-buildx-action digest to d5234d6
+* [[`1233c16b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1233c16b)] - **deps**: update docker&#x2F;setup-buildx-action digest to f0ad70c
+* [[`e6bb1cba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e6bb1cba)] - **deps**: update actions&#x2F;stale action to v6 (#302)
+* [[`596ea5a7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/596ea5a7)] - **deps**: update docker&#x2F;setup-buildx-action digest to f5bc16b
+* [[`9aaf4f79`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9aaf4f79)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to b21ec9b
+* [[`2b7e573f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2b7e573f)] - **deps**: update docker&#x2F;setup-buildx-action digest to f385c9e
+* [[`1450502a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1450502a)] - **deps**: update actions&#x2F;setup-node digest to 9f3a02b
+* [[`c7414eed`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c7414eed)] - **deps**: update actions&#x2F;setup-go digest to 30b9ddf
+
+
 ## Version 0.20.0 (2022-09-09)
 
 ### Features and improvements
