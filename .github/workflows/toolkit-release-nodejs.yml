@@ -160,7 +160,7 @@ jobs:
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.2.0
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
-      compile-builder: true
+      compile-generator: true
 
   release:
     needs: [build, provenance]
