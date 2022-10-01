@@ -1,3 +1,10 @@
+## Version 0.21.1 (2022-10-01)
+
+### Bug fixes
+
+* [[`8eea633b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8eea633b)] - **fix**: enable builder-compilation for now
+
+
 ## Version 0.21.0 (2022-10-01)
 
 ### Features and improvements
