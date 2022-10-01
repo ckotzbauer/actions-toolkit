@@ -1,3 +1,10 @@
+## Version 0.21.3 (2022-10-01)
+
+### Bug fixes
+
+* [[`1268cf58`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1268cf58)] - **fix**: rename input for all
+
+
 ## Version 0.21.2 (2022-10-01)
 
 ### Bug fixes
