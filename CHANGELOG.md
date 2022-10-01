@@ -1,3 +1,10 @@
+## Version 0.21.2 (2022-10-01)
+
+### Bug fixes
+
+* [[`0fb0f1d6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0fb0f1d6)] - **fix**: input-name
+
+
 ## Version 0.21.1 (2022-10-01)
 
 ### Bug fixes
