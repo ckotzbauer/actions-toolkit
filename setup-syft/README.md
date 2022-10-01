@@ -8,5 +8,5 @@
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `version` | Syft version to install. | `true` | `"v0.55.0"` |
+| `version` | Syft version to install. | `true` | `"v0.58.0"` |
 
