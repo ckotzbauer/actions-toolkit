@@ -22,6 +22,7 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | [Scan Snyk](.github/workflows/toolkit-scan-snyk.yml)          | Scans a project with Snyk. |
 | [Size Label](.github/workflows/toolkit-size-label.yml)          | Assignes Size-Labels to PRs. |
 | [Stale](.github/workflows/toolkit-stale.yml)          | Closes stale issues and PRs. |
+| [SLSA-Provenance](slsa-provenance/README.md) | Generates a provenance-file from artifacts (SLSA Level 1). It can be optionally signed and attested with Cosign (SLSA Level 2). |
 
 
 ## Actions
