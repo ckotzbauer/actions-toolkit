@@ -1,3 +1,10 @@
+## Version 0.23.0 (2022-10-22)
+
+### Common changes
+
+* [[`73915988`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/73915988)] - **chore**: several updates
+
+
 ## Version 0.22.0 (2022-10-22)
 
 ### Features and improvements
