@@ -19,7 +19,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v1.11.4
+        default: v1.12.3
       docker-tags:
         required: true
         type: string
@@ -86,7 +86,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@9becc617647dfa20ae7b1151972e9b3a2c338a2b
         with:
-          cosign-release: 'v1.12.1'
+          cosign-release: 'v1.13.1'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.22.0
@@ -152,6 +152,7 @@ jobs:
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       compile-generator: true
+      private-repo: true
 
   release:
     needs: [build, provenance]
@@ -194,4 +195,4 @@ jobs:
             output/assets/dist/*.sbom
             output/assets/dist/*.pem
             output/assets/oci-sbom.json*
-            output/attestation.intoto.jsonl/attestation.intoto.jsonl
+            output/multiple.intoto.jsonl/multiple.intoto.jsonl

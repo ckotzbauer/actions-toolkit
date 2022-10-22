@@ -76,7 +76,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@9becc617647dfa20ae7b1151972e9b3a2c338a2b
         with:
-          cosign-release: 'v1.12.1'
+          cosign-release: 'v1.13.1'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.22.0
@@ -131,6 +131,7 @@ jobs:
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       compile-generator: true
+      private-repo: true
 
   release:
     needs: [build, provenance]
@@ -167,4 +168,4 @@ jobs:
           prerelease: ${{ contains(inputs.version, 'alpha') || contains(inputs.version, 'beta') || contains(inputs.version, 'rc') }}
           files: |
             output/assets/oci-sbom.json*
-            output/attestation.intoto.jsonl/attestation.intoto.jsonl
+            output/multiple.intoto.jsonl/multiple.intoto.jsonl
