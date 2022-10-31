@@ -131,7 +131,7 @@ jobs:
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       compile-generator: true
-      private-repo: true
+      private-repository: true
 
   release:
     needs: [build, provenance]
