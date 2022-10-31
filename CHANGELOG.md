@@ -1,3 +1,22 @@
+## Version 0.24.0 (2022-10-31)
+
+### Bug fixes
+
+* [[`1e701cc0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1e701cc0)] - **fix**: new input name
+
+### Dependency updates
+
+* [[`adcb2bbc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/adcb2bbc)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 97f73bf
+* [[`021960ba`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/021960ba)] - **deps**: update ad-m&#x2F;github-push-action digest to 552c074
+* [[`3ce6e819`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3ce6e819)] - **deps**: update actions&#x2F;setup-node digest to 16352bb
+* [[`2e3512c7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2e3512c7)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 69bbe78
+* [[`b0f50676`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b0f50676)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 867862b
+* [[`05f9ea35`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/05f9ea35)] - **deps**: update sigstore&#x2F;cosign-installer digest to 7bca8b4 (#345)
+* [[`bad2729d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bad2729d)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to b9f1a2a
+* [[`c6e825dc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c6e825dc)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to ad77417
+* [[`10cd792b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/10cd792b)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 51d9697 (#342)
+
+
 ## Version 0.23.0 (2022-10-22)
 
 ### Common changes
