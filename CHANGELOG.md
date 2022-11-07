@@ -1,3 +1,18 @@
+## Version 0.25.0 (2022-11-07)
+
+### Features and improvements
+
+* [[`15e3c3ac`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/15e3c3ac)] - **feat**: update grype and syft
+
+### Dependency updates
+
+* [[`de36820a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/de36820a)] - **deps**: update slsa-framework&#x2F;slsa-github-generator action to v1.2.2 (#355)
+* [[`c4b4a12d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4b4a12d)] - **deps**: update docker&#x2F;build-push-action digest to ffe65bf
+* [[`833602b4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/833602b4)] - **deps**: update actions&#x2F;setup-node digest to 00e1b66
+* [[`28006013`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/28006013)] - **deps**: update actions&#x2F;setup-go digest to 27b43e1
+* [[`31cb77a2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/31cb77a2)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 79d3672
+
+
 ## Version 0.24.0 (2022-10-31)
 
 ### Bug fixes
