@@ -4,7 +4,7 @@ inputs:
   version:
     description: "Grype version to install."
     required: true
-    default: "v0.52.0"
+    default: "v0.53.1"
   install-only:
     description: "Install the binary only."
     required: true
