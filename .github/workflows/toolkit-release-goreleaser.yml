@@ -165,7 +165,7 @@ jobs:
           token: ${{ secrets.pat }}
 
       - name: Generate Changelog
-        uses: ckotzbauer/changelog-generator@05956b235a647e99711cdff5379541f40f5b9461
+        uses: ckotzbauer/changelog-generator@f16c6233f1a1172aeb71f82f0830fd91d91588b6
         with:
           release-version: ${{ inputs.version }}
           github-handle: ${{ github.repository }}
