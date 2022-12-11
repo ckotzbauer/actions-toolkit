@@ -1,3 +1,18 @@
+## Version 0.27.0 (2022-12-11)
+
+### Features and improvements
+
+* [[`6545a659`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6545a659)] - **feat**: replace label-workflow
+
+### Bug fixes
+
+* [[`0a5749e0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0a5749e0)] - **fix**: use new workflow
+
+### Dependency updates
+
+* [[`a5358f1b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a5358f1b)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 10f9a24
+
+
 ## Version 0.26.0 (2022-12-10)
 
 ### Features and improvements
