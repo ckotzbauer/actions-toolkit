@@ -4,15 +4,15 @@ on:
     branches:
       - "main"
     paths:
-      - ".github/labels.json"
+      - ".github/labels.yml"
 jobs:
   labels:
     name: DefaultLabelsActions
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: lannonbr/issue-label-manager-action@4.0.0
+      - uses: micnncim/action-label-syncer@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.token }}
         with:
-          delete: true
+          manifest: .github/labels.yml
