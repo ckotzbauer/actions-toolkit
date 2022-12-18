@@ -89,17 +89,6 @@ on:
       coverage-file:
         required: false
         type: string
-    secrets:
-      token:
-        required: true
-      pat:
-        required: true
-      ghcr-password:
-        required: false
-      dockerhub-user:
-        required: false
-      dockerhub-password:
-        required: false
 
 permissions:
   contents: read
