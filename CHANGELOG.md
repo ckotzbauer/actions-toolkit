@@ -1,3 +1,27 @@
+## Version 0.28.0 (2022-12-18)
+
+### Features and improvements
+
+* [[`d31ada8c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d31ada8c)] - **feat**: add initial build-workflow
+
+### Dependency updates
+
+* [[`38ccea82`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/38ccea82)] - **deps**: update actions&#x2F;checkout digest to 3ba5ee6
+* [[`b8fb07df`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b8fb07df)] - **deps**: update actions&#x2F;setup-go digest to bb5ff97 (#397)
+* [[`5c698b86`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5c698b86)] - **deps**: update actions&#x2F;checkout digest to 8856415
+* [[`86e7fb66`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/86e7fb66)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 62468a1
+* [[`4de73c16`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4de73c16)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 13f1e21
+* [[`28c413ae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/28c413ae)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 8f67e59 (#393)
+* [[`288df8f0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/288df8f0)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to dcf040b (#392)
+* [[`1735184d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1735184d)] - **deps**: update ad-m&#x2F;github-push-action digest to 0fafdd6
+* [[`387349d9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/387349d9)] - **deps**: update actions&#x2F;checkout digest to 755da8c
+* [[`202978a0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/202978a0)] - **deps**: update actions&#x2F;setup-go digest to 6edd440
+* [[`998be4bf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/998be4bf)] - **deps**: update actions&#x2F;setup-node digest to 377c6da
+* [[`c84616a0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c84616a0)] - **deps**: update actions&#x2F;setup-go digest to 38dbe75
+* [[`9ea9540e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9ea9540e)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to f16c623
+* [[`31d0a2a7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/31d0a2a7)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 05956b2
+
+
 ## Version 0.27.0 (2022-12-11)
 
 ### Features and improvements
