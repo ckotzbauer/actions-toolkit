@@ -14,8 +14,10 @@ The same immutable git-tag is used for all actions and workflows when they are r
 
 | Name                                                                     | Description |
 | ------------------------------------------------------------------------ | ----------- |
+| [Build and test](.github/workflows/toolkit-build-test.yml)   | Builds and tests a project with different technologies and tools. |
 | [Create default labels](.github/workflows/toolkit-create-default-labels.yml)          | Creates a specified set of labels from a config-file. |
 | [Label issues](.github/workflows/toolkit-label-issues.yml)          | Labels issues and PRs by comment-commands. |
+| [Lint](.github/workflows/toolkit-lint.yml)   | Lints and checks a project with different technologies and tools. |
 | [Release OCI](.github/workflows/toolkit-release-oci.yml)                 | Releases a OCI-Image project with optional Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release GoReleaser](.github/workflows/toolkit-release-goreleaser.yml)   | Releases a GoReleaser project with a OCI-Image, optional signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release Node.js](.github/workflows/toolkit-release-nodejs.yml)          | Releases a Node.js project with an optional OCI-Image, NPM-Package, OCI-Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
