@@ -1,0 +1,194 @@
+name: Build and test
+
+on:
+  workflow_call:
+    inputs:
+      install-go:
+        required: false
+        default: false
+        type: boolean
+      go-version:
+        required: false
+        default: "1.19.4"
+        type: string
+      install-node:
+        required: false
+        default: false
+        type: boolean
+      node-version:
+        required: false
+        default: 16
+        type: string
+      install-dotnet:
+        required: false
+        default: false
+        type: boolean
+      dotnet-version:
+        required: false
+        default: "7.0.x"
+        type: string
+      install-goreleaser:
+        required: false
+        default: false
+        type: boolean
+      goreleaser-version:
+        required: false
+        type: string
+        default: v1.13.1
+      install-kubebuilder:
+        required: false
+        default: false
+        type: boolean
+      kubebuilder-version:
+        required: false
+        type: string
+        default: 3.1.0
+      install-kubectl:
+        required: false
+        default: false
+        type: boolean
+      kubectl-version:
+        required: false
+        type: string
+        default: v1.26.0
+      install-cosign:
+        required: false
+        default: false
+        type: boolean
+      install-awscli:
+        required: false
+        default: false
+        type: boolean
+      build-commands:
+        required: false
+        type: string
+        default: ''
+      test-commands:
+        required: false
+        type: string
+        default: ''
+      build-image:
+        required: false
+        default: false
+        type: boolean
+      docker-tag:
+        required: false
+        type: string
+      docker-context:
+        required: false
+        default: "."
+        type: string
+      scan-image:
+        required: false
+        default: false
+        type: boolean
+      report-coverage:
+        required: false
+        default: false
+        type: boolean
+      coverage-file:
+        required: false
+        type: string
+    secrets:
+      token:
+        required: true
+      pat:
+        required: true
+      ghcr-password:
+        required: false
+      dockerhub-user:
+        required: false
+      dockerhub-password:
+        required: false
+
+permissions:
+  contents: read
+  packages: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3ba5ee6fac7e0e30e2ea884e236f282d3a775891
+
+      - name: Setup Go
+        if: ${{ inputs.install-go == true }}
+        uses: actions/setup-go@bb5ff97ab9c85a2085c8968c49b14f9f0530e2a8
+        with:
+          go-version: ${{ inputs.go-version }}
+
+      - name: Setup Node
+        if: ${{ inputs.install-node == true }}
+        uses: actions/setup-node@377c6dae4006fcd73be5aac564ee449b1a5d63f7
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Setup Dotnet
+        if: ${{ inputs.install-dotnet == true }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+
+      - name: Setup Cosign
+        if: ${{ inputs.install-cosign == true }}
+        uses: sigstore/cosign-installer@b6757d8360bb6b9803c38b68e8cb7442baaf7eb5
+        with:
+          cosign-release: 'v1.13.1'
+
+      - name: Setup GoReleaser
+        if: ${{ inputs.install-goreleaser == true }}
+        uses: goreleaser/goreleaser-action@13f1e21a502d76668f53fc8631dfef02a96ecac6
+        with:
+          version: ${{ inputs.goreleaser-version }}
+          install-only: true
+
+      - name: Setup Kubebuilder
+        if: ${{ inputs.install-kubebuilder == true }}
+        uses: RyanSiu1995/kubebuilder-action@v1.2
+        with:
+          version: ${{ inputs.kubebuilder-version }}
+
+      - name: Setup AWS CLI
+        if: ${{ inputs.install-awscli == true }}
+        uses: unfor19/install-aws-cli-action@v1
+
+      - name: Setup Kubectl
+        if: ${{ inputs.install-kubectl == true }}
+        uses: azure/setup-kubectl@v3.1
+        with:
+          version: ${{ inputs.kubectl-version }}
+
+      - name: Build
+        if: ${{ inputs.build-commands != '' }}
+        run: ${{ inputs.build-commands }}
+
+      - name: Test
+        if: ${{ inputs.test-commands != '' }}
+        run: ${{ inputs.test-commands }}
+
+      - name: Report coverage
+        uses: codecov/codecov-action@v3
+        if: ${{ inputs.report-coverage == true }}
+        with:
+          files: ${{ inputs.coverage-filt }}
+
+      - name: Build image
+        if: ${{ inputs.build-image == true }}
+        uses: ckotzbauer/actions-toolkit/docker@0.27.0
+        with:
+          context: ${{ inputs.docker-context }}
+          push: false
+          load: true
+          platforms: linux/amd64
+          tags: |
+            ${{ inputs.docker-tag }}
+
+      - name: Scan image
+        if: ${{ inputs.scan-image == true }}
+        uses: ckotzbauer/actions-toolkit/grype@0.27.0
+        with:
+          scan-target: ${{ inputs.docker-tag }}
+          fail-on: "medium"
+          config-file: ".github/grype.yaml"
