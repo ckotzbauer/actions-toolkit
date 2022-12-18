@@ -1,3 +1,18 @@
+## Version 0.29.0 (2022-12-18)
+
+### Features and improvements
+
+* [[`7f68d711`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f68d711)] - **feat**: add lint-workflow
+
+### Bug fixes
+
+* [[`a75bf69c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a75bf69c)] - **fix**: remove unused secrets
+
+### Documentation
+
+* [[`a8bd8a79`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a8bd8a79)] - **doc**: add new workflows
+
+
 ## Version 0.28.0 (2022-12-18)
 
 ### Features and improvements
