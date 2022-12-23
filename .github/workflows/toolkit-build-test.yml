@@ -160,7 +160,7 @@ jobs:
 
       - name: Setup Syft
         if: ${{ inputs.install-syft == true }}
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.30.0
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.30.2
 
       - name: Build
         if: ${{ inputs.build-commands != '' }}
