@@ -89,6 +89,11 @@ on:
       coverage-file:
         required: false
         type: string
+    secrets:
+      encrypted-build-secrets:
+        required: false
+      encrypted-test-secrets:
+        required: false
 
 permissions:
   contents: read
@@ -151,10 +156,14 @@ jobs:
 
       - name: Build
         if: ${{ inputs.build-commands != '' }}
+        env:
+          ENCRYPTED_BUILD_SECRETS: ${{ secrets.encrypted-build-secrets }}
         run: ${{ inputs.build-commands }}
 
       - name: Test
         if: ${{ inputs.test-commands != '' }}
+        env:
+          ENCRYPTED_TEST_SECRETS: ${{ secrets.encrypted-test-secrets }}
         run: ${{ inputs.test-commands }}
 
       - name: Report coverage
