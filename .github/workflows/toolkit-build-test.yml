@@ -59,6 +59,10 @@ on:
         required: false
         default: false
         type: boolean
+      install-syft:
+        required: false
+        default: false
+        type: boolean
       build-commands:
         required: false
         type: string
@@ -153,6 +157,10 @@ jobs:
         uses: azure/setup-kubectl@v3.1
         with:
           version: ${{ inputs.kubectl-version }}
+
+      - name: Setup Syft
+        if: ${{ inputs.install-syft == true }}
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.30.0
 
       - name: Build
         if: ${{ inputs.build-commands != '' }}
