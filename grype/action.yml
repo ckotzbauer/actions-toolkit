@@ -39,7 +39,11 @@ runs:
     - name: Scan for vulnerabilities
       if: ${{ inputs.install-only != 'true' }}
       run: |
-        grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
+        if test -f "${{ inputs.output }}"; then
+          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
+        else
+          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}"
+        fi
       shell: sh
 
     # TODO: Optionally attest vulnerabilities (#29)
