@@ -1,3 +1,31 @@
+## Version 0.30.0 (2022-12-23)
+
+### Features and improvements
+
+* [[`fab9bfa3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fab9bfa3)] - **feat**: add build- and test-secrets
+* [[`bdbf287e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bdbf287e)] - **feat**: pin all versions
+
+### Bug fixes
+
+* [[`c5e9a502`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c5e9a502)] - **fix**: handle non-existant config-file
+
+### Dependency updates
+
+* [[`5bc89d6f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5bc89d6f)] - **deps**: update actions&#x2F;setup-node digest to c406543
+* [[`c55775b0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c55775b0)] - **deps**: update actions&#x2F;setup-go digest to 1661eeb
+* [[`60afe6ef`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/60afe6ef)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 1384b0b (#409)
+* [[`6c158529`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6c158529)] - **deps**: update actions&#x2F;stale action to v7 (#408)
+* [[`dea3c45c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/dea3c45c)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to a7c543c
+* [[`3eae0ddc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3eae0ddc)] - **deps**: update docker&#x2F;setup-qemu-action digest to 12d39e1
+* [[`da5aebaf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/da5aebaf)] - **deps**: update docker&#x2F;setup-buildx-action digest to c252a3b
+* [[`67545971`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/67545971)] - **deps**: update docker&#x2F;build-push-action digest to 4eb68bb
+* [[`86adb26d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/86adb26d)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 36704c9
+* [[`e6006d62`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e6006d62)] - **deps**: update sigstore&#x2F;cosign-installer digest to df6c89e
+* [[`005c1a9a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/005c1a9a)] - **deps**: update philips-labs&#x2F;slsa-provenance-action digest to 903776f
+* [[`a4627107`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a4627107)] - **deps**: update actions&#x2F;setup-go digest to 1710640
+* [[`bae55829`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bae55829)] - **deps**: update actions&#x2F;setup-node digest to bbe2ac7
+
+
 ## Version 0.29.0 (2022-12-18)
 
 ### Features and improvements
