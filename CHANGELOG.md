@@ -1,3 +1,17 @@
+## Version 0.30.2 (2022-12-23)
+
+### Bug fixes
+
+* [[`08f008ee`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/08f008ee)] - **fix**: add syft
+
+### Dependency updates
+
+* [[`6e8f84b4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6e8f84b4)] - **deps**: update actions&#x2F;setup-go digest to 991a6a2 (#412)
+* [[`82b56d35`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/82b56d35)] - **deps**: update actions&#x2F;setup-node digest to 3e8819f (#413)
+* [[`6653715f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6653715f)] - **deps**: update actions&#x2F;setup-dotnet digest to e94d154
+* [[`05578978`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/05578978)] - **deps**: update actions&#x2F;stale digest to 95d1818 (#415)
+
+
 ## Version 0.30.1 (2022-12-23)
 
 ### Bug fixes
