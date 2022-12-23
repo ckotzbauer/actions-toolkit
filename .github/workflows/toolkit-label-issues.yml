@@ -15,8 +15,8 @@ jobs:
   label-issues:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@3ba5ee6fac7e0e30e2ea884e236f282d3a775891
       - name: label
-        uses: ckotzbauer/label-command-action@v2
+        uses: ckotzbauer/label-command-action@d796b941bb53da9c72c300b0a69118c038a79c57
         env:
           GITHUB_TOKEN: "${{ secrets.token }}"

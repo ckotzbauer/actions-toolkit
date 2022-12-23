@@ -116,7 +116,7 @@ jobs:
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@09d024bd0207f89ac22acd11bbc262fc9e869ae7
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
 
@@ -135,17 +135,17 @@ jobs:
 
       - name: Setup Kubebuilder
         if: ${{ inputs.install-kubebuilder == true }}
-        uses: RyanSiu1995/kubebuilder-action@v1.2
+        uses: RyanSiu1995/kubebuilder-action@e9f16f211e05b56796ef26810e55c083843f8f8b
         with:
           version: ${{ inputs.kubebuilder-version }}
 
       - name: Setup AWS CLI
         if: ${{ inputs.install-awscli == true }}
-        uses: unfor19/install-aws-cli-action@v1
+        uses: unfor19/install-aws-cli-action@7a427b852d87c231cb6a8ace7aff7317a6a37243
 
       - name: Setup Kubectl
         if: ${{ inputs.install-kubectl == true }}
-        uses: azure/setup-kubectl@v3.1
+        uses: azure/setup-kubectl@4beba283efe5fed62ff8130228c8179825463224
         with:
           version: ${{ inputs.kubectl-version }}
 
@@ -158,7 +158,7 @@ jobs:
         run: ${{ inputs.test-commands }}
 
       - name: Report coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@e0fbd592d323cb2991fb586fdd260734fcb41fcb
         if: ${{ inputs.report-coverage == true }}
         with:
           files: ${{ inputs.coverage-filt }}

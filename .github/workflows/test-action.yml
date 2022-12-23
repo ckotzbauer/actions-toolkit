@@ -14,9 +14,9 @@ jobs:
         module:
           - sbom
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@3ba5ee6fac7e0e30e2ea884e236f282d3a775891
 
-    - uses: dorny/paths-filter@v2.11.1
+    - uses: dorny/paths-filter@4067d885736b84de7c414f582ac45897079b0a78
       id: changes
       with:
         filters: |
@@ -26,7 +26,7 @@ jobs:
 
     - name: Setup Go
       if: steps.changes.outputs.src == 'true'
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@17106403fa5e2516d58cbf6bf1314893d4351d78
       with:
         go-version: 1.17
 

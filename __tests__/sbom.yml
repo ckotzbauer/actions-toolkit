@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup cosign
-        uses: sigstore/cosign-installer@v1.4.1
+        uses: sigstore/cosign-installer@df6c89e679716101b2628c1c3cd997f7626f27b8
 
       - name: GHCR Login
-        uses: docker/login-action@v1
+        uses: docker/login-action@bc135a1993a1d0db3e9debefa0cfcb70443cc94c
         with:
           registry: ghcr.io
           username: ckotzbauer

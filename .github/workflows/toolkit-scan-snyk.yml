@@ -41,26 +41,26 @@ jobs:
   scan-snyk:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@3ba5ee6fac7e0e30e2ea884e236f282d3a775891
       - name: Install Go
         if: ${{ inputs.install-go == true }}
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@17106403fa5e2516d58cbf6bf1314893d4351d78
         with:
           go-version: ${{ inputs.go-version }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@bbe2ac79a1347190c27c8a7ca53301a26c066415
         with:
           node-version: ${{ inputs.node-version }}
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@09d024bd0207f89ac22acd11bbc262fc9e869ae7
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
 
-      - uses: snyk/actions/setup@master
+      - uses: snyk/actions/setup@1cc9026f51d822442cb4b872d8d7ead8cc69a018
       - name: Snyk monitor
         env:
           SNYK_TOKEN: ${{ secrets.token }}
