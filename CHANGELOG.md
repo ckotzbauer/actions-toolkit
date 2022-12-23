@@ -1,3 +1,10 @@
+## Version 0.30.1 (2022-12-23)
+
+### Bug fixes
+
+* [[`0fe374c5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0fe374c5)] - **fix**: use pinned version
+
+
 ## Version 0.30.0 (2022-12-23)
 
 ### Features and improvements
