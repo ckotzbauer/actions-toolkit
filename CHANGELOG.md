@@ -1,3 +1,15 @@
+## Version 0.30.3 (2022-12-25)
+
+### Bug fixes
+
+* [[`9ec523d4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9ec523d4)] - **fix**: use official release version
+
+### Dependency updates
+
+* [[`95ea6920`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/95ea6920)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to f055c8e
+* [[`0710c229`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0710c229)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.30.2 (#416)
+
+
 ## Version 0.30.2 (2022-12-23)
 
 ### Bug fixes
