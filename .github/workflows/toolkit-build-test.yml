@@ -154,7 +154,7 @@ jobs:
 
       - name: Setup Kubectl
         if: ${{ inputs.install-kubectl == true }}
-        uses: azure/setup-kubectl@v3.1
+        uses: azure/setup-kubectl@v3.2
         with:
           version: ${{ inputs.kubectl-version }}
 
