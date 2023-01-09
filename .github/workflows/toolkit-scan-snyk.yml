@@ -60,7 +60,7 @@ jobs:
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
 
-      - uses: snyk/actions/setup@1cc9026f51d822442cb4b872d8d7ead8cc69a018
+      - uses: snyk/actions/setup@083d2833d2946bd6d4fc7e98c37e46673046568b
       - name: Snyk monitor
         env:
           SNYK_TOKEN: ${{ secrets.token }}
