@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        uses: actions/setup-node@9227cda3f057273998ba2241d51a075b0598bbe5
         with:
           node-version: ${{ inputs.node-version }}
 
