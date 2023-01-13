@@ -150,7 +150,7 @@ jobs:
 
       - name: Setup AWS CLI
         if: ${{ inputs.install-awscli == true }}
-        uses: unfor19/install-aws-cli-action@7a427b852d87c231cb6a8ace7aff7317a6a37243
+        uses: unfor19/install-aws-cli-action@457b7980b125044247e455d87b9a26fc2299b787
 
       - name: Setup Kubectl
         if: ${{ inputs.install-kubectl == true }}
