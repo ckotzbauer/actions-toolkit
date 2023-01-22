@@ -16,10 +16,11 @@ on:
       goreleaser-args:
         required: false
         type: string
+        default: "--skip-validate"
       goreleaser-version:
         required: false
         type: string
-        default: v1.13.1
+        default: v1.14.1
       docker-tags:
         required: true
         type: string
