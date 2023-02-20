@@ -4,7 +4,7 @@ inputs:
   version:
     description: "Grype version to install."
     required: true
-    default: "v0.55.0"
+    default: "v0.57.1"
   install-only:
     description: "Install the binary only."
     required: true
@@ -39,7 +39,7 @@ runs:
     - name: Scan for vulnerabilities
       if: ${{ inputs.install-only != 'true' }}
       run: |
-        if test -f "${{ inputs.output }}"; then
+        if test -f "${{ inputs.config-file }}"; then
           grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
         else
           grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}"

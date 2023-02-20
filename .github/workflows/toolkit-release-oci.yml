@@ -110,7 +110,6 @@ jobs:
         id: hash
         run: |
           cd ${{ inputs.artifact-path }}
-          echo "::set-output name=hashes::$(find . -type f | xargs sha256sum | base64 -w0)"
 
       - name: Upload assets
         uses: actions/upload-artifact@65d862660abb392b8c4a3d1195a2108db131dd05
