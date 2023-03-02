@@ -42,7 +42,7 @@ runs:
         if test -f "${{ inputs.config-file }}"; then
           grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
         else
-          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}"
+          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}"
         fi
       shell: sh
 
