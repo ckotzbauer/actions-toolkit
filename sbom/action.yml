@@ -51,18 +51,16 @@ runs:
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob --output-signature ${{ inputs.output }}.sig --output-certificate ${{ inputs.output }}.pem ${{ inputs.output }}
+      run: cosign sign-blob -y --output-signature ${{ inputs.output }}.sig --output-certificate ${{ inputs.output }}.pem ${{ inputs.output }}
       shell: sh
       env:
-        COSIGN_EXPERIMENTAL: "1"
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Verify SBOM
       if: ${{ inputs.verify == 'true' }}
-      run: cosign verify-blob --signature ${{ inputs.output }}.sig --cert ${{ inputs.output }}.pem ${{ inputs.output }}
+      run: cosign verify-blob --signature ${{ inputs.output }}.sig --certificate ${{ inputs.output }}.pem ${{ inputs.output }}
       shell: sh
       env:
-        COSIGN_EXPERIMENTAL: "1"
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Attest images with SBOM
@@ -70,10 +68,9 @@ runs:
       run: |
         echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; 
         do 
-          cosign attest -f --type spdx --predicate ${{ inputs.output }} $a;
+          cosign attest -y --type spdx --predicate ${{ inputs.output }} $a;
           cosign attach sbom --type syft --sbom ${{ inputs.output }} $a;
         done
       shell: sh
       env:
-        COSIGN_EXPERIMENTAL: "1"
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}

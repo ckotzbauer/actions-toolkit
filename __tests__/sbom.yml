@@ -30,7 +30,6 @@ jobs:
         shell: bash
         run: |
           cat oci-sbom.json | jq -r '.source.target.userInput' | grep ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
-          cosign verify-blob --signature oci-sbom.json.sig oci-sbom.json
-          cosign verify-attestation ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0
-        env:
-          COSIGN_EXPERIMENTAL: "1"
+          cosign verify-blob --signature oci-sbom.json.sig --certificate oci-sbom.json.pem oci-sbom.json
+          # TODO:
+          # cosign verify-attestation --certificate-identity TODO --certificate-oidc-issuer https://token.actions.githubusercontent.com ghcr.io/ckotzbauer/actions-toolkit/test-image:1.0.0

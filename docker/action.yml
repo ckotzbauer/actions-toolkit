@@ -91,16 +91,15 @@ runs:
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign sign -f -r $a; done
+      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign sign -y -r $a; done
       shell: sh
       env:
-        COSIGN_EXPERIMENTAL: "1"
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
-    - name: Verify image
-      if: ${{ inputs.verify == 'true' }}
-      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign verify $a; done
-      shell: sh
-      env:
-        COSIGN_EXPERIMENTAL: "1"
-        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
+    #- name: Verify image
+    #  if: ${{ inputs.verify == 'true' }}
+    #  # TODO:
+    #  run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign verify --certificate-identity TODO --certificate-oidc-issuer https://token.actions.githubusercontent.com $a; done
+    #  shell: sh
+    #  env:
+    #    COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}

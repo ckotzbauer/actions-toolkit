@@ -87,7 +87,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@c3667d99424e7e6047999fb6246c0da843953c65
         with:
-          cosign-release: 'v1.13.1'
+          cosign-release: 'v2.0.0'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.32.0
@@ -100,7 +100,6 @@ jobs:
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.token }}
-          COSIGN_EXPERIMENTAL: 1
           COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
