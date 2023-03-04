@@ -1,3 +1,10 @@
+## Version 0.33.1 (2023-03-04)
+
+### Bug fixes
+
+* [[`45a25fd0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/45a25fd0)] - **fix**: disable sbom-verification
+
+
 ## Version 0.33.0 (2023-03-04)
 
 ### Features and improvements
