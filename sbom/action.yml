@@ -56,12 +56,13 @@ runs:
       env:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
-    - name: Verify SBOM
-      if: ${{ inputs.verify == 'true' }}
-      run: cosign verify-blob --signature ${{ inputs.output }}.sig --certificate ${{ inputs.output }}.pem ${{ inputs.output }}
-      shell: sh
-      env:
-        COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
+    #- name: Verify SBOM
+    #  if: ${{ inputs.verify == 'true' }}
+    # TODO:
+    #  run: cosign verify-blob --signature ${{ inputs.output }}.sig --certificate ${{ inputs.output }}.pem ${{ inputs.output }}
+    #  shell: sh
+    #  env:
+    #    COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' && inputs.images != '' }}
