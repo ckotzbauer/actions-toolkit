@@ -1,3 +1,35 @@
+## Version 0.33.0 (2023-03-04)
+
+### Features and improvements
+
+* [[`ec4b5424`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ec4b5424)] - **feat**: updates for cosign v2
+
+### Bug fixes
+
+* [[`0669b5dc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0669b5dc)] - **fix**: remove config-file
+
+### Dependency updates
+
+* [[`b6ead08d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b6ead08d)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 31bde76 (#517)
+* [[`b242bb71`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b242bb71)] - **deps**: update docker&#x2F;setup-buildx-action digest to 03a7a3d
+* [[`691793ea`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/691793ea)] - **deps**: update docker&#x2F;setup-buildx-action digest to 774ea5c
+* [[`5993cf55`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5993cf55)] - **deps**: update sigstore&#x2F;cosign-installer digest to c3667d9
+* [[`63c94e56`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/63c94e56)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to f25a30c
+* [[`4db80a4f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4db80a4f)] - **deps**: update codecov&#x2F;codecov-action digest to 4b062cb
+* [[`ac3fb582`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ac3fb582)] - **deps**: update slsa-framework&#x2F;slsa-github-generator action to v1.5.0
+* [[`aadba122`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/aadba122)] - **deps**: update docker&#x2F;build-push-action digest to 35434f5
+* [[`46912c8e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/46912c8e)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to bfc3a61
+* [[`1988b462`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1988b462)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 26e4d99 (#508)
+* [[`4a7685ad`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4a7685ad)] - **deps**: update docker&#x2F;setup-qemu-action digest to de3982d
+* [[`2506748f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2506748f)] - **deps**: update docker&#x2F;build-push-action digest to d63c962
+* [[`c729f552`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c729f552)] - **deps**: update docker&#x2F;setup-buildx-action digest to a19c171
+* [[`6d9b4529`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6d9b4529)] - **deps**: update codecov&#x2F;codecov-action digest to ce0bcc6 (#504)
+* [[`d3f86646`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d3f86646)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 1d44853
+* [[`d5c44c60`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d5c44c60)] - **deps**: update docker&#x2F;build-push-action digest to a3ae207
+* [[`f0804ce1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f0804ce1)] - **deps**: update actions&#x2F;stale digest to 3d90444
+* [[`971f77d6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/971f77d6)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 45b3791
+
+
 ## Version 0.32.0 (2023-02-20)
 
 ### Dependency updates
