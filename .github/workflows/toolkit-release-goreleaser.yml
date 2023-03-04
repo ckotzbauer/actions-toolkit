@@ -96,7 +96,7 @@ jobs:
         uses: goreleaser/goreleaser-action@1d44853e589689f0aaa1c397f991ecf92e9c0591
         with:
           version: ${{ inputs.goreleaser-version }}
-          args: release --rm-dist ${{ inputs.goreleaser-args }}
+          args: release --clean ${{ inputs.goreleaser-args }}
         env:
           GORELEASER_CURRENT_TAG: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.token }}
