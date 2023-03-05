@@ -1,3 +1,10 @@
+## Version 0.33.3 (2023-03-05)
+
+### Bug fixes
+
+* [[`fa7f340e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fa7f340e)] - **fix**: add hashing for oci-workflow
+
+
 ## Version 0.33.2 (2023-03-05)
 
 ### Bug fixes
