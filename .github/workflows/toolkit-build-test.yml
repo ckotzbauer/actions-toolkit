@@ -34,7 +34,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v1.13.1
+        default: v1.15.2
       install-kubebuilder:
         required: false
         default: false
