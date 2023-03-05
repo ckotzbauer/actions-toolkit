@@ -1,3 +1,18 @@
+## Version 0.33.2 (2023-03-05)
+
+### Bug fixes
+
+* [[`3f092b6d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3f092b6d)] - **fix**: use new flag
+
+### Build and testing
+
+* [[`46513f70`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/46513f70)] - **build**: update goreleaser
+
+### Dependency updates
+
+* [[`34b71d0d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/34b71d0d)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 5d914a5
+
+
 ## Version 0.33.1 (2023-03-04)
 
 ### Bug fixes
