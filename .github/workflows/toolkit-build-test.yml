@@ -144,7 +144,7 @@ jobs:
 
       - name: Setup Kubebuilder
         if: ${{ inputs.install-kubebuilder == true }}
-        uses: RyanSiu1995/kubebuilder-action@3452ecc2b0ce9490accb52868f065a028ad6ea1d
+        uses: RyanSiu1995/kubebuilder-action@ed0e300b13152c2c2bfb104475665c7bf609332f
         with:
           version: ${{ inputs.kubebuilder-version }}
 
