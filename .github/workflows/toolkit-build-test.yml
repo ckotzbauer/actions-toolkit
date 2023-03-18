@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.19.4"
+        default: "1.20.2"
         type: string
       install-node:
         required: false
@@ -34,7 +34,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v1.15.2
+        default: v1.16.1
       install-kubebuilder:
         required: false
         default: false
