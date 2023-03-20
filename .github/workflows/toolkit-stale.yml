@@ -14,7 +14,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/stale@326b913d3ab9fc28cfa5afaddccd5ef730929eda
+    - uses: actions/stale@01aa53266cd31523ca362b0c4d4d1f41f397524d
       with:
         repo-token: ${{ secrets.token }}
         stale-issue-message: 'This issue is stale because it has been open 90 days with no activity. Remove stale label with `/remove-lifecycle stale` or comment or this will be closed in 5 days.'
