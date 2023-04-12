@@ -10,7 +10,7 @@ jobs:
   create-default-labels:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@40a16ebeed7da831425b665e600750cb36b38d06
+      - uses: actions/checkout@83b7061638ee4956cf7545a6f7efe594e5ad0247
       - uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c
         env:
           GITHUB_TOKEN: ${{ secrets.token }}
