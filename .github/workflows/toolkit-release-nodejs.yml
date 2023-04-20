@@ -191,7 +191,7 @@ jobs:
 
       - name: Publish NPM package
         if: ${{ inputs.npm == true }}
-        uses: JS-DevTools/npm-publish@b992c2e1ba643d38b8a937a5c70587fdd70fbc21
+        uses: JS-DevTools/npm-publish@c5f37b90eac9e430a3af0b211f80efb9b191bd8c
         with:
           token: ${{ secrets.npm-token }}
           access: "public"
