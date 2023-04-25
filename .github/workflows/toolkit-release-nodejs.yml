@@ -91,7 +91,7 @@ jobs:
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
-        uses: sigstore/cosign-installer@66dd3f388647c8d36a2b8b27371cce115a10e003
+        uses: sigstore/cosign-installer@204a51a57a74d190b284a0ce69b44bc37201f343
         with:
           cosign-release: 'v2.0.0'
 
