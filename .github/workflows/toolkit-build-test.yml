@@ -137,7 +137,7 @@ jobs:
 
       - name: Setup GoReleaser
         if: ${{ inputs.install-goreleaser == true }}
-        uses: goreleaser/goreleaser-action@cffc4af7bfb5858a36ca6f7f021305d4428be7ad
+        uses: goreleaser/goreleaser-action@7e0ddfe79f59bc07a5f10b94cd65b969158f67c6
         with:
           version: ${{ inputs.goreleaser-version }}
           install-only: true
