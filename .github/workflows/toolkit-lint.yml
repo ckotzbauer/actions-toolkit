@@ -37,7 +37,7 @@ jobs:
 
       - name: Setup Go
         if: ${{ inputs.install-go == true }}
-        uses: actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753
+        uses: actions/setup-go@49bc3307c5d359429e8aee983859eb8dfad28c6b
         with:
           go-version: ${{ inputs.go-version }}
 
