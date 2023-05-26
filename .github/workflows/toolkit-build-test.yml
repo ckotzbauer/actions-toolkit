@@ -125,7 +125,7 @@ jobs:
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
-        uses: actions/setup-dotnet@aa983c550dfda0d1722b6ac6aed55724ffacc6d3
+        uses: actions/setup-dotnet@916351aac9bf8880c972d4fea274ab5e747d8f36
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
 
