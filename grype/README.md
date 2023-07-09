@@ -8,7 +8,7 @@
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `version` | Grype version to install. | `true` | `"v0.61.1"` |
+| `version` | Grype version to install. | `true` | `"v0.63.1"` |
 | `install-only` | Install the binary only. | `true` | `"false"` |
 | `fail-on` | Fail the action when vulns with a severity >= where found [negligible low medium high critical]. | `false` | `""` |
 | `output` | Output file. | `true` | `""` |
