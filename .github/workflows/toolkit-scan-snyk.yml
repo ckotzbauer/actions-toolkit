@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
       - name: Install Go
         if: ${{ inputs.install-go == true }}
-        uses: actions/setup-go@d085b4fe57b6e17262cbebc67b4d2d341d8938c2
+        uses: actions/setup-go@883490dfd06f396ebe0b738bc313a53cf9d851e5
         with:
           go-version: ${{ inputs.go-version }}
 
