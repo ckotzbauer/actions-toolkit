@@ -17,7 +17,7 @@ on:
         type: boolean
       node-version:
         required: false
-        default: 18
+        default: 20
         type: string
       install-dotnet:
         required: false
