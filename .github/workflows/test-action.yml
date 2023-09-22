@@ -14,7 +14,7 @@ jobs:
         module:
           - sbom
     steps:
-    - uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
+    - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
 
     - uses: dorny/paths-filter@4067d885736b84de7c414f582ac45897079b0a78
       id: changes
