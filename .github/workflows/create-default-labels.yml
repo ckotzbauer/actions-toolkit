@@ -10,7 +10,7 @@ jobs:
     name: DefaultLabelsActions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@7cdaf2fbc075e6f3b9ca94cfd6cec5adc8a75622
+      - uses: actions/checkout@8530928916aaef40f59e6f221989ccb31f5759e7
       - uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c
         env:
           GITHUB_TOKEN: ${{ secrets.token }}
