@@ -41,7 +41,7 @@ jobs:
   scan-snyk:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8530928916aaef40f59e6f221989ccb31f5759e7
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Install Go
         if: ${{ inputs.install-go == true }}
         uses: actions/setup-go@bfd2fb341f32be7281829126376a12a780ca79fc
