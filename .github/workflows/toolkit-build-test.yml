@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.20.5"
+        default: "1.21.4"
         type: string
       install-node:
         required: false
@@ -34,7 +34,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v1.19.2
+        default: v1.22.1
       install-kubebuilder:
         required: false
         default: false
@@ -50,7 +50,7 @@ on:
       kubectl-version:
         required: false
         type: string
-        default: v1.27.1
+        default: v1.28.3
       install-cosign:
         required: false
         default: false
@@ -133,7 +133,7 @@ jobs:
         if: ${{ inputs.install-cosign == true }}
         uses: sigstore/cosign-installer@1fc5bd396d372bee37d608f955b336615edf79c8
         with:
-          cosign-release: 'v2.1.1'
+          cosign-release: 'v2.2.1'
 
       - name: Setup GoReleaser
         if: ${{ inputs.install-goreleaser == true }}
