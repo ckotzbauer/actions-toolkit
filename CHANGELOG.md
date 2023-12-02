@@ -1,3 +1,10 @@
+## Version 0.37.2 (2023-12-02)
+
+### Features and improvements
+
+* [[`3e72c7c6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3e72c7c6)] - **feat**: update dotnet
+
+
 ## Version 0.37.1 (2023-12-02)
 
 ### Bug fixes
