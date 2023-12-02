@@ -20,7 +20,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v1.12.1
+        default: v1.22.1
       docker-tags:
         required: true
         type: string
