@@ -25,7 +25,7 @@ on:
         type: boolean
       dotnet-version:
         required: false
-        default: "7.0.x"
+        default: "8.0.x"
         type: string
       install-goreleaser:
         required: false
