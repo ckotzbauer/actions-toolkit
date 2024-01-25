@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
-    - uses: dorny/paths-filter@67617953b4001d04fd3ced8df881d9ba1d08da9c
+    - uses: dorny/paths-filter@1441771bbfdd59dcd748680ee64ebd8faab1a242
       id: changes
       with:
         filters: |
