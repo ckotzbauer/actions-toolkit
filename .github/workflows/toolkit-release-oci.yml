@@ -151,7 +151,7 @@ jobs:
           commit-output: commits.md
 
       - name: Download artifacts
-        uses: actions/download-artifact@bb3fa7fd35ab8113a980912eb9f59b846d14e3ff
+        uses: actions/download-artifact@3ad8411bbdac537922aa8fb779989d55b1df4a4e
         with:
           path: output
 
