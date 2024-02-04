@@ -90,7 +90,7 @@ jobs:
           cosign-release: 'v2.2.3'
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.37.2
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.38.0
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@d50b0c42eeed7b45ad20ecc8046a958047efe1d5
@@ -103,7 +103,7 @@ jobs:
           COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.37.2
+        uses: ckotzbauer/actions-toolkit/docker@0.38.0
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -118,7 +118,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.37.2
+        uses: ckotzbauer/actions-toolkit/sbom@0.38.0
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -181,7 +181,7 @@ jobs:
           ls -R output
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.37.2
+        uses: ckotzbauer/actions-toolkit/push-release@0.38.0
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}
