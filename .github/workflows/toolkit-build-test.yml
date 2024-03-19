@@ -175,7 +175,7 @@ jobs:
         run: ${{ inputs.test-commands }}
 
       - name: Report coverage
-        uses: codecov/codecov-action@251ba34669580cb1cba13b602ce56b27a7bd1a33
+        uses: codecov/codecov-action@4621ecce093438b398d3d338ab5fe3b038f8e593
         if: ${{ inputs.report-coverage == true }}
         with:
           files: ${{ inputs.coverage-filt }}
