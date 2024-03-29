@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.21.6"
+        default: "1.22.1"
         type: string
       install-node:
         required: false

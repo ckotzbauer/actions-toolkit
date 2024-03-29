@@ -28,7 +28,7 @@ jobs:
       if: steps.changes.outputs.src == 'true'
       uses: actions/setup-go@be1aa1186e83689f3e45adaf3697af86f816fb2e
       with:
-        go-version: 1.21
+        go-version: 1.22
 
     - name: Setup act
       if: steps.changes.outputs.src == 'true'
