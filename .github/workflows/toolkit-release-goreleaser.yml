@@ -16,7 +16,7 @@ on:
       goreleaser-args:
         required: false
         type: string
-        default: "--skip-validate"
+        default: "--skip=validate"
       goreleaser-version:
         required: false
         type: string
