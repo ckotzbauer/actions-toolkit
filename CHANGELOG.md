@@ -1,3 +1,19 @@
+## Version 0.40.0 (2024-03-30)
+
+### Features and improvements
+
+* [[`e2ef0707`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e2ef0707)] - **feat**: add python-support
+
+### Bug fixes
+
+* [[`c57fe2d3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c57fe2d3)] - **fix**: replace deprecated syntax
+
+### Dependency updates
+
+* [[`24f73f82`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/24f73f82)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 02c2376
+* [[`1b265470`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1b265470)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 8275bcd
+
+
 ## Version 0.39.0 (2024-03-29)
 
 ### Features and improvements
