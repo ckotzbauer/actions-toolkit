@@ -27,6 +27,14 @@ on:
         required: false
         default: "8.0.x"
         type: string
+      install-python:
+        required: false
+        default: false
+        type: boolean
+      python-version:
+        required: false
+        default: "3.12"
+        type: string
       install-goreleaser:
         required: false
         default: false
@@ -128,6 +136,12 @@ jobs:
         uses: actions/setup-dotnet@5d1464d5da459f3d7085106d52e499f4dc5d0f59
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
+
+      - name: Setup Python
+        if: ${{ inputs.install-python == true }}
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d
+        with:
+          python-version: ${{ inputs.python-version }}
 
       - name: Setup Cosign
         if: ${{ inputs.install-cosign == true }}
