@@ -1,3 +1,19 @@
+## Version 0.41.2 (2024-04-06)
+
+### Bug fixes
+
+* [[`56d8f6e6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/56d8f6e6)] - **fix**: relax mandatory-inputs
+
+### Cleanup and refactoring
+
+* [[`702d4284`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/702d4284)] - **cleanup**: remove test-files
+
+### Dependency updates
+
+* [[`cd5b87a1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cd5b87a1)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 2d52ea2
+* [[`c4f64e4d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4f64e4d)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to bfe0987
+
+
 ## Version 0.41.1 (2024-04-06)
 
 ### Bug fixes
