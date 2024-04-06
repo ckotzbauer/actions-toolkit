@@ -1,3 +1,28 @@
+## Version 0.41.0 (2024-04-06)
+
+### Features and improvements
+
+* [[`24c4bdc1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/24c4bdc1)] - **feat**: adjusted defaults; more setup-actions; default grype-config
+
+### Bug fixes
+
+* [[`4c0bb756`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4c0bb756)] - **fix**: reset unrelease version
+
+### Dependency updates
+
+* [[`75ce3cd2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/75ce3cd2)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 8ae3a70 (#1088)
+* [[`f0e634e2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f0e634e2)] - **deps**: update js-devtools&#x2F;npm-publish digest to c292f92
+* [[`1235213c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1235213c)] - **deps**: update codecov&#x2F;codecov-action digest to 0bb547a
+* [[`d92fc466`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d92fc466)] - **deps**: update docker&#x2F;setup-buildx-action digest to d70bba7
+* [[`3b5cfc5b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3b5cfc5b)] - **deps**: update codecov&#x2F;codecov-action digest to 7afa10e
+* [[`06e7b4b1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/06e7b4b1)] - **deps**: update codecov&#x2F;codecov-action digest to 3a20752
+* [[`6b696329`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6b696329)] - **deps**: update docker&#x2F;build-push-action digest to f8bc7f4
+* [[`746b5c0f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/746b5c0f)] - **deps**: update js-devtools&#x2F;npm-publish digest to 854ce41
+* [[`776324ae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/776324ae)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to d6a8cf5
+* [[`f25b62ed`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f25b62ed)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to df5007f
+* [[`7f91eec9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f91eec9)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 312b286 (#1078)
+
+
 ## Version 0.40.0 (2024-03-30)
 
 ### Features and improvements
