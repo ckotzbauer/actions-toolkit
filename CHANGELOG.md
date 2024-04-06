@@ -1,3 +1,10 @@
+## Version 0.41.1 (2024-04-06)
+
+### Bug fixes
+
+* [[`cc827422`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cc827422)] - **fix**: change path
+
+
 ## Version 0.41.0 (2024-04-06)
 
 ### Features and improvements

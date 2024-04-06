@@ -174,7 +174,7 @@ jobs:
 
       - name: Setup Syft
         if: ${{ inputs.install-syft == true }}
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.41.0
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.41.1
 
       - name: Build
         if: ${{ inputs.build-commands != '' }}
@@ -196,7 +196,7 @@ jobs:
 
       - name: Build image
         if: ${{ inputs.build-image == true }}
-        uses: ckotzbauer/actions-toolkit/docker@0.41.0
+        uses: ckotzbauer/actions-toolkit/docker@0.41.1
         with:
           context: ${{ inputs.docker-context }}
           push: false
@@ -207,7 +207,7 @@ jobs:
 
       - name: Scan image
         if: ${{ inputs.scan-image == true }}
-        uses: ckotzbauer/actions-toolkit/grype@0.41.0
+        uses: ckotzbauer/actions-toolkit/grype@0.41.1
         with:
           scan-target: ${{ inputs.docker-tag }}
           fail-on: "medium"
