@@ -3,7 +3,7 @@ description: 'Installs the Syft binary'
 inputs:
   version:
     description: "Syft version to install."
-    required: true
+    required: false
     default: "v1.1.0"
 runs:
   using: "composite"

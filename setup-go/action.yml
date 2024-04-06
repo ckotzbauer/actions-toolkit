@@ -3,7 +3,7 @@ description: 'Installs golang'
 inputs:
   version:
     description: "Go version to install."
-    required: true
+    required: false
     default: "1.22.1"
 runs:
   using: "composite"

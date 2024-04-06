@@ -3,7 +3,7 @@ description: 'Installs dotnet core'
 inputs:
   version:
     description: "Dotnet version to install."
-    required: true
+    required: false
     default: "8.0.x"
 runs:
   using: "composite"

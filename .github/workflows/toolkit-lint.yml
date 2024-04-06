@@ -37,15 +37,15 @@ jobs:
 
       - name: Setup Go
         if: ${{ inputs.install-go == true }}
-        uses: actions/setup-go@be1aa1186e83689f3e45adaf3697af86f816fb2e
+        uses: ckotzbauer/actions-toolkit/setup-go@0.41.1
         with:
-          go-version: ${{ inputs.go-version }}
+          version: ${{ inputs.go-version }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: actions/setup-node@c2ac33f2c62f978d6c944d9648125a294e56dc0b
+        uses: ckotzbauer/actions-toolkit/setup-node@0.41.1
         with:
-          node-version: ${{ inputs.node-version }}
+          version: ${{ inputs.node-version }}
 
       - name: Lint
         run: ${{ inputs.lint-commands }}

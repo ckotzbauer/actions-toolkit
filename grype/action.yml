@@ -3,11 +3,11 @@ description: 'Scan with Grype'
 inputs:
   version:
     description: "Grype version to install."
-    required: true
+    required: false
     default: "v0.74.7"
   install-only:
     description: "Install the binary only."
-    required: true
+    required: false
     default: "false"
   fail-on:
     description: "Fail the action when vulns with a severity >= where found [negligible low medium high critical]."
@@ -19,7 +19,7 @@ inputs:
     default: ""
   format:
     description: "Output format [json table cyclonedx]"
-    required: true
+    required: false
     default: "table"
   config-file:
     description: "Config-File"
