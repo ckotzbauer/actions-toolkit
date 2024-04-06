@@ -1,0 +1,9 @@
+ignore:
+  - vulnerability: CVE-2023-42363
+  - vulnerability: CVE-2023-42364
+  - vulnerability: CVE-2023-42365
+  - vulnerability: CVE-2023-42366
+  - vulnerability: CVE-2023-45288
+  - vulnerability: CVE-2024-22365
+  - vulnerability: GHSA-8g9c-28fc-mcx2
+  - vulnerability: GHSA-59j7-ghrg-fj52

@@ -1,0 +1,3 @@
+ignore:
+  - vulnerability: GHSA-8g9c-28fc-mcx2
+  - vulnerability: GHSA-59j7-ghrg-fj52

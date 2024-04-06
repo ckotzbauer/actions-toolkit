@@ -1,0 +1,14 @@
+name: 'Setup Go'
+description: 'Installs golang'
+inputs:
+  version:
+    description: "Go version to install."
+    required: true
+    default: "1.22.1"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Golang
+      uses: actions/setup-go@be1aa1186e83689f3e45adaf3697af86f816fb2e
+      with:
+        go-version: ${{ inputs.version }}

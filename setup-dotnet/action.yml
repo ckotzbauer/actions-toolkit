@@ -1,0 +1,14 @@
+name: 'Setup Dotnet'
+description: 'Installs dotnet core'
+inputs:
+  version:
+    description: "Dotnet version to install."
+    required: true
+    default: "8.0.x"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Dotnet
+      uses: actions/setup-dotnet@5d1464d5da459f3d7085106d52e499f4dc5d0f59
+      with:
+        dotnet-version: ${{ inputs.version }}

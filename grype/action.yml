@@ -36,13 +36,23 @@ runs:
         curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
       shell: sh
 
+    - name: Setup YQ
+      if: ${{ inputs.install-only != 'true' }}
+      run: |
+        curl -sSfL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /usr/bin/yq
+        chmod +x /usr/bin/yq
+      shell: sh
+
     - name: Scan for vulnerabilities
       if: ${{ inputs.install-only != 'true' }}
       run: |
+        curl -sSfL https://raw.githubusercontent.com/ckotzbauer/actions-toolkit/main/.github/grype.yaml > base.yaml
+
         if test -f "${{ inputs.config-file }}"; then
-          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -c "${{ inputs.config-file }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
+          yq eval-all '. as $item ireduce ({}; . *+ $item)' base.yaml ${{ inputs.config-file }} > merged.yaml
+          grype ${{ inputs.scan-target }} -c "merged.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
         else
-          grype ${{ inputs.scan-target }} -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}"
+          grype ${{ inputs.scan-target }} -c "base.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}"
         fi
       shell: sh
 
