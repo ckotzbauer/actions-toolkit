@@ -39,8 +39,8 @@ runs:
     - name: Setup YQ
       if: ${{ inputs.install-only != 'true' }}
       run: |
-        curl -sSfL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /usr/bin/yq
-        chmod +x /usr/bin/yq
+        curl -sSfL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /usr/local/bin/yq
+        chmod +x /usr/local/bin/yq
       shell: sh
 
     - name: Scan for vulnerabilities
