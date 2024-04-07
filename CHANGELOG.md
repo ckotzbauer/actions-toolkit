@@ -1,3 +1,18 @@
+## Version 0.42.0 (2024-04-07)
+
+### Bug fixes
+
+* [[`ec207bc1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ec207bc1)] - **fix**: use correct naming
+
+### Cleanup and refactoring
+
+* [[`ffca100f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ffca100f)] - **cleanup**: remove per-repo default-labels action
+
+### Dependency updates
+
+* [[`07927e1f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/07927e1f)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 9a9fb8f
+
+
 ## Version 0.41.2 (2024-04-06)
 
 ### Bug fixes
