@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: ckotzbauer/actions-toolkit/setup-node@0.41.2
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.41.2
         with:
           version: ${{ inputs.node-version }}
 
