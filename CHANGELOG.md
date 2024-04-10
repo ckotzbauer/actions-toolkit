@@ -1,3 +1,19 @@
+## Version v0.42.1 (2024-04-10)
+
+### Bug fixes
+
+* [[`e08d1bb0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e08d1bb0)] - **fix**: downgrad upload&#x2F;download-artifacts actions
+
+### Dependency updates
+
+* [[`2ebb3228`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2ebb3228)] - **deps**: update codecov&#x2F;codecov-action digest to 8450866
+* [[`9574bbe1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9574bbe1)] - **deps**: update codecov&#x2F;codecov-action digest to d701256
+* [[`b61c08c1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b61c08c1)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 9937f9b
+* [[`fb1a7c7d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fb1a7c7d)] - **deps**: update softprops&#x2F;action-gh-release digest to 9b795e5
+* [[`ccd16008`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ccd16008)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to d045468
+* [[`c2c73866`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c2c73866)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 90b5fec
+
+
 ## Version 0.42.0 (2024-04-07)
 
 ### Bug fixes
