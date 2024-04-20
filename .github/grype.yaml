@@ -5,3 +5,4 @@ ignore:
   - vulnerability: CVE-2023-42366
   - vulnerability: CVE-2023-45288
   - vulnerability: CVE-2024-22365
+  - vulnerability: GHSA-rhh4-rh7c-7r5v
