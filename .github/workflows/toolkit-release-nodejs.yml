@@ -94,7 +94,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@59acb6260d9c0ba8f4a2f9d9b48431a222b68e20
         with:
-          cosign-release: 'v2.2.3'
+          cosign-release: 'v2.2.4'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@v0.42.1
@@ -143,7 +143,7 @@ jobs:
           echo "hashes=$(find . -type f | xargs sha256sum | base64 -w0)" >> $GITHUB_OUTPUT
 
       - name: Upload assets
-        uses: actions/upload-artifact@b06cde36fc32a3ee94080e87258567f73f921537
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         with:
           retention-days: 1
           name: assets
@@ -182,7 +182,7 @@ jobs:
           commit-output: commits.md
 
       - name: Download artifacts
-        uses: actions/download-artifact@b4aefff88e83a2676a730654e1ce3dce61880379
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
           path: output
 
