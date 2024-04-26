@@ -1,3 +1,25 @@
+## Version 0.44.0 (2024-04-26)
+
+### Bug fixes
+
+* [[`a0e104ef`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a0e104ef)] - **fix**: ignore GHSA-rhh4-rh7c-7r5v
+
+### Dependency updates
+
+* [[`9e24955d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9e24955d)] - **deps**: update slsa-framework&#x2F;slsa-github-generator action to v2 (#1125)
+* [[`83988c1b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/83988c1b)] - **deps**: update docker&#x2F;build-push-action digest to eb539f4
+* [[`16cb03ff`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/16cb03ff)] - **deps**: update actions&#x2F;checkout digest to 8459bc0 (#1126)
+* [[`e72ff6d6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e72ff6d6)] - **deps**: update docker&#x2F;build-push-action digest to 7f1f43b (#1130)
+* [[`11998fbb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/11998fbb)] - **deps**: update actions&#x2F;download-artifact digest to 65a9edc
+* [[`4fd78b6a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4fd78b6a)] - **deps**: update codecov&#x2F;codecov-action digest to daf8061
+* [[`a2966d58`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a2966d58)] - **deps**: update actions&#x2F;upload-artifact digest to 552bf37
+* [[`b775222d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b775222d)] - **deps**: update codecov&#x2F;codecov-action digest to c852ea6
+* [[`9c961df3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9c961df3)] - **deps**: update actions&#x2F;upload-artifact digest to 79616d2
+* [[`25794b8e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/25794b8e)] - **deps**: update actions&#x2F;download-artifact digest to 0daa75e
+* [[`60840ae6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/60840ae6)] - **deps**: update sigstore&#x2F;cosign-installer digest to 19351d0
+* [[`8ebb4293`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8ebb4293)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 77a3676
+
+
 ## Version 0.43.0 (2024-04-20)
 
 ### Features and improvements

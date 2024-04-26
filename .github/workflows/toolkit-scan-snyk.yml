@@ -52,25 +52,25 @@ jobs:
       - uses: actions/checkout@8459bc0c7e3759cdf591f513d9f141a95fef0a8f
       - name: Install Go
         if: ${{ inputs.install-go == true }}
-        uses: ckotzbauer/actions-toolkit/setup-go@0.43.0
+        uses: ckotzbauer/actions-toolkit/setup-go@0.44.0
         with:
           version: ${{ inputs.go-version }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.43.0
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.44.0
         with:
           version: ${{ inputs.node-version }}
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
-        uses: ckotzbauer/actions-toolkit/setup-dotnet@0.43.0
+        uses: ckotzbauer/actions-toolkit/setup-dotnet@0.44.0
         with:
           version: ${{ inputs.dotnet-version }}
 
       - name: Setup Python
         if: ${{ inputs.install-python == true }}
-        uses: ckotzbauer/actions-toolkit/setup-python@0.43.0
+        uses: ckotzbauer/actions-toolkit/setup-python@0.44.0
         with:
           version: ${{ inputs.python-version }}
 
