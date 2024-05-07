@@ -64,7 +64,7 @@ runs:
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@a530e948adbeb357dbca95a7f8845d385edf4438
+      uses: docker/setup-buildx-action@be3701b2116d2f723573ca9e8cdb4ca85d3cdaf0
 
     - name: GHCR Login
       if: ${{ inputs.ghcr-password }}
