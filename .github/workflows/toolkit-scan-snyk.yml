@@ -74,7 +74,7 @@ jobs:
         with:
           version: ${{ inputs.python-version }}
 
-      - uses: snyk/actions/setup@8349f9043a8b7f0f3ee8885bf28f0b388d2446e8
+      - uses: snyk/actions/setup@d406fd286b663eb8c6f8adcced4f7bcd199c0a3f
       - name: Snyk monitor
         env:
           SNYK_TOKEN: ${{ secrets.token }}
