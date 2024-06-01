@@ -28,7 +28,7 @@ jobs:
           sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
 
       - name: Generate Changelog
-        uses: ckotzbauer/changelog-generator@da2406cc87aae755ce6d2bde1aeb20ee4b5edd8f
+        uses: ckotzbauer/changelog-generator@6702887e454b4b62485ec5c2fb0d52eb44182407
         with:
           release-version: ${{ github.event.inputs.version }}
           github-handle: ${{ github.repository }}
