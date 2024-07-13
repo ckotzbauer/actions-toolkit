@@ -1,3 +1,129 @@
+## Version 0.45.0 (2024-07-13)
+
+### Features and improvements
+
+* [[`53136783`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/53136783)] - **feat**: update versions
+
+### Dependency updates
+
+* [[`bd4d4f94`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bd4d4f94)] - **deps**: update snyk&#x2F;actions digest to 640e317
+* [[`b01c5dfb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b01c5dfb)] - **deps**: update codecov&#x2F;codecov-action digest to e1b169f
+* [[`e4e01667`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e4e01667)] - **deps**: update codecov&#x2F;codecov-action digest to 543b309
+* [[`09551b77`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/09551b77)] - **deps**: update actions&#x2F;setup-python digest to 39cd149
+* [[`e0e7675a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e0e7675a)] - **deps**: update snyk&#x2F;actions digest to dad21f4
+* [[`b10f4e57`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b10f4e57)] - **deps**: update actions&#x2F;setup-dotnet digest to 6bd8b7f
+* [[`77afe7f0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/77afe7f0)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 3db2a4e (#1244)
+* [[`edfb620d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/edfb620d)] - **deps**: update actions&#x2F;setup-go digest to 0a12ed9 (#1222)
+* [[`c31ca3d3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c31ca3d3)] - **deps**: update js-devtools&#x2F;npm-publish digest to 76c32bc
+* [[`5f246a7e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5f246a7e)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to d81a42a
+* [[`03e2b332`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/03e2b332)] - **deps**: update actions&#x2F;upload-artifact digest to 0b2256b
+* [[`82fa1e46`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/82fa1e46)] - **deps**: update actions&#x2F;download-artifact digest to fa0a91b
+* [[`02c39715`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/02c39715)] - **deps**: update docker&#x2F;setup-buildx-action digest to 2ad1852
+* [[`085607f1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/085607f1)] - **deps**: update docker&#x2F;setup-buildx-action digest to 4fd8129
+* [[`ab32733b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ab32733b)] - **deps**: update docker&#x2F;setup-buildx-action digest to ab17e3e
+* [[`5a523d78`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5a523d78)] - **deps**: update docker&#x2F;setup-buildx-action digest to 13cf788
+* [[`f0744f08`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f0744f08)] - **deps**: update docker&#x2F;setup-qemu-action digest to 5927c83
+* [[`d504e949`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d504e949)] - **deps**: update softprops&#x2F;action-gh-release digest to 288696b
+* [[`096d1d82`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/096d1d82)] - **deps**: update docker&#x2F;build-push-action digest to 1a16264
+* [[`121ee42b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/121ee42b)] - **deps**: update codecov&#x2F;codecov-action digest to 893cfea
+* [[`9e188782`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9e188782)] - **deps**: update codecov&#x2F;codecov-action digest to 0cbef54
+* [[`1f26cccd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1f26cccd)] - **deps**: update ad-m&#x2F;github-push-action digest to 77c5b41
+* [[`01bb2ed3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/01bb2ed3)] - **deps**: update docker&#x2F;build-push-action digest to 9552610
+* [[`088f89ad`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/088f89ad)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to be98bdf
+* [[`b7413491`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b7413491)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 3682013
+* [[`4529b60b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4529b60b)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to a212f0e
+* [[`be814371`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/be814371)] - **deps**: update ad-m&#x2F;github-push-action digest to f17d07c
+* [[`f55ad97d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f55ad97d)] - **deps**: update actions&#x2F;setup-python digest to a0d74c0
+* [[`45d5bbfb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/45d5bbfb)] - **deps**: update actions&#x2F;setup-node digest to 1e60f62
+* [[`8025b2e0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8025b2e0)] - **deps**: update docker&#x2F;build-push-action digest to af64c4e
+* [[`5aad457b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5aad457b)] - **deps**: update softprops&#x2F;action-gh-release digest to a485adb
+* [[`c124b812`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c124b812)] - **deps**: update actions&#x2F;setup-python digest to 4eb7dbc
+* [[`1425d725`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1425d725)] - **deps**: update docker&#x2F;build-push-action digest to 1556069
+* [[`dd596d89`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/dd596d89)] - **deps**: update codecov&#x2F;codecov-action digest to af2ee03
+* [[`860845ff`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/860845ff)] - **deps**: update snyk&#x2F;actions digest to a1346e4
+* [[`f2898842`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f2898842)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 60034bf
+* [[`3ceecf9e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3ceecf9e)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 4feba57
+* [[`b0b67711`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b0b67711)] - **deps**: update codecov&#x2F;codecov-action digest to ca3e2d9
+* [[`99621ff8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/99621ff8)] - **deps**: update snyk&#x2F;actions digest to cf77efc
+* [[`eba47ad3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eba47ad3)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 20623cc
+* [[`1d5a5704`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1d5a5704)] - **deps**: update docker&#x2F;build-push-action digest to 31159d4
+* [[`2d67b2a5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2d67b2a5)] - **deps**: update docker&#x2F;setup-buildx-action digest to abe89fb
+* [[`7b31847f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7b31847f)] - **deps**: update softprops&#x2F;action-gh-release digest to 810bfa2
+* [[`2d7460dd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2d7460dd)] - **deps**: update docker&#x2F;build-push-action digest to 94f8f8c
+* [[`c1281aa0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c1281aa0)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to d33b6f6
+* [[`4e398ce6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4e398ce6)] - **deps**: update codecov&#x2F;codecov-action digest to f546948
+* [[`eece458e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/eece458e)] - **deps**: update docker&#x2F;build-push-action digest to 4367da9
+* [[`cad3bfaf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cad3bfaf)] - **deps**: update sigstore&#x2F;cosign-installer digest to b235ed9
+* [[`ec6925b9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ec6925b9)] - **deps**: update codecov&#x2F;codecov-action digest to 9a146cf
+* [[`104575ae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/104575ae)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 85d0b9d
+* [[`9f07449e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9f07449e)] - **deps**: update actions&#x2F;checkout digest to 692973e (#1198)
+* [[`122ae684`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/122ae684)] - **deps**: update docker&#x2F;build-push-action digest to 86c2bd0
+* [[`38c4353c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/38c4353c)] - **deps**: update codecov&#x2F;codecov-action digest to e28ff12
+* [[`fd8d6f7d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fd8d6f7d)] - **deps**: update docker&#x2F;build-push-action digest to cfed4e9
+* [[`99bc6d77`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/99bc6d77)] - **deps**: update codecov&#x2F;codecov-action digest to 7594baa
+* [[`439960cc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/439960cc)] - **deps**: update codecov&#x2F;codecov-action digest to 81c0a51
+* [[`7c8604ae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7c8604ae)] - **deps**: update codecov&#x2F;codecov-action digest to f5e203f
+* [[`c796cc7e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c796cc7e)] - **deps**: update codecov&#x2F;codecov-action digest to feaf700 (#1193)
+* [[`914491bb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/914491bb)] - **deps**: update docker&#x2F;build-push-action digest to 84354d3
+* [[`400c14da`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/400c14da)] - **deps**: update codecov&#x2F;codecov-action digest to 7b6a727
+* [[`f42b2746`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f42b2746)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to ad12f80
+* [[`d3a1f000`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d3a1f000)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 286f3b1
+* [[`ed842a3e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ed842a3e)] - **deps**: update codecov&#x2F;codecov-action digest to ccf7a1f (#1188)
+* [[`3554b227`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3554b227)] - **deps**: update codecov&#x2F;codecov-action digest to 5fe1d91
+* [[`7f617aa6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f617aa6)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 306de7d
+* [[`814a854c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/814a854c)] - **deps**: update js-devtools&#x2F;npm-publish digest to 52bacc1
+* [[`0e76c450`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0e76c450)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 0888f51 (#1184)
+* [[`327ed2d1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/327ed2d1)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 6702887 (#1182)
+* [[`a411fc4e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a411fc4e)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 01e578f (#1183)
+* [[`53a1d890`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/53a1d890)] - **deps**: update codecov&#x2F;codecov-action digest to 679cd7b
+* [[`c92fbf05`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c92fbf05)] - **deps**: update docker&#x2F;build-push-action digest to ca052bb
+* [[`8769e984`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8769e984)] - **deps**: update codecov&#x2F;codecov-action digest to 51fc5dc
+* [[`87a748f1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/87a748f1)] - **deps**: update docker&#x2F;build-push-action digest to ef6cba3
+* [[`b4a6eead`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b4a6eead)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 1a35544 (#1177)
+* [[`641ae6fe`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/641ae6fe)] - **deps**: update codecov&#x2F;codecov-action digest to a1504ae
+* [[`03d9f15f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/03d9f15f)] - **deps**: update actions&#x2F;setup-node digest to eff380d
+* [[`015fce9e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/015fce9e)] - **deps**: update snyk&#x2F;actions digest to d406fd2
+* [[`0111bdda`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0111bdda)] - **deps**: update codecov&#x2F;codecov-action digest to a05a16b
+* [[`6a410d4a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6a410d4a)] - **deps**: update actions&#x2F;checkout digest to b80ff79 (#1172)
+* [[`e7adc312`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e7adc312)] - **deps**: update actions&#x2F;checkout digest to b1ec302 (#1170)
+* [[`601f73b6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/601f73b6)] - **deps**: update codecov&#x2F;codecov-action digest to 125fc84
+* [[`0eb08078`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0eb08078)] - **deps**: update codecov&#x2F;codecov-action digest to c9dbf6a (#1169)
+* [[`9697d077`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9697d077)] - **deps**: update sigstore&#x2F;cosign-installer digest to b49ef6b (#1168)
+* [[`b2dd8656`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b2dd8656)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 2ef7dd0 (#1167)
+* [[`cd38ede4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cd38ede4)] - **deps**: update actions&#x2F;checkout digest to a5ac7e5 (#1164)
+* [[`fea05016`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fea05016)] - **deps**: update codecov&#x2F;codecov-action digest to d42a336
+* [[`304fea36`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/304fea36)] - **deps**: update docker&#x2F;setup-qemu-action digest to b12b38b
+* [[`cd5a6d78`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cd5a6d78)] - **deps**: update docker&#x2F;setup-buildx-action digest to 5138f76
+* [[`5b336a0a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5b336a0a)] - **deps**: update docker&#x2F;build-push-action digest to 2a53c6c
+* [[`7137a15e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7137a15e)] - **deps**: update codecov&#x2F;codecov-action digest to fd624e5
+* [[`fe5219d6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fe5219d6)] - **deps**: update docker&#x2F;build-push-action digest to df19a79 (#1159)
+* [[`acf89a99`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/acf89a99)] - **deps**: update codecov&#x2F;codecov-action digest to 6d79887 (#1158)
+* [[`9a5fe4b2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9a5fe4b2)] - **deps**: update codecov&#x2F;codecov-action digest to b71af43 (#1157)
+* [[`8fa843f2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8fa843f2)] - **deps**: update sigstore&#x2F;cosign-installer digest to 7a59e5a
+* [[`e09944a1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e09944a1)] - **deps**: update actions&#x2F;setup-go digest to 4ab57d7 (#1151)
+* [[`58598c99`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/58598c99)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to bec7be9 (#1153)
+* [[`c4406c32`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c4406c32)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 5742e2a
+* [[`66cd76a4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/66cd76a4)] - **deps**: update docker&#x2F;build-push-action digest to 6003d32
+* [[`cff3d213`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cff3d213)] - **deps**: update docker&#x2F;setup-buildx-action digest to be3701b
+* [[`cb0ec380`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cb0ec380)] - **deps**: update docker&#x2F;setup-qemu-action digest to a318853 (#1148)
+* [[`89361605`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/89361605)] - **deps**: update softprops&#x2F;action-gh-release digest to 69320db (#1149)
+* [[`45ce4471`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/45ce4471)] - **deps**: update codecov&#x2F;codecov-action digest to f691d46
+* [[`3a81c19c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3a81c19c)] - **deps**: update softprops&#x2F;action-gh-release digest to 3989e4b
+* [[`a2411dc1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a2411dc1)] - **deps**: update docker&#x2F;build-push-action digest to 729f7f4
+* [[`018b1df2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/018b1df2)] - **deps**: update sigstore&#x2F;cosign-installer digest to 8d927bd
+* [[`3923c531`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3923c531)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to dd067d7 (#1142)
+* [[`ad719a16`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ad719a16)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to da2406c
+* [[`106fbea8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/106fbea8)] - **deps**: update codecov&#x2F;codecov-action digest to 5ecb98a
+* [[`919d2527`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/919d2527)] - **deps**: update codecov&#x2F;codecov-action digest to 5a299d1
+* [[`c56323a2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c56323a2)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to e58248d (#1138)
+* [[`cf09b22f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cf09b22f)] - **deps**: update actions&#x2F;checkout digest to 44c2b7a (#1137)
+* [[`28f413da`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/28f413da)] - **deps**: update codecov&#x2F;codecov-action digest to dad251d
+* [[`2479434a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2479434a)] - **deps**: update codecov&#x2F;codecov-action digest to 1290bdd
+* [[`343be18f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/343be18f)] - **deps**: update sigstore&#x2F;cosign-installer digest to 8c9caa0
+* [[`9c6b9267`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9c6b9267)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 2953d07
+* [[`e5661b62`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e5661b62)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 02ef392
+
+
 ## Version 0.44.0 (2024-04-26)
 
 ### Bug fixes
