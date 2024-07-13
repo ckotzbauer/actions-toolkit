@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - name: label
-        uses: ckotzbauer/label-command-action@58cca0c86ce673e50ac31167f03c09bb506ce2f6
+        uses: ckotzbauer/label-command-action@dd6417bb0ed7bbf26df0417153353eb8dc1d6280
         env:
           GITHUB_TOKEN: "${{ secrets.token }}"
