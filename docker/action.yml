@@ -78,6 +78,8 @@ runs:
 
     - name: Build image
       uses: docker/build-push-action@1a162644f9a7e87d8f4b053101d1d9a712edc18c
+      env:
+        DOCKER_BUILD_RECORD_UPLOAD: false
       with:
         github-token: ${{ inputs.github-token }}
         push: ${{ inputs.push }}
