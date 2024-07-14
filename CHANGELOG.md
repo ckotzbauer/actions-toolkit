@@ -1,3 +1,16 @@
+## Version 0.45.1 (2024-07-14)
+
+### Bug fixes
+
+* [[`0a478cc6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0a478cc6)] - **fix**: disable upload
+
+### Dependency updates
+
+* [[`b64a8269`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b64a8269)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to dd6417b
+* [[`68cdc629`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/68cdc629)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 24d3ba4
+* [[`4bb61568`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4bb61568)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 58cca0c
+
+
 ## Version 0.45.0 (2024-07-13)
 
 ### Features and improvements
