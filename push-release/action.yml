@@ -39,7 +39,7 @@ runs:
         branch: ${{ inputs.branch }}
 
     - name: Create release
-      uses: softprops/action-gh-release@0ab9029cac4874ac25cd2d941052851bef4d66f4
+      uses: softprops/action-gh-release@e5aff6f50fb1cde6005b4a5d0ac851e076e3bd7a
       with:
         name: ${{ inputs.version }}
         tag_name: ${{ inputs.version }}
