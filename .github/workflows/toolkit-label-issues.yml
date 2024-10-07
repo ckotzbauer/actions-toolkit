@@ -15,7 +15,7 @@ jobs:
   label-issues:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871
       - name: label
         uses: ckotzbauer/label-command-action@39e6619b5c0fa2155e0ea656af753a92b75aed4a
         env:
