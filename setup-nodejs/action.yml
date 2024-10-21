@@ -9,6 +9,6 @@ runs:
   using: "composite"
   steps:
     - name: Setup Node
-      uses: actions/setup-node@aca7b64a59c0063db8564e0ffdadd3887f1cbae5
+      uses: actions/setup-node@abb238b1313d8ef4d3e3a96d204e08329cafbf85
       with:
         node-version: ${{ inputs.version }}
