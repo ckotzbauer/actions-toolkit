@@ -9,6 +9,6 @@ runs:
   using: "composite"
   steps:
     - name: Setup Golang
-      uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32
+      uses: actions/setup-go@5a083d0e9a84784eb32078397cf5459adecb4c40
       with:
         go-version: ${{ inputs.version }}
