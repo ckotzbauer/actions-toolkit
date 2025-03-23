@@ -10,7 +10,7 @@ on:
       node-version:
         required: false
         type: string
-        default: "20"
+        default: "22"
       version:
         required: true
         type: string
@@ -94,7 +94,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@d7d6bc7722e3daa8354c50bcb52f4837da5e9b6a
         with:
-          cosign-release: 'v2.4.1'
+          cosign-release: 'v2.4.3'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.46.0

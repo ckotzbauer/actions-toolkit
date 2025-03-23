@@ -4,7 +4,7 @@ inputs:
   version:
     description: "Dotnet version to install."
     required: false
-    default: "8.0.x"
+    default: "9.0.x"
 runs:
   using: "composite"
   steps:

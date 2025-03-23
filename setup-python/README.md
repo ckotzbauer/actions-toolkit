@@ -1,12 +1,12 @@
 
-# Setup Node
+# Setup Python
 
-> Installs nodejs.
+> Installs python.
 
 
 ## Inputs
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `version` | Node version to install. | `true` | `"20"` |
+| `version` | Python version to install. | `true` | `"3.13"` |
 

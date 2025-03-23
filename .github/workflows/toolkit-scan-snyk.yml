@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.23.4"
+        default: "1.24.1"
         type: string
       install-node:
         required: false
@@ -17,7 +17,7 @@ on:
         type: boolean
       node-version:
         required: false
-        default: "20"
+        default: "22"
         type: string
       install-dotnet:
         required: false
@@ -25,7 +25,7 @@ on:
         type: boolean
       dotnet-version:
         required: false
-        default: "8.0.x"
+        default: "9.0.x"
         type: string
       install-python:
         required: false
@@ -33,7 +33,7 @@ on:
         type: boolean
       python-version:
         required: false
-        default: "3.12"
+        default: "3.13"
         type: string
       scan-commands:
         required: true
