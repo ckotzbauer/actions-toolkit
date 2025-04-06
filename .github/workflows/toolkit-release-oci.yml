@@ -67,7 +67,7 @@ jobs:
       hashes: ${{ steps.hash.outputs.hashes }}
     steps:
       - name: Checkout
-        uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
         with:
           fetch-depth: 0
           token: ${{ secrets.pat }}
@@ -138,7 +138,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
         with:
           fetch-depth: 0
           token: ${{ secrets.pat }}
