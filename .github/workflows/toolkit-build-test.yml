@@ -114,6 +114,8 @@ on:
         required: false
       encrypted-test-secrets:
         required: false
+      ghcr-password:
+        required: false
 
 permissions:
   contents: read
@@ -207,6 +209,7 @@ jobs:
         uses: ckotzbauer/actions-toolkit/docker@0.47.2
         with:
           context: ${{ inputs.docker-context }}
+          ghcr-password: ${{ secrets.ghcr-password }}
           file: ${{ inputs.docker-file }}
           push: ${{ inputs.docker-push }}
           load: true
