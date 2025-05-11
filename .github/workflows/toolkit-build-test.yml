@@ -94,6 +94,10 @@ on:
         required: false
         default: ""
         type: string
+      docker-push:
+        required: false
+        default: false
+        type: boolean
       scan-image:
         required: false
         default: false
@@ -204,7 +208,7 @@ jobs:
         with:
           context: ${{ inputs.docker-context }}
           file: ${{ inputs.docker-file }}
-          push: false
+          push: ${{ inputs.docker-push }}
           load: true
           platforms: linux/amd64
           tags: |
