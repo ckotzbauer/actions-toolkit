@@ -1,3 +1,10 @@
+## Version 0.47.3 (2025-05-11)
+
+### Bug fixes
+
+* [[`777421f9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/777421f9)] - **fix**: add ghcr-password
+
+
 ## Version 0.47.2 (2025-05-11)
 
 ### Bug fixes
