@@ -1,3 +1,10 @@
+## Version 0.47.4 (2025-05-11)
+
+### Bug fixes
+
+* [[`9fcf4519`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9fcf4519)] - **fix**: load-param
+
+
 ## Version 0.47.3 (2025-05-11)
 
 ### Bug fixes
