@@ -90,6 +90,10 @@ on:
         required: false
         default: "."
         type: string
+      docker-file:
+        required: false
+        default: ""
+        type: string
       scan-image:
         required: false
         default: false
@@ -199,6 +203,7 @@ jobs:
         uses: ckotzbauer/actions-toolkit/docker@0.47.0
         with:
           context: ${{ inputs.docker-context }}
+          file: ${{ inputs.docker-file }}
           push: false
           load: true
           platforms: linux/amd64
