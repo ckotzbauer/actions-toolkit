@@ -1,3 +1,10 @@
+## Version 0.47.2 (2025-05-11)
+
+### Bug fixes
+
+* [[`32e1da85`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/32e1da85)] - **fix**: add push argument
+
+
 ## Version 0.47.1 (2025-05-11)
 
 ### Bug fixes
