@@ -98,6 +98,10 @@ on:
         required: false
         default: false
         type: boolean
+      docker-load:
+        required: false
+        default: true
+        type: boolean
       scan-image:
         required: false
         default: false
@@ -212,7 +216,7 @@ jobs:
           ghcr-password: ${{ secrets.ghcr-password }}
           file: ${{ inputs.docker-file }}
           push: ${{ inputs.docker-push }}
-          load: true
+          load: ${{ inputs.docker-load }}
           platforms: linux/amd64
           tags: |
             ${{ inputs.docker-tag }}
