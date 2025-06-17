@@ -143,7 +143,7 @@ jobs:
           echo "hashes=$(find . -type f | xargs sha256sum | base64 -w0)" >> $GITHUB_OUTPUT
 
       - name: Upload assets
-        uses: actions/upload-artifact@6027e3dd177782cd8ab9af838c04fd81a07f1d47
+        uses: actions/upload-artifact@de65e23aa2b7e23d713bb51fbfcb6d502f8667d8
         with:
           retention-days: 1
           name: assets
