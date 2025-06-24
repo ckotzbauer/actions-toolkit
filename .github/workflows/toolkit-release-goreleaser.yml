@@ -10,7 +10,7 @@ on:
       go-version:
         required: false
         type: string
-        default: "1.24.1"
+        default: "1.24.4"
       version:
         required: true
         type: string
@@ -21,7 +21,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v2.8.1
+        default: v2.10.2
       docker-tags:
         required: true
         type: string
