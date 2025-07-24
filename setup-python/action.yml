@@ -9,6 +9,6 @@ runs:
   using: "composite"
   steps:
     - name: Setup Python
-      uses: actions/setup-python@88ffd4d597d830d67a7369dd33dcb72c0958a807
+      uses: actions/setup-python@3c6f142cc0036d53007e92fa1e327564a4cfb7aa
       with:
         python-version: ${{ inputs.version }}
