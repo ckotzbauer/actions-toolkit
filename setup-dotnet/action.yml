@@ -9,6 +9,6 @@ runs:
   using: "composite"
   steps:
     - name: Setup Dotnet
-      uses: actions/setup-dotnet@06a5327ecf052da066584dc709dc2bc479274b3e
+      uses: actions/setup-dotnet@87c6e1177627274101056947ed58ce11ef42d658
       with:
         dotnet-version: ${{ inputs.version }}
