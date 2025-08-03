@@ -94,7 +94,7 @@ jobs:
         if: ${{ inputs.sign == true }}
         uses: sigstore/cosign-installer@d58896d6a1865668819e1d91763c7751a165e159
         with:
-          cosign-release: 'v2.4.3'
+          cosign-release: 'v2.5.3'
 
       - name: Setup Syft
         uses: ckotzbauer/actions-toolkit/setup-syft@0.48.0
