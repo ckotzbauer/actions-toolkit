@@ -37,13 +37,13 @@ jobs:
 
       - name: Setup Go
         if: ${{ inputs.install-go == true }}
-        uses: ckotzbauer/actions-toolkit/setup-go@0.48.0
+        uses: ckotzbauer/actions-toolkit/setup-go@0.49.0
         with:
           version: ${{ inputs.go-version }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.48.0
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.49.0
         with:
           version: ${{ inputs.node-version }}
 
