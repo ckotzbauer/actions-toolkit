@@ -102,6 +102,10 @@ on:
         required: false
         default: true
         type: boolean
+      docker-platforms:
+        required: false
+        default: linux/amd64
+        type: string
       scan-image:
         required: false
         default: false
@@ -217,7 +221,7 @@ jobs:
           file: ${{ inputs.docker-file }}
           push: ${{ inputs.docker-push }}
           load: ${{ inputs.docker-load }}
-          platforms: linux/amd64
+          platforms: ${{ inputs.docker-platforms }}
           tags: |
             ${{ inputs.docker-tag }}
 
