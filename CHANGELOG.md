@@ -1,3 +1,15 @@
+## Version 0.49.2 (2025-08-26)
+
+### Features and improvements
+
+* [[`f57a0ec9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f57a0ec9)] - **feat**: make platform configurable
+
+### Dependency updates
+
+* [[`3910b36c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3910b36c)] - **deps**: update actions&#x2F;download-artifact digest to abefc31 (#1720)
+* [[`754e0baf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/754e0baf)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to a08664b (#1719)
+
+
 ## Version 0.49.1 (2025-08-25)
 
 ### Bug fixes
