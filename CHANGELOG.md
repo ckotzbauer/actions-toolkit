@@ -1,3 +1,25 @@
+## Version 0.50.0 (2025-09-05)
+
+### Features and improvements
+
+* [[`991062cf`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/991062cf)] - **feat**: several updates and enable docker-cache
+
+### Dependency updates
+
+* [[`9756465e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9756465e)] - **deps**: update docker&#x2F;build-push-action digest to cb8fc75 (#1732)
+* [[`5f821eea`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5f821eea)] - **deps**: update codecov&#x2F;codecov-action digest to 5a10915 (#1731)
+* [[`4d38db15`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4d38db15)] - **deps**: update actions&#x2F;setup-python digest to e797f83 (#1730)
+* [[`452539f5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/452539f5)] - **deps**: update actions&#x2F;stale digest to 3a9db7e (#1729)
+* [[`d4cca5df`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d4cca5df)] - **deps**: update actions&#x2F;setup-node digest to a0853c2 (#1728)
+* [[`a5661ffa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a5661ffa)] - **deps**: update actions&#x2F;setup-node digest to b7234cc (#1727)
+* [[`cd53da32`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cd53da32)] - **deps**: update actions&#x2F;setup-dotnet digest to d4c9434 (#1726)
+* [[`73f85760`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/73f85760)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to 9f006ed (#1725)
+* [[`e881e2d3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e881e2d3)] - **deps**: update actions&#x2F;setup-python digest to 3d1e2d2 (#1724)
+* [[`a6379f28`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a6379f28)] - **deps**: update snyk&#x2F;actions digest to e222141 (#1723)
+* [[`ee41c094`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ee41c094)] - **deps**: update actions&#x2F;setup-python digest to 65b0712 (#1722)
+* [[`f3364763`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f3364763)] - **deps**: update actions&#x2F;setup-node digest to d7a1131 (#1721)
+
+
 ## Version 0.49.2 (2025-08-26)
 
 ### Features and improvements
