@@ -55,6 +55,14 @@ inputs:
     description: Custom cosign-repository
     required: false
     default: ""
+  cache-from:
+    description: Image cache-from
+    required: false
+    default: "type=gha"
+  cache-to:
+    description: Image cache-to
+    required: false
+    default: "type=gha,mode=max"
 runs:
   using: "composite"
   steps:
@@ -90,6 +98,8 @@ runs:
         load: ${{ inputs.load }}
         build-args: ${{ inputs.build-args }}
         tags: ${{ inputs.tags }}
+        cache-from: ${{ inputs.cache-from }}
+        cache-to: ${{ inputs.cache-to }}
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}

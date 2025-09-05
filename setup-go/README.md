@@ -8,5 +8,5 @@
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `version` | Go version to install. | `true` | `"1.24.5"` |
+| `version` | Go version to install. | `true` | `"1.25.0"` |
 
