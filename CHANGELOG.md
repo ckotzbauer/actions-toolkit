@@ -1,3 +1,20 @@
+## Version 0.50.1 (2025-09-11)
+
+### Bug fixes
+
+* [[`3f6ef134`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3f6ef134)] - **fix**: remove caching
+
+### Dependency updates
+
+* [[`1d0d25cd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/1d0d25cd)] - **deps**: update js-devtools&#x2F;npm-publish digest to d76128b (#1739)
+* [[`ac02e795`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ac02e795)] - **deps**: update softprops&#x2F;action-gh-release digest to 5d1b0b1 (#1738)
+* [[`6dc9a700`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6dc9a700)] - **deps**: update actions&#x2F;setup-node digest to cd2651c (#1737)
+* [[`cf0cb158`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/cf0cb158)] - **deps**: update actions&#x2F;setup-dotnet digest to 7403103 (#1736)
+* [[`5a45cfc5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5a45cfc5)] - **deps**: update sigstore&#x2F;cosign-installer digest to bb9dfc1 (#1735)
+* [[`0397c974`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0397c974)] - **deps**: update softprops&#x2F;action-gh-release digest to 6cbd405 (#1734)
+* [[`15ccdb86`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/15ccdb86)] - **deps**: update ckotzbauer&#x2F;label-command-action digest to fbaa6d2 (#1733)
+
+
 ## Version 0.50.0 (2025-09-05)
 
 ### Features and improvements
