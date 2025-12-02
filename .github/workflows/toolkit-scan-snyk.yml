@@ -49,7 +49,7 @@ jobs:
   scan-snyk:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
       - name: Install Go
         if: ${{ inputs.install-go == true }}
         uses: ckotzbauer/actions-toolkit/setup-go@0.50.1
