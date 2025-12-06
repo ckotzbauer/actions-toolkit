@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.25.0"
+        default: "1.25"
         type: string
       install-node:
         required: false
@@ -17,7 +17,7 @@ on:
         type: boolean
       node-version:
         required: false
-        default: 22
+        default: 24
         type: string
       lint-commands:
         required: true

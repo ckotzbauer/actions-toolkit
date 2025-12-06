@@ -8,5 +8,5 @@
 
 | Name | Description | Required | Default |
 | --- | --- | --- | --- |
-| `version` | Node version to install. | `true` | `"22"` |
+| `version` | Node version to install. | `true` | `"24"` |
 

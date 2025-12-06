@@ -10,7 +10,7 @@ on:
       go-version:
         required: false
         type: string
-        default: "1.25.0"
+        default: "1.25"
       version:
         required: true
         type: string
