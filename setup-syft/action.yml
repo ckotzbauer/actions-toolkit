@@ -1,10 +1,10 @@
-name: 'Setup Syft'
-description: 'Installs the Syft binary'
+name: "Setup Syft"
+description: "Installs the Syft binary"
 inputs:
   version:
     description: "Syft version to install."
     required: false
-    default: "v1.32.0"
+    default: "v1.42.1"
 runs:
   using: "composite"
   steps:
