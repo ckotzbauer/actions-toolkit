@@ -1,3 +1,30 @@
+## Version 0.53.0 (2026-03-10)
+
+### Features and improvements
+
+* [[`10db786e`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/10db786e)] - **feat**: add review workflow
+* [[`719a7896`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/719a7896)] - **feat**: add scan-job
+
+### Dependency updates
+
+* [[`04afbfaa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/04afbfaa)] - **deps**: update docker&#x2F;setup-buildx-action digest to c8ad1c5 (#1853)
+* [[`c5239d79`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c5239d79)] - **deps**: update docker&#x2F;setup-qemu-action digest to a4bc6cd (#1854)
+* [[`b4393aa0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b4393aa0)] - **deps**: update docker&#x2F;build-push-action digest to dbac3ca (#1852)
+* [[`4064f2fb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4064f2fb)] - **deps**: update goreleaser&#x2F;goreleaser-action digest to 4be059c (#1838)
+* [[`6987caac`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6987caac)] - **deps**: update actions&#x2F;setup-node digest to 53b8394 (#1839)
+* [[`6f29a120`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6f29a120)] - **deps**: update actions&#x2F;download-artifact digest to 70fc10c (#1840)
+* [[`84bba10c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/84bba10c)] - **deps**: update actions&#x2F;upload-artifact digest to bbbca2d (#1841)
+* [[`05143f31`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/05143f31)] - **deps**: update actions&#x2F;setup-go digest to 27fdb26 (#1842)
+* [[`020c789c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/020c789c)] - **deps**: update actions&#x2F;setup-dotnet digest to c2fa09f (#1843)
+* [[`3dfcd450`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3dfcd450)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 4e1bac3 (#1844)
+* [[`3cc08831`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3cc08831)] - **deps**: update docker&#x2F;setup-qemu-action digest to 72cd565 (#1846)
+* [[`ac1bc754`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ac1bc754)] - **deps**: update docker&#x2F;build-push-action digest to f64672c (#1847)
+* [[`15b7498c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/15b7498c)] - **deps**: update docker&#x2F;setup-buildx-action digest to 8f54c6f (#1848)
+* [[`3924d1ed`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3924d1ed)] - **deps**: update actions&#x2F;setup-python digest to 28f2168 (#1851)
+* [[`0fec2193`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0fec2193)] - **deps**: update js-devtools&#x2F;npm-publish digest to acc94d5 (#1850)
+* [[`6f9c9ca8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6f9c9ca8)] - **deps**: pin dependencies (#1849)
+
+
 ## Version 0.52.0 (2026-02-21)
 
 ### Features and improvements
