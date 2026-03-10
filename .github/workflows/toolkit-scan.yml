@@ -1,0 +1,30 @@
+name: Scan image
+
+on:
+  workflow_call:
+    inputs:
+      docker-tag:
+        required: true
+        type: string
+      fail-on:
+        required: false
+        default: "medium"
+        type: string
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+
+      - name: Scan image
+        uses: ckotzbauer/actions-toolkit/grype@0.52.0
+        with:
+          scan-target: ${{ inputs.docker-tag }}
+          fail-on: ${{ inputs.fail-on }}
+          config-file: ".github/grype.yaml"
