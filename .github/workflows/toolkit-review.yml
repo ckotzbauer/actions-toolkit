@@ -1,0 +1,202 @@
+name: Code Review
+
+on:
+  workflow_call:
+    inputs:
+      model:
+        required: false
+        default: "anthropic/claude-haiku-4.5"
+        type: string
+      conventions:
+        required: false
+        default: ""
+        type: string
+        description: "Additional project-specific conventions to enforce (one per line)"
+      max-comments:
+        required: false
+        default: 10
+        type: number
+        description: "Maximum number of review comments to post"
+    secrets:
+      openrouter-token:
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: >-
+      github.event.pull_request.user.login != 'renovate[bot]' &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        with:
+          fetch-depth: 0
+
+      - name: Get PR diff
+        id: diff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} \
+            -H "Accept: application/vnd.github.v3.diff" > /tmp/pr.diff
+          echo "diff_size=$(wc -c < /tmp/pr.diff)" >> "$GITHUB_OUTPUT"
+
+      - name: Skip if diff is empty
+        if: steps.diff.outputs.diff_size == '0'
+        run: echo "No changes to review" && exit 0
+
+      - name: Run AI review
+        if: steps.diff.outputs.diff_size != '0'
+        env:
+          OPENROUTER_TOKEN: ${{ secrets.openrouter-token }}
+          MODEL: ${{ inputs.model }}
+          CONVENTIONS: ${{ inputs.conventions }}
+          MAX_COMMENTS: ${{ inputs.max-comments }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          DIFF=$(cat /tmp/pr.diff)
+
+          SYSTEM_PROMPT=$(cat <<'SYSPROMPT'
+          You are a precise, senior code reviewer. You review ONLY the changed lines in a pull request diff.
+
+          ## Rules
+
+          1. ONLY comment on lines that are part of the diff (added or modified lines marked with `+`).
+          2. NEVER comment on unchanged code, removed lines, or pre-existing patterns.
+          3. If a pattern already existed before this PR and the PR merely continues it, do NOT flag it.
+          4. Focus exclusively on:
+             - **Correctness**: Logic errors, edge cases, off-by-one errors, null/undefined handling, race conditions.
+             - **Security**: Injection vulnerabilities, credential exposure, insecure defaults, missing input validation at system boundaries.
+             - **Maintainability**: Unclear naming, missing error handling for external calls, overly complex logic that could be simplified.
+          5. Do NOT comment on style, formatting, missing docs/comments, or minor nitpicks.
+          6. Each comment must reference the exact file path and line number from the diff.
+          7. Be concise. One short paragraph per issue.
+
+          ## Output format
+
+          Respond with a JSON array. Each element:
+          ```json
+          {
+            "path": "relative/file/path",
+            "line": <line_number_in_new_file>,
+            "body": "**<Category>**: <description of the issue and suggested fix>"
+          }
+          ```
+
+          If there are no issues, respond with an empty array: `[]`
+
+          Categories: `Correctness`, `Security`, `Maintainability`
+          SYSPROMPT
+          )
+
+          USER_PROMPT="Review the following pull request diff."
+
+          if [ -n "$CONVENTIONS" ]; then
+            USER_PROMPT="$USER_PROMPT
+
+          Additional project conventions to enforce:
+          $CONVENTIONS"
+          fi
+
+          USER_PROMPT="$USER_PROMPT
+
+          \`\`\`diff
+          $DIFF
+          \`\`\`"
+
+          PAYLOAD=$(jq -n \
+            --arg model "$MODEL" \
+            --arg system "$SYSTEM_PROMPT" \
+            --arg user "$USER_PROMPT" \
+            --argjson max_tokens 4096 \
+            '{
+              model: $model,
+              max_tokens: $max_tokens,
+              messages: [
+                { role: "system", content: $system },
+                { role: "user", content: $user }
+              ]
+            }')
+
+          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+            -H "Authorization: Bearer $OPENROUTER_TOKEN" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/$REPO" \
+            -d "$PAYLOAD")
+
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
+
+          if [ -z "$CONTENT" ]; then
+            echo "::warning::No response from AI model"
+            echo "API Response: $RESPONSE"
+            exit 0
+          fi
+
+          # Extract JSON array from response (handle markdown code blocks)
+          COMMENTS=$(echo "$CONTENT" | sed -n '/^\[/,/^\]/p')
+          if [ -z "$COMMENTS" ]; then
+            COMMENTS=$(echo "$CONTENT" | sed -n '/```json/,/```/p' | sed '1d;$d')
+          fi
+          if [ -z "$COMMENTS" ]; then
+            COMMENTS=$(echo "$CONTENT" | sed -n '/```/,/```/p' | sed '1d;$d')
+          fi
+
+          if [ -z "$COMMENTS" ] || [ "$COMMENTS" = "[]" ]; then
+            echo "No issues found."
+            exit 0
+          fi
+
+          # Validate JSON
+          if ! echo "$COMMENTS" | jq empty 2>/dev/null; then
+            echo "::warning::Could not parse AI response as JSON"
+            echo "Raw content: $CONTENT"
+            exit 0
+          fi
+
+          COMMENT_COUNT=$(echo "$COMMENTS" | jq 'length')
+          echo "Found $COMMENT_COUNT review comments"
+
+          # Get the latest commit SHA for the PR
+          COMMIT_SHA=$(gh api "repos/$REPO/pulls/$PR_NUMBER" --jq '.head.sha')
+
+          # Post individual review comments (limited to max-comments)
+          LIMIT=$MAX_COMMENTS
+          if [ "$COMMENT_COUNT" -lt "$LIMIT" ]; then
+            LIMIT=$COMMENT_COUNT
+          fi
+
+          # Build review comments array for the GitHub review API
+          REVIEW_COMMENTS=$(echo "$COMMENTS" | jq --argjson limit "$LIMIT" '[.[:$limit][] | {path: .path, line: .line, body: .body}]')
+
+          # Submit as a single pull request review
+          REVIEW_PAYLOAD=$(jq -n \
+            --arg sha "$COMMIT_SHA" \
+            --arg event "COMMENT" \
+            --argjson comments "$REVIEW_COMMENTS" \
+            '{
+              commit_id: $sha,
+              event: $event,
+              comments: $comments
+            }')
+
+          gh api "repos/$REPO/pulls/$PR_NUMBER/reviews" \
+            --method POST \
+            --input - <<< "$REVIEW_PAYLOAD" || {
+              echo "::warning::Failed to submit review, posting as PR comment instead"
+              SUMMARY=$(echo "$COMMENTS" | jq -r --argjson limit "$LIMIT" '.[:$limit][] | "- **\(.path):\(.line)** — \(.body)"')
+              gh pr comment "$PR_NUMBER" --repo "$REPO" --body "## AI Code Review
+
+          $SUMMARY
+
+          ---
+          *Reviewed by $MODEL via OpenRouter*"
+          }
+
+          echo "Review submitted successfully"

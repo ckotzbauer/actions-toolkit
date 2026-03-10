@@ -19,6 +19,7 @@ The same immutable git-tag is used for all actions and workflows when they are r
 | [Release OCI](.github/workflows/toolkit-release-oci.yml)                 | Releases a OCI-Image project with optional Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release GoReleaser](.github/workflows/toolkit-release-goreleaser.yml)   | Releases a GoReleaser project with a OCI-Image, optional signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
 | [Release Node.js](.github/workflows/toolkit-release-nodejs.yml)          | Releases a Node.js project with an optional OCI-Image, NPM-Package, OCI-Signing (Cosign), SBOM, SLSA provenance generation, Changelog and a GitHub release. |
+| [Code Review](.github/workflows/toolkit-review.yml)            | AI-powered code review for pull requests using Claude via OpenRouter. |
 | [Scan Snyk](.github/workflows/toolkit-scan-snyk.yml)          | Scans a project with Snyk. |
 | [SLSA-Provenance](slsa-provenance/README.md) | Generates a provenance-file from artifacts (SLSA Level 1). It can be optionally signed and attested with Cosign (SLSA Level 2). |
 
