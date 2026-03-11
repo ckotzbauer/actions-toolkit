@@ -63,6 +63,18 @@ jobs:
         run: |
           DIFF=$(cat /tmp/pr.diff)
 
+          # Filter out noisy/generated files that bloat the diff
+          EXCLUDE_PATTERNS='go\.sum|go\.mod|vendor/|\.lock$|package-lock\.json|yarn\.lock|\.pb\.go|_generated\.|\.gen\.go'
+          DIFF=$(cat /tmp/pr.diff | awk -v pat="$EXCLUDE_PATTERNS" '
+              /^diff --git/ {
+                  skip = 0
+                  file = $0
+                  sub(/.*b\//, "", file)
+                  if (match(file, pat)) skip = 1
+              }
+              !skip { print }
+          ')
+
           SYSTEM_PROMPT=$(cat <<'SYSPROMPT'
           You are a precise, senior code reviewer. You review ONLY the changed lines in a pull request diff.
 
@@ -76,8 +88,9 @@ jobs:
              - **Security**: Injection vulnerabilities, credential exposure, insecure defaults, missing input validation at system boundaries.
              - **Maintainability**: Unclear naming, missing error handling for external calls, overly complex logic that could be simplified.
           5. Do NOT comment on style, formatting, missing docs/comments, or minor nitpicks.
-          6. Each comment must reference the exact file path and line number from the diff.
-          7. Be concise. One short paragraph per issue.
+          6. If an error case is handled by logging a warning or error, do NOT describe it as "fails silently" or similar. Logging IS explicit error handling.
+          7. Each comment must reference the exact file path and line number from the diff.
+          8. Be concise. One short paragraph per issue.
 
           ## Output format
 
@@ -96,7 +109,16 @@ jobs:
           SYSPROMPT
           )
 
+          CLAUDE_MD=$(gh api "repos/$REPO/contents/CLAUDE.md" --jq '.content' 2>/dev/null | base64 -d 2>/dev/null || true)
+
           USER_PROMPT="Review the following pull request diff."
+
+          if [ -n "$CLAUDE_MD" ]; then
+          USER_PROMPT="$USER_PROMPT
+
+          Project conventions (from CLAUDE.md):
+          $CLAUDE_MD"
+          fi
 
           if [ -n "$CONVENTIONS" ]; then
             USER_PROMPT="$USER_PROMPT
@@ -113,8 +135,8 @@ jobs:
 
           PAYLOAD=$(jq -n \
             --arg model "$MODEL" \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$USER_PROMPT" \
+            --rawfile system <(printf '%s' "$SYSTEM_PROMPT") \
+            --rawfile user <(printf '%s' "$USER_PROMPT") \
             --argjson max_tokens 4096 \
             '{
               model: $model,
@@ -125,11 +147,11 @@ jobs:
               ]
             }')
 
-          RESPONSE=$(curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
+          RESPONSE=$(printf '%s' "$PAYLOAD" | curl -s -X POST "https://openrouter.ai/api/v1/chat/completions" \
             -H "Authorization: Bearer $OPENROUTER_TOKEN" \
             -H "Content-Type: application/json" \
             -H "HTTP-Referer: https://github.com/$REPO" \
-            -d "$PAYLOAD")
+            -d @-)
 
           CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content // empty')
 

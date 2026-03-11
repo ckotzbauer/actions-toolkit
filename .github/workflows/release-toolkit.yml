@@ -21,11 +21,13 @@ jobs:
         shell: bash
         run: |
           LAST_TAG=$(git describe --abbrev=0 --tags)
+          LAST_SHA=$(git rev-list -1 "${LAST_TAG}")
           find .github/workflows/toolkit-*.yml | while read -r a; do
-              sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" $a;
-              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${{ github.event.inputs.version }}\"#g" $a;
+              sed -i "s#@${LAST_SHA}#@${{ github.event.inputs.version }}#g" $a;
+              sed -i "s# ${LAST_TAG}\$# ${{ github.event.inputs.version }}#g" $a;
           done
-          sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
+          sed -i "s#@${LAST_SHA}#@${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
+          sed -i "s# ${LAST_TAG}\$# ${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@4e1bac38b88eeeb047eb75596a11d91af7d95b97
