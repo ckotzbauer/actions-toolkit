@@ -1,3 +1,15 @@
+## Version 0.53.1 (2026-03-11)
+
+### Bug fixes
+
+* [[`3f1998aa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3f1998aa)] - **fix**: various improvements
+
+### Dependency updates
+
+* [[`6dae1c79`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6dae1c79)] - **deps**: pin ckotzbauer&#x2F;actions-toolkit action to 4d43609 (#1855)
+* [[`04f586f2`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/04f586f2)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.53.0 (#1857)
+
+
 ## Version 0.53.0 (2026-03-10)
 
 ### Features and improvements
