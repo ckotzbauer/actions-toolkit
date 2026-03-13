@@ -2,5 +2,12 @@
   "extends": [
     "github>ckotzbauer/renovate-config:default"
   ],
-  "automerge": false
+  "automerge": false,
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["ckotzbauer/actions-toolkit"],
+      "pinDigests": false
+    }
+  ]
 }
