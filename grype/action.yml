@@ -48,11 +48,16 @@ runs:
       run: |
         curl -sSfL https://raw.githubusercontent.com/ckotzbauer/actions-toolkit/main/.github/grype.yaml > base.yaml
 
+        OUTPUT_FLAG=""
+        if [ -n "${{ inputs.output }}" ]; then
+          OUTPUT_FLAG="--file ${{ inputs.output }}"
+        fi
+
         if test -f "${{ inputs.config-file }}"; then
           yq eval-all '. as $item ireduce ({}; . *+ $item)' base.yaml ${{ inputs.config-file }} > merged.yaml
-          grype ${{ inputs.scan-target }} -c "merged.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}" --file "${{ inputs.output }}"
+          grype ${{ inputs.scan-target }} -c "merged.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}" $OUTPUT_FLAG
         else
-          grype ${{ inputs.scan-target }} -c "base.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}"
+          grype ${{ inputs.scan-target }} -c "base.yaml" -f "${{ inputs.fail-on }}" -o "${{ inputs.format }}" $OUTPUT_FLAG
         fi
       shell: sh
 
