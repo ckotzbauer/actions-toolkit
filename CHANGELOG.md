@@ -1,3 +1,24 @@
+## Version 0.54.0 (2026-03-13)
+
+### Features and improvements
+
+* [[`324942ce`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/324942ce)] - **feat**: upgrade to cosign 3.x
+* [[`5d47bb42`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5d47bb42)] - **feat**: add auto-release workflow
+
+### Bug fixes
+
+* [[`c10919aa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c10919aa)] - **fix**: disable action-pins for own actions
+
+### Dependency updates
+
+* [[`d3d2f0a3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d3d2f0a3)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to d89c0bf (#1862)
+* [[`8cdab112`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8cdab112)] - **deps**: update ad-m&#x2F;github-push-action digest to 4cc7477
+* [[`9ac5480d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9ac5480d)] - **deps**: update actions&#x2F;download-artifact digest to 484a0b5
+* [[`577d9694`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/577d9694)] - **deps**: update actions&#x2F;download-artifact digest to 3e5f45b (#1859)
+* [[`3147eca9`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3147eca9)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 77336b6 (#1856)
+* [[`5170dd93`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5170dd93)] - **deps**: pin ckotzbauer&#x2F;actions-toolkit action to 5eba4a9 (#1858)
+
+
 ## Version 0.53.1 (2026-03-11)
 
 ### Bug fixes
