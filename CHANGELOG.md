@@ -1,3 +1,10 @@
+## Version 0.54.2 (2026-03-13)
+
+### Bug fixes
+
+* [[`91dc44ea`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/91dc44ea)] - **fix**: replace last tag
+
+
 ## Version 0.54.1 (2026-03-13)
 
 ### Bug fixes
