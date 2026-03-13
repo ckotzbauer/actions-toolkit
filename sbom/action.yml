@@ -12,7 +12,7 @@ inputs:
   format:
     description: "SBOM format (json, text, cyclonedx, cyclonedx-json, spdx, spdx-json, table)"
     required: false
-    default: "json"
+    default: "spdx-json"
   output:
     description: "Output file"
     required: false
