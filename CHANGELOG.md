@@ -1,3 +1,15 @@
+## Version 0.55.0 (2026-03-13)
+
+### Features and improvements
+
+* [[`d213ceae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d213ceae)] - **feat**: adjust workflow permissions
+* [[`756d3c21`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/756d3c21)] - **feat**: upload grype sarif reports
+
+### Dependency updates
+
+* [[`e3c0cd61`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e3c0cd61)] - **deps**: update github&#x2F;codeql-action digest to 28deaed (#1864)
+
+
 ## Version 0.54.5 (2026-03-13)
 
 ### Bug fixes
