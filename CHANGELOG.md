@@ -1,3 +1,10 @@
+## Version 0.54.5 (2026-03-13)
+
+### Bug fixes
+
+* [[`6e60a301`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6e60a301)] - **fix**: use spdxjson
+
+
 ## Version 0.54.4 (2026-03-13)
 
 ### Bug fixes
