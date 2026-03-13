@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version'
+        description: "Version"
         required: true
 
 jobs:
@@ -23,10 +23,9 @@ jobs:
           LAST_TAG=$(git describe --abbrev=0 --tags)
           find .github/workflows/toolkit-*.yml | while read -r a; do
               sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" $a;
-              sed -i "s# ${LAST_TAG}\$# ${{ github.event.inputs.version }}#g" $a;
+              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${{ github.event.inputs.version }}\"#g" $a;
           done
           sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
-          sed -i "s# ${LAST_TAG}\$# ${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@d89c0bf65b5e5824bdc459295580884d9995dabf
