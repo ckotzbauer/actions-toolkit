@@ -1,0 +1,208 @@
+name: Auto-Release
+
+on:
+  workflow_call:
+    inputs:
+      release-workflow:
+        description: "Filename of the release workflow to trigger (e.g. release.yml)"
+        required: true
+        type: string
+      bump:
+        description: "Semver bump type. 'auto' analyzes conventional commits since the last tag."
+        required: false
+        default: auto
+        type: string
+      branch:
+        description: "Target branch for the release workflow"
+        required: false
+        default: main
+        type: string
+      tag-prefix:
+        description: "Prefix of release tags (e.g. 'v' for v1.0.0 tags, empty for 1.0.0 tags)"
+        required: false
+        default: ""
+        type: string
+      dry-run:
+        description: "Only calculate version without triggering the release workflow"
+        required: false
+        default: false
+        type: boolean
+      extra-inputs:
+        description: "Additional inputs to pass to the release workflow as JSON (e.g. '{\"key\":\"value\"}')"
+        required: false
+        default: "{}"
+        type: string
+    secrets:
+      token:
+        description: "PAT with repo and workflow access"
+        required: true
+    outputs:
+      version:
+        description: "The calculated release version"
+        value: ${{ jobs.auto-release.outputs.version }}
+      previous-version:
+        description: "The previous release version"
+        value: ${{ jobs.auto-release.outputs.previous-version }}
+      skipped:
+        description: "Whether the release was skipped"
+        value: ${{ jobs.auto-release.outputs.skipped }}
+      bump-type:
+        description: "The determined semver bump type"
+        value: ${{ jobs.auto-release.outputs.bump-type }}
+
+jobs:
+  auto-release:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      previous-version: ${{ steps.version.outputs.previous-version }}
+      skipped: ${{ steps.version.outputs.skipped }}
+      bump-type: ${{ steps.version.outputs.bump-type }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.token }}
+
+      - name: Calculate version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          PREFIX="${{ inputs.tag-prefix }}"
+          BUMP="${{ inputs.bump }}"
+
+          # Get the latest tag
+          LAST_TAG=$(git describe --abbrev=0 --tags 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            echo "::error::No previous tag found. Please create an initial release first."
+            exit 1
+          fi
+
+          echo "Last tag: $LAST_TAG"
+
+          # Strip prefix to get the version number
+          LAST_VERSION="${LAST_TAG#$PREFIX}"
+          echo "previous-version=$LAST_VERSION" >> "$GITHUB_OUTPUT"
+
+          # Check for commits since last tag
+          COMMIT_COUNT=$(git rev-list "${LAST_TAG}..HEAD" --count)
+          echo "Commits since last tag: $COMMIT_COUNT"
+
+          if [ "$COMMIT_COUNT" -eq 0 ]; then
+            echo "No commits since last tag. Skipping release."
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            echo "version=$LAST_VERSION" >> "$GITHUB_OUTPUT"
+            echo "bump-type=none" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "skipped=false" >> "$GITHUB_OUTPUT"
+
+          # Determine bump type
+          if [ "$BUMP" = "auto" ]; then
+            COMMITS=$(git log "${LAST_TAG}..HEAD" --pretty=format:"%s" --no-merges)
+            HAS_BREAKING=false
+            HAS_FEAT=false
+
+            while IFS= read -r msg; do
+              # Check for breaking changes
+              if echo "$msg" | grep -qiE '^[a-z]+(\(.+\))?!:' || echo "$msg" | grep -qi 'BREAKING CHANGE'; then
+                HAS_BREAKING=true
+              fi
+              # Check for features
+              if echo "$msg" | grep -qiE '^feat(\(.+\))?:'; then
+                HAS_FEAT=true
+              fi
+            done <<< "$COMMITS"
+
+            if [ "$HAS_BREAKING" = true ]; then
+              BUMP="major"
+            elif [ "$HAS_FEAT" = true ]; then
+              BUMP="minor"
+            else
+              BUMP="patch"
+            fi
+
+            echo "Auto-detected bump type: $BUMP"
+          fi
+
+          echo "bump-type=$BUMP" >> "$GITHUB_OUTPUT"
+
+          # Parse current version (handles pre-release suffixes)
+          BASE_VERSION=$(echo "$LAST_VERSION" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+')
+          MAJOR=$(echo "$BASE_VERSION" | cut -d. -f1)
+          MINOR=$(echo "$BASE_VERSION" | cut -d. -f2)
+          PATCH=$(echo "$BASE_VERSION" | cut -d. -f3)
+
+          # Calculate new version
+          case "$BUMP" in
+            major)
+              MAJOR=$((MAJOR + 1))
+              MINOR=0
+              PATCH=0
+              ;;
+            minor)
+              MINOR=$((MINOR + 1))
+              PATCH=0
+              ;;
+            patch)
+              PATCH=$((PATCH + 1))
+              ;;
+            *)
+              echo "::error::Invalid bump type: $BUMP. Must be 'major', 'minor', 'patch', or 'auto'."
+              exit 1
+              ;;
+          esac
+
+          NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+          echo "New version: $NEW_VERSION"
+          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger release workflow
+        if: steps.version.outputs.skipped != 'true' && inputs.dry-run != true
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.token }}
+        run: |
+          set -euo pipefail
+
+          VERSION="${{ steps.version.outputs.version }}"
+          WORKFLOW="${{ inputs.release-workflow }}"
+          BRANCH="${{ inputs.branch }}"
+          EXTRA='${{ inputs.extra-inputs }}'
+
+          echo "Triggering workflow '$WORKFLOW' with version '$VERSION' on branch '$BRANCH'"
+
+          # Build the inputs JSON
+          INPUTS=$(echo "$EXTRA" | jq -c --arg v "$VERSION" '. + {version: $v}')
+
+          # Build the -f flags from JSON inputs
+          FLAGS=()
+          for key in $(echo "$INPUTS" | jq -r 'keys[]'); do
+            value=$(echo "$INPUTS" | jq -r --arg k "$key" '.[$k]')
+            FLAGS+=("-f" "${key}=${value}")
+          done
+
+          gh workflow run "$WORKFLOW" --ref "$BRANCH" "${FLAGS[@]}"
+
+          echo "Successfully triggered release workflow for version $VERSION"
+
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.version.outputs.skipped }}" = "true" ]; then
+            echo "### Auto-Release skipped" >> "$GITHUB_STEP_SUMMARY"
+            echo "No commits since last release (**${{ steps.version.outputs.previous-version }}**)." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Auto-Release" >> "$GITHUB_STEP_SUMMARY"
+            echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+            echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+            echo "| **Previous version** | ${{ steps.version.outputs.previous-version }} |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| **New version** | ${{ steps.version.outputs.version }} |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| **Bump type** | ${{ steps.version.outputs.bump-type }} |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| **Dry run** | ${{ inputs.dry-run }} |" >> "$GITHUB_STEP_SUMMARY"
+          fi
