@@ -1,3 +1,10 @@
+## Version 0.54.3 (2026-03-13)
+
+### Bug fixes
+
+* [[`a99bc27f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a99bc27f)] - **fix**: restore old logic
+
+
 ## Version 0.54.2 (2026-03-13)
 
 ### Bug fixes
