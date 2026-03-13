@@ -1,3 +1,10 @@
+## Version 0.54.1 (2026-03-13)
+
+### Bug fixes
+
+* [[`9afbe423`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9afbe423)] - **fix**: adjust format
+
+
 ## Version 0.54.0 (2026-03-13)
 
 ### Features and improvements
