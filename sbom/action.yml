@@ -51,7 +51,7 @@ runs:
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob -y --output-signature ${{ inputs.output }}.sig --output-certificate ${{ inputs.output }}.pem ${{ inputs.output }}
+      run: cosign sign-blob -y --bundle ${{ inputs.output }}.bundle ${{ inputs.output }}
       shell: sh
       env:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
@@ -59,7 +59,7 @@ runs:
     #- name: Verify SBOM
     #  if: ${{ inputs.verify == 'true' }}
     # TODO:
-    #  run: cosign verify-blob --signature ${{ inputs.output }}.sig --certificate ${{ inputs.output }}.pem ${{ inputs.output }}
+    #  run: cosign verify-blob --bundle ${{ inputs.output }}.bundle --certificate-identity-regexp=".*" --certificate-oidc-issuer https://token.actions.githubusercontent.com ${{ inputs.output }}
     #  shell: sh
     #  env:
     #    COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
@@ -67,10 +67,9 @@ runs:
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' && inputs.images != '' }}
       run: |
-        echo "${{ inputs.images }}" | grep -v "^$" | while read -r a; 
-        do 
+        echo "${{ inputs.images }}" | grep -v "^$" | while read -r a;
+        do
           cosign attest -y --type spdx --predicate ${{ inputs.output }} $a;
-          cosign attach sbom --type syft --sbom ${{ inputs.output }} $a;
         done
       shell: sh
       env:
