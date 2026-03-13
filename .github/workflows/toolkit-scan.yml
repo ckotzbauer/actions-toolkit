@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
 
       - name: Scan image
-        uses: ckotzbauer/actions-toolkit/grype@0.54.0 # 0.54.2
+        uses: ckotzbauer/actions-toolkit/grype@0.54.1
         with:
           scan-target: ${{ inputs.docker-tag }}
           fail-on: ${{ inputs.fail-on }}
