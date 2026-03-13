@@ -68,11 +68,9 @@ on:
         required: false
 
 permissions:
-  id-token: write
-  contents: write
-  packages: write
   actions: read
-
+  contents: read
+  packages: read
 jobs:
   build:
     runs-on: ubuntu-latest

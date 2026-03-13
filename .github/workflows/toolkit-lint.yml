@@ -24,10 +24,8 @@ on:
         type: string
 
 permissions:
-  contents: read
-  packages: read
   actions: read
-
+  contents: read
 jobs:
   lint:
     runs-on: ubuntu-latest

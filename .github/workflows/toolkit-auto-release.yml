@@ -51,8 +51,8 @@ on:
         value: ${{ jobs.auto-release.outputs.bump-type }}
 
 permissions:
-  contents: read
-
+  actions: read
+  contents: write
 jobs:
   auto-release:
     runs-on: ubuntu-latest

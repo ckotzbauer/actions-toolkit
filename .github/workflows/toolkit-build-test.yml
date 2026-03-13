@@ -130,10 +130,9 @@ on:
         required: false
 
 permissions:
+  actions: read
   contents: read
   packages: read
-  actions: read
-
 jobs:
   build:
     runs-on: ${{ inputs.platform }}

@@ -15,7 +15,6 @@ permissions:
   contents: read
   packages: read
   security-events: write
-
 jobs:
   scan:
     runs-on: ubuntu-latest
