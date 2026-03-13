@@ -1,3 +1,10 @@
+## Version 0.55.1 (2026-03-13)
+
+### Dependency updates
+
+* [[`90138665`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/90138665)] - **deps**: update github&#x2F;codeql-action action to v4 (#1866)
+
+
 ## Version 0.55.0 (2026-03-13)
 
 ### Features and improvements
