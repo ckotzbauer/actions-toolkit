@@ -1,3 +1,10 @@
+## Version 0.55.4 (2026-03-14)
+
+### Bug fixes
+
+* [[`68c78e76`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/68c78e76)] - **fix**: update versions
+
+
 ## Version 0.55.3 (2026-03-14)
 
 ### Bug fixes
