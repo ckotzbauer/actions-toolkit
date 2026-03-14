@@ -1,3 +1,14 @@
+## Version 0.55.2 (2026-03-14)
+
+### Bug fixes
+
+* [[`566126f5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/566126f5)] - **fix**: adjust permissions
+
+### Common changes
+
+* [[`44b9248b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/44b9248b)] - **chore**: Replace scan-snyk with scan-grype and fix workflow permissions
+
+
 ## Version 0.55.1 (2026-03-13)
 
 ### Dependency updates

@@ -84,7 +84,7 @@ jobs:
           token: ${{ secrets.pat }}
 
       - name: Setup Node
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.1 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.2 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
 
@@ -95,7 +95,7 @@ jobs:
           cosign-release: "v3.0.5"
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.55.1 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.55.2 # 0.54.3
 
       # TODO: Verify base-image when Node.js images are signed
 
@@ -109,7 +109,7 @@ jobs:
 
       - name: Build and push image
         if: ${{ inputs.docker-tags != '' }}
-        uses: ckotzbauer/actions-toolkit/docker@0.55.1 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/docker@0.55.2 # 0.54.3
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -124,7 +124,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.55.1 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/sbom@0.55.2 # 0.54.3
         with:
           images: ${{ inputs.docker-tags }}
           scan-target: "file:package-lock.json"
@@ -195,7 +195,7 @@ jobs:
           access: "public"
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.55.1 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/push-release@0.55.2 # 0.54.3
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}
