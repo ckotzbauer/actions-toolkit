@@ -1,3 +1,23 @@
+## Version 0.55.5 (2026-03-16)
+
+### Bug fixes
+
+* [[`6b7c3d19`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6b7c3d19)] - **fix**: remove .txt
+* [[`7f6769e3`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f6769e3)] - **fix**: prevent code scanning configuration error on CVE findings
+* [[`7f49b30c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7f49b30c)] - **fix**: increase permissions again
+
+### Dependency updates
+
+* [[`c253da46`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c253da46)] - **deps**: update docker&#x2F;build-push-action digest to 1031bc4 (#1871)
+* [[`4e3a0d0d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/4e3a0d0d)] - **deps**: update docker&#x2F;setup-buildx-action digest to 8016837 (#1872)
+* [[`5bc827d8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5bc827d8)] - **deps**: update docker&#x2F;setup-qemu-action digest to b99055d (#1873)
+* [[`27fdc05d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/27fdc05d)] - **deps**: update actions&#x2F;setup-go digest to 8f19afc (#1874)
+* [[`2622cd74`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/2622cd74)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 4532c44 (#1868)
+* [[`932ea4d4`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/932ea4d4)] - **deps**: update softprops&#x2F;action-gh-release digest to 153bb8e (#1870)
+* [[`384de7ae`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/384de7ae)] - **deps**: update softprops&#x2F;action-gh-release digest to 11f9176 (#1869)
+* [[`13a7bcfb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/13a7bcfb)] - **deps**: update ckotzbauer&#x2F;changelog-generator digest to 9973b91 (#1867)
+
+
 ## Version 0.55.4 (2026-03-14)
 
 ### Bug fixes
