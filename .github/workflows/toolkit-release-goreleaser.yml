@@ -190,7 +190,6 @@ jobs:
           files: |
             output/assets/dist/*.tar.gz
             output/assets/dist/*.zip
-            output/assets/dist/*.txt
             output/assets/dist/*.bundle
             output/assets/dist/*.sbom
             output/assets/oci-sbom.json*
