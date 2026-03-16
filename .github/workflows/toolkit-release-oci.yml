@@ -78,10 +78,10 @@ jobs:
           cosign-release: "v3.0.5"
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.55.5 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.55.6 # 0.54.3
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.55.5 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/docker@0.55.6 # 0.54.3
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -96,7 +96,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.55.5 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/sbom@0.55.6 # 0.54.3
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -159,7 +159,7 @@ jobs:
           ls -R output
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.55.5 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/push-release@0.55.6 # 0.54.3
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

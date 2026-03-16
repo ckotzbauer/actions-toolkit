@@ -1,3 +1,10 @@
+## Version 0.55.6 (2026-03-16)
+
+### Bug fixes
+
+* [[`293b53e5`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/293b53e5)] - **fix**: add optional ghcr login
+
+
 ## Version 0.55.5 (2026-03-16)
 
 ### Bug fixes
