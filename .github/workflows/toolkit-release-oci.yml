@@ -56,8 +56,9 @@ on:
 
 permissions:
   actions: read
-  contents: read
-  packages: read
+  id-token: write
+  contents: write
+  packages: write
 jobs:
   build:
     runs-on: ubuntu-latest
