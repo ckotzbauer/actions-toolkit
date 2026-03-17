@@ -1,3 +1,10 @@
+## Version 0.55.8 (2026-03-17)
+
+### Bug fixes
+
+* [[`be9b2f41`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/be9b2f41)] - **fix**: add another permission
+
+
 ## Version 0.55.7 (2026-03-17)
 
 ### Bug fixes
