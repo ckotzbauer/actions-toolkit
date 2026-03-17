@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
 
       - name: GHCR Login
-        if: ${{ secrets.ghcr-password }}
+        if: ${{ secrets.ghcr-password != '' }}
         run: docker login -u ${{ github.actor }} -p ${{ secrets.ghcr-password }} ghcr.io
         shell: sh
 
