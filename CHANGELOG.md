@@ -1,3 +1,12 @@
+## Version 0.55.7 (2026-03-17)
+
+### Bug fixes
+
+* [[`7c7b1e6b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/7c7b1e6b)] - **fix**: smaller permission and check changes
+* [[`aefce09f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/aefce09f)] - **fix**: adjust condition
+* [[`bcd4da2c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/bcd4da2c)] - **fix**: adjust secret-handling
+
+
 ## Version 0.55.6 (2026-03-16)
 
 ### Bug fixes
