@@ -24,6 +24,7 @@ on:
 permissions:
   actions: read
   contents: read
+  pull-requests: write
 jobs:
   review:
     runs-on: ubuntu-latest
