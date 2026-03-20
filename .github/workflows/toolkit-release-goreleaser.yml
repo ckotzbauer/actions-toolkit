@@ -191,6 +191,8 @@ jobs:
             output/assets/dist/*.tar.gz
             output/assets/dist/*.zip
             output/assets/dist/*.bundle
-            output/assets/dist/*.sbom
+            output/assets/dist/*.sigstore.json
+            output/assets/dist/*.sbom.json
+            output/assets/dist/*checksums.txt
             output/assets/oci-sbom.json*
             output/multiple.intoto.jsonl/multiple.intoto.jsonl
