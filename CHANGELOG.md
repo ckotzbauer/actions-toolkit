@@ -1,3 +1,10 @@
+## Version 0.55.9 (2026-03-20)
+
+### Bug fixes
+
+* [[`885d8182`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/885d8182)] - **fix**: adjust output-files
+
+
 ## Version 0.55.8 (2026-03-17)
 
 ### Bug fixes
