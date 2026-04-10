@@ -32,6 +32,15 @@ inputs:
   tags:
     description: "List of tags"
     required: true
+  # cache parameters
+  cache-from:
+    description: "External cache sources (e.g. 'type=gha', 'type=registry,ref=myimage:cache')"
+    required: false
+    default: "type=gha"
+  cache-to:
+    description: "Cache export destinations (e.g. 'type=gha,mode=max', 'type=registry,ref=myimage:cache')"
+    required: false
+    default: "type=gha,mode=max"
   # registry-auth parameters
   ghcr-password:
     description: "Password of ghcr.io."
@@ -90,6 +99,8 @@ runs:
         load: ${{ inputs.load }}
         build-args: ${{ inputs.build-args }}
         tags: ${{ inputs.tags }}
+        cache-from: ${{ inputs.cache-from }}
+        cache-to: ${{ inputs.cache-to }}
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}

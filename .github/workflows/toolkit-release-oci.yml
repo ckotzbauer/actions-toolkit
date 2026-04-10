@@ -42,6 +42,16 @@ on:
         required: false
         default: ""
         type: string
+      docker-cache-from:
+        description: "Docker build cache source."
+        required: false
+        default: "type=gha"
+        type: string
+      docker-cache-to:
+        description: "Docker build cache destination."
+        required: false
+        default: "type=gha,mode=max"
+        type: string
     secrets:
       token:
         required: true
@@ -92,6 +102,8 @@ jobs:
           verify: ${{ inputs.verify }}
           cosign-repository: ${{ inputs.cosign-repository }}
           platforms: ${{ inputs.docker-platforms }}
+          cache-from: ${{ inputs.docker-cache-from }}
+          cache-to: ${{ inputs.docker-cache-to }}
           tags: ${{ inputs.docker-tags }}
 
       - name: Generate SBOM

@@ -5,6 +5,14 @@ inputs:
     description: "Python version to install."
     required: false
     default: "3.13"
+  cache:
+    description: "Package manager for dependency caching (e.g. 'pip', 'pipenv', 'poetry'). Empty to disable."
+    required: false
+    default: "pip"
+  cache-dependency-path:
+    description: "Path to dependency file(s) for cache key generation (e.g. 'requirements.txt')."
+    required: false
+    default: ""
 runs:
   using: "composite"
   steps:
@@ -12,3 +20,5 @@ runs:
       uses: actions/setup-python@28f2168f4d98ee0445e3c6321f6e6616c83dd5ec
       with:
         python-version: ${{ inputs.version }}
+        cache: ${{ inputs.cache }}
+        cache-dependency-path: ${{ inputs.cache-dependency-path }}

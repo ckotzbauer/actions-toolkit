@@ -5,6 +5,14 @@ inputs:
     description: "Go version to install."
     required: false
     default: "1.26"
+  cache:
+    description: "Enable dependency caching."
+    required: false
+    default: "true"
+  cache-dependency-path:
+    description: "Path to dependency file(s) for cache key generation (e.g. 'go.sum', 'subdir/**/go.sum')."
+    required: false
+    default: ""
 runs:
   using: "composite"
   steps:
@@ -12,3 +20,5 @@ runs:
       uses: actions/setup-go@8f19afcc704763637be6b1718da0af52ca05785d
       with:
         go-version: ${{ inputs.version }}
+        cache: ${{ inputs.cache }}
+        cache-dependency-path: ${{ inputs.cache-dependency-path }}

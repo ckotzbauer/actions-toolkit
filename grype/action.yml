@@ -31,13 +31,29 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Cache Grype binary
+      id: cache-grype
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+      with:
+        path: /usr/local/bin/grype
+        key: grype-${{ inputs.version }}-${{ runner.os }}
+
     - name: Setup Grype
+      if: steps.cache-grype.outputs.cache-hit != 'true'
       run: |
         curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
       shell: sh
 
-    - name: Setup YQ
+    - name: Cache YQ binary
       if: ${{ inputs.install-only != 'true' }}
+      id: cache-yq
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+      with:
+        path: /usr/local/bin/yq
+        key: yq-latest-${{ runner.os }}
+
+    - name: Setup YQ
+      if: ${{ inputs.install-only != 'true' && steps.cache-yq.outputs.cache-hit != 'true' }}
       run: |
         curl -sSfL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /usr/local/bin/yq
         chmod +x /usr/local/bin/yq

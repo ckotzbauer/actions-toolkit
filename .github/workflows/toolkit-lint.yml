@@ -11,6 +11,11 @@ on:
         required: false
         default: "1.26"
         type: string
+      go-cache-dependency-path:
+        description: "Path to Go dependency file(s) for cache key generation."
+        required: false
+        default: ""
+        type: string
       install-node:
         required: false
         default: false
@@ -18,6 +23,16 @@ on:
       node-version:
         required: false
         default: 24
+        type: string
+      node-cache:
+        description: "Node.js package manager for caching ('npm', 'yarn', 'pnpm'). Empty to disable."
+        required: false
+        default: "npm"
+        type: string
+      node-cache-dependency-path:
+        description: "Path to Node.js dependency file(s) for cache key generation."
+        required: false
+        default: ""
         type: string
       lint-commands:
         required: true
@@ -38,12 +53,15 @@ jobs:
         uses: ckotzbauer/actions-toolkit/setup-go@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.go-version }}
+          cache-dependency-path: ${{ inputs.go-cache-dependency-path }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
         uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
+          cache: ${{ inputs.node-cache }}
+          cache-dependency-path: ${{ inputs.node-cache-dependency-path }}
 
       - name: Lint
         run: ${{ inputs.lint-commands }}

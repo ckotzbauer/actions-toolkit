@@ -11,6 +11,16 @@ on:
         required: false
         type: string
         default: "24"
+      node-cache:
+        description: "Node.js package manager for caching ('npm', 'yarn', 'pnpm'). Empty to disable."
+        required: false
+        default: "npm"
+        type: string
+      node-cache-dependency-path:
+        description: "Path to Node.js dependency file(s) for cache key generation."
+        required: false
+        default: ""
+        type: string
       version:
         required: true
         type: string
@@ -53,6 +63,16 @@ on:
         required: false
         default: ""
         type: string
+      docker-cache-from:
+        description: "Docker build cache source."
+        required: false
+        default: "type=gha"
+        type: string
+      docker-cache-to:
+        description: "Docker build cache destination."
+        required: false
+        default: "type=gha,mode=max"
+        type: string
     secrets:
       token:
         required: true
@@ -88,6 +108,8 @@ jobs:
         uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
+          cache: ${{ inputs.node-cache }}
+          cache-dependency-path: ${{ inputs.node-cache-dependency-path }}
 
       - name: Setup Cosign
         if: ${{ inputs.sign == true }}
@@ -121,6 +143,8 @@ jobs:
           verify: ${{ inputs.verify }}
           cosign-repository: ${{ inputs.cosign-repository }}
           platforms: ${{ inputs.docker-platforms }}
+          cache-from: ${{ inputs.docker-cache-from }}
+          cache-to: ${{ inputs.docker-cache-to }}
           tags: ${{ inputs.docker-tags }}
 
       - name: Generate SBOM

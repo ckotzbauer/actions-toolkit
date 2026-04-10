@@ -15,6 +15,11 @@ on:
         required: false
         default: "1.26"
         type: string
+      go-cache-dependency-path:
+        description: "Path to Go dependency file(s) for cache key generation (e.g. 'go.sum', 'subdir/**/go.sum')."
+        required: false
+        default: ""
+        type: string
       install-node:
         required: false
         default: false
@@ -22,6 +27,16 @@ on:
       node-version:
         required: false
         default: 24
+        type: string
+      node-cache:
+        description: "Node.js package manager for caching ('npm', 'yarn', 'pnpm'). Empty to disable."
+        required: false
+        default: "npm"
+        type: string
+      node-cache-dependency-path:
+        description: "Path to Node.js dependency file(s) for cache key generation."
+        required: false
+        default: ""
         type: string
       install-dotnet:
         required: false
@@ -31,6 +46,11 @@ on:
         required: false
         default: "9.0.x"
         type: string
+      dotnet-cache-dependency-path:
+        description: "Path to .NET dependency file(s) for cache key generation."
+        required: false
+        default: ""
+        type: string
       install-python:
         required: false
         default: false
@@ -38,6 +58,16 @@ on:
       python-version:
         required: false
         default: "3.13"
+        type: string
+      python-cache:
+        description: "Python package manager for caching ('pip', 'pipenv', 'poetry'). Empty to disable."
+        required: false
+        default: "pip"
+        type: string
+      python-cache-dependency-path:
+        description: "Path to Python dependency file(s) for cache key generation."
+        required: false
+        default: ""
         type: string
       install-goreleaser:
         required: false
@@ -110,6 +140,16 @@ on:
         required: false
         default: linux/amd64
         type: string
+      docker-cache-from:
+        description: "Docker build cache source (e.g. 'type=gha', 'type=registry,ref=myimage:cache')."
+        required: false
+        default: "type=gha"
+        type: string
+      docker-cache-to:
+        description: "Docker build cache destination (e.g. 'type=gha,mode=max')."
+        required: false
+        default: "type=gha,mode=max"
+        type: string
       scan-image:
         required: false
         default: false
@@ -145,24 +185,30 @@ jobs:
         uses: ckotzbauer/actions-toolkit/setup-go@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.go-version }}
+          cache-dependency-path: ${{ inputs.go-cache-dependency-path }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
         uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
+          cache: ${{ inputs.node-cache }}
+          cache-dependency-path: ${{ inputs.node-cache-dependency-path }}
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
         uses: ckotzbauer/actions-toolkit/setup-dotnet@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.dotnet-version }}
+          cache-dependency-path: ${{ inputs.dotnet-cache-dependency-path }}
 
       - name: Setup Python
         if: ${{ inputs.install-python == true }}
         uses: ckotzbauer/actions-toolkit/setup-python@0.55.9 # 0.54.3
         with:
           version: ${{ inputs.python-version }}
+          cache: ${{ inputs.python-cache }}
+          cache-dependency-path: ${{ inputs.python-cache-dependency-path }}
 
       - name: Setup Cosign
         if: ${{ inputs.install-cosign == true }}
@@ -177,14 +223,37 @@ jobs:
           version: ${{ inputs.goreleaser-version }}
           install-only: true
 
-      - name: Setup Kubebuilder
+      - name: Cache Kubebuilder
         if: ${{ inputs.install-kubebuilder == true }}
+        id: cache-kubebuilder
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: /usr/local/kubebuilder/bin
+          key: kubebuilder-${{ inputs.kubebuilder-version }}-${{ runner.os }}
+
+      - name: Setup Kubebuilder
+        if: ${{ inputs.install-kubebuilder == true && steps.cache-kubebuilder.outputs.cache-hit != 'true' }}
         uses: RyanSiu1995/kubebuilder-action@7170cb0476187070ae04cbb6cee305e809de2693
         with:
           version: ${{ inputs.kubebuilder-version }}
 
-      - name: Setup AWS CLI
+      - name: Restore Kubebuilder PATH
+        if: ${{ inputs.install-kubebuilder == true && steps.cache-kubebuilder.outputs.cache-hit == 'true' }}
+        run: echo "/usr/local/kubebuilder/bin" >> $GITHUB_PATH
+        shell: sh
+
+      - name: Cache AWS CLI
         if: ${{ inputs.install-awscli == true }}
+        id: cache-awscli
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: |
+            /usr/local/aws-cli
+            /usr/local/bin/aws
+          key: awscli-${{ runner.os }}
+
+      - name: Setup AWS CLI
+        if: ${{ inputs.install-awscli == true && steps.cache-awscli.outputs.cache-hit != 'true' }}
         uses: unfor19/install-aws-cli-action@f5b46b7f32cf5e7ebd652656c5036bf83dd1e60c
 
       - name: Setup Kubectl
@@ -225,6 +294,8 @@ jobs:
           push: ${{ inputs.docker-push }}
           load: ${{ inputs.docker-load }}
           platforms: ${{ inputs.docker-platforms }}
+          cache-from: ${{ inputs.docker-cache-from }}
+          cache-to: ${{ inputs.docker-cache-to }}
           tags: |
             ${{ inputs.docker-tag }}
 
