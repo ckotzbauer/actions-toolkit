@@ -226,7 +226,7 @@ jobs:
       - name: Cache Kubebuilder
         if: ${{ inputs.install-kubebuilder == true }}
         id: cache-kubebuilder
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: /usr/local/kubebuilder/bin
           key: kubebuilder-${{ inputs.kubebuilder-version }}-${{ runner.os }}
@@ -245,7 +245,7 @@ jobs:
       - name: Cache AWS CLI
         if: ${{ inputs.install-awscli == true }}
         id: cache-awscli
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: |
             /usr/local/aws-cli
