@@ -34,7 +34,7 @@ jobs:
         shell: sh
 
       - name: Scan image
-        uses: ckotzbauer/actions-toolkit/grype@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/grype@0.56.0 # 0.54.3
         with:
           scan-target: ${{ inputs.docker-tag }}
           fail-on: ${{ inputs.fail-on }}

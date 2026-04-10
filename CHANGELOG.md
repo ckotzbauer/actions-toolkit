@@ -1,3 +1,10 @@
+## Version 0.56.0 (2026-04-10)
+
+### Features and improvements
+
+* [[`82e72fbd`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/82e72fbd)] - **feat**: add caching
+
+
 ## Version 0.55.9 (2026-03-20)
 
 ### Bug fixes

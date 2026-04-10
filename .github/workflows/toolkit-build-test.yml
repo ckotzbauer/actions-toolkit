@@ -182,14 +182,14 @@ jobs:
 
       - name: Setup Go
         if: ${{ inputs.install-go == true }}
-        uses: ckotzbauer/actions-toolkit/setup-go@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-go@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.go-version }}
           cache-dependency-path: ${{ inputs.go-cache-dependency-path }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
           cache: ${{ inputs.node-cache }}
@@ -197,14 +197,14 @@ jobs:
 
       - name: Setup Dotnet
         if: ${{ inputs.install-dotnet == true }}
-        uses: ckotzbauer/actions-toolkit/setup-dotnet@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-dotnet@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.dotnet-version }}
           cache-dependency-path: ${{ inputs.dotnet-cache-dependency-path }}
 
       - name: Setup Python
         if: ${{ inputs.install-python == true }}
-        uses: ckotzbauer/actions-toolkit/setup-python@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-python@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.python-version }}
           cache: ${{ inputs.python-cache }}
@@ -264,7 +264,7 @@ jobs:
 
       - name: Setup Syft
         if: ${{ inputs.install-syft == true }}
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.56.0 # 0.54.3
 
       - name: Build
         if: ${{ inputs.build-commands != '' }}
@@ -286,7 +286,7 @@ jobs:
 
       - name: Build image
         if: ${{ inputs.build-image == true }}
-        uses: ckotzbauer/actions-toolkit/docker@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/docker@0.56.0 # 0.54.3
         with:
           context: ${{ inputs.docker-context }}
           ghcr-password: ${{ secrets.ghcr-password }}
@@ -301,7 +301,7 @@ jobs:
 
       - name: Scan image
         if: ${{ inputs.scan-image == true }}
-        uses: ckotzbauer/actions-toolkit/grype@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/grype@0.56.0 # 0.54.3
         with:
           scan-target: ${{ inputs.docker-tag }}
           fail-on: "medium"

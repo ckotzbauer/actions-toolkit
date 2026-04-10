@@ -50,14 +50,14 @@ jobs:
 
       - name: Setup Go
         if: ${{ inputs.install-go == true }}
-        uses: ckotzbauer/actions-toolkit/setup-go@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-go@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.go-version }}
           cache-dependency-path: ${{ inputs.go-cache-dependency-path }}
 
       - name: Setup Node
         if: ${{ inputs.install-node == true }}
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.55.9 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.56.0 # 0.54.3
         with:
           version: ${{ inputs.node-version }}
           cache: ${{ inputs.node-cache }}
