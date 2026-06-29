@@ -10,7 +10,7 @@ runs:
   steps:
     - name: Cache Syft binary
       id: cache-syft
-      uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
       with:
         path: /usr/local/bin/syft
         key: syft-${{ inputs.version }}-${{ runner.os }}
