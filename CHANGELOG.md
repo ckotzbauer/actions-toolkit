@@ -1,3 +1,20 @@
+## Version 0.57.0 (2026-08-23)
+
+### Features and improvements
+
+* [[`fee7906d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/fee7906d)] - **feat**: version updates
+
+### Dependency updates
+
+* [[`5335bc4b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5335bc4b)] - **deps**: update sigstore&#x2F;cosign-installer action to v4.1.2 (#1883)
+* [[`0929de53`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0929de53)] - **deps**: update azure&#x2F;setup-kubectl action to v5 (#1887)
+* [[`04c16d1f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/04c16d1f)] - **deps**: update github&#x2F;codeql-action action to v4.37.7 (#1888)
+* [[`464a4e5a`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/464a4e5a)] - **deps**: update actions&#x2F;cache action to v6 (#1889)
+* [[`e617d5aa`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e617d5aa)] - **deps**: update dependency sigstore&#x2F;cosign to v3.1.3 (#1890)
+* [[`258a586f`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/258a586f)] - **deps**: update github&#x2F;codeql-action action to v4.36.0 (#1878)
+* [[`afab0f74`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/afab0f74)] - **deps**: update actions&#x2F;cache action to v5 (#1885)
+
+
 ## Version 0.56.0 (2026-04-10)
 
 ### Features and improvements
