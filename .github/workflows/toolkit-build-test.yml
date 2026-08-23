@@ -13,7 +13,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.26"
+        default: "1.27"
         type: string
       go-cache-dependency-path:
         description: "Path to Go dependency file(s) for cache key generation (e.g. 'go.sum', 'subdir/**/go.sum')."
@@ -44,7 +44,7 @@ on:
         type: boolean
       dotnet-version:
         required: false
-        default: "9.0.x"
+        default: "10.0.x"
         type: string
       dotnet-cache-dependency-path:
         description: "Path to .NET dependency file(s) for cache key generation."
@@ -76,7 +76,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v2.13.3
+        default: v2.17.0
       install-kubebuilder:
         required: false
         default: false
@@ -92,7 +92,7 @@ on:
       kubectl-version:
         required: false
         type: string
-        default: v1.35.1
+        default: v1.36.4
       install-cosign:
         required: false
         default: false

@@ -9,7 +9,7 @@ on:
         type: boolean
       go-version:
         required: false
-        default: "1.26"
+        default: "1.27"
         type: string
       go-cache-dependency-path:
         description: "Path to Go dependency file(s) for cache key generation."

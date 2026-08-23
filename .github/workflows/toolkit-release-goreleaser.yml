@@ -10,7 +10,7 @@ on:
       go-version:
         required: false
         type: string
-        default: "1.26"
+        default: "1.27"
       go-cache-dependency-path:
         description: "Path to Go dependency file(s) for cache key generation."
         required: false
@@ -26,7 +26,7 @@ on:
       goreleaser-version:
         required: false
         type: string
-        default: v2.13.3
+        default: v2.17.0
       docker-tags:
         required: true
         type: string

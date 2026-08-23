@@ -6,4 +6,4 @@
 
 | Name      | Description            | Required | Default    |
 | --------- | ---------------------- | -------- | ---------- |
-| `version` | Go version to install. | `true`   | `"1.26.0"` |
+| `version` | Go version to install. | `true`   | `"1.27.0"` |

@@ -1,12 +1,9 @@
-
 # Setup Syft
 
 > Installs the syft binary.
 
-
 ## Inputs
 
-| Name | Description | Required | Default |
-| --- | --- | --- | --- |
-| `version` | Syft version to install. | `true` | `"v1.27.1"` |
-
+| Name      | Description              | Required | Default     |
+| --------- | ------------------------ | -------- | ----------- |
+| `version` | Syft version to install. | `true`   | `"v1.51.0"` |
