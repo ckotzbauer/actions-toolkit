@@ -16,20 +16,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v6.0.2
         with:
           fetch-depth: 0
+          persist-credentials: false
           token: ${{ secrets.REPO_ACCESS }}
 
       - name: Update versions
         shell: bash
+        env:
+          NEW_VERSION: ${{ github.event.inputs.version }}
         run: |
           LAST_TAG=$(git describe --abbrev=0 --tags)
           find .github/workflows/toolkit-*.yml | while read -r a; do
-              sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" $a;
-              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${{ github.event.inputs.version }}\"#g" $a;
+              sed -i "s#@${LAST_TAG}#@${NEW_VERSION}#g" $a;
+              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${NEW_VERSION}\"#g" $a;
           done
-          sed -i "s#@${LAST_TAG}#@${{ github.event.inputs.version }}#g" .github/workflows/release-toolkit.yml;
+          sed -i "s#@${LAST_TAG}#@${NEW_VERSION}#g" .github/workflows/release-toolkit.yml;
 
       - name: Generate Changelog
         uses: ckotzbauer/changelog-generator@4532c44e171ec8a55980f35f4025285c2c2fd309

@@ -63,9 +63,10 @@ jobs:
       bump-type: ${{ steps.version.outputs.bump-type }}
     steps:
       - name: Checkout
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v6.0.2
         with:
           fetch-depth: 0
+          persist-credentials: false
           token: ${{ secrets.token }}
 
       - name: Calculate version

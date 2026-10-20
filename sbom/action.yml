@@ -25,10 +25,6 @@ inputs:
     description: "Attest the images with the generated SBOMs"
     required: false
     default: 'false'
-  verify:
-    description: "Verify SBOM with cosign"
-    required: false
-    default: 'false'
   cosign-repository:
     description: Custom cosign-repository
     required: false
@@ -38,35 +34,27 @@ runs:
   steps:
     - name: Generate SBOM
       if: ${{ inputs.images != '' }}
-      run: |
+      run: | # zizmor: ignore[template-injection] trusted consumer input
         NAME=$(echo "${{ inputs.images }}" | head -n1)
         syft $NAME -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
       shell: sh
 
     - name: Generate SBOM
       if: ${{ inputs.scan-target != '' }}
-      run: |
+      run: | # zizmor: ignore[template-injection] trusted consumer input
         syft ${{ inputs.scan-target }} -o ${{ inputs.format }} | jq --compact-output > ${{ inputs.output }}
       shell: sh
 
     - name: Sign SBOM
       if: ${{ inputs.sign == 'true' }}
-      run: cosign sign-blob -y --bundle ${{ inputs.output }}.bundle ${{ inputs.output }}
+      run: cosign sign-blob -y --bundle ${{ inputs.output }}.bundle ${{ inputs.output }} # zizmor: ignore[template-injection] trusted consumer input
       shell: sh
       env:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
-    #- name: Verify SBOM
-    #  if: ${{ inputs.verify == 'true' }}
-    # TODO:
-    #  run: cosign verify-blob --bundle ${{ inputs.output }}.bundle --certificate-identity-regexp=".*" --certificate-oidc-issuer https://token.actions.githubusercontent.com ${{ inputs.output }}
-    #  shell: sh
-    #  env:
-    #    COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
-
     - name: Attest images with SBOM
       if: ${{ inputs.attest == 'true' && inputs.images != '' }}
-      run: |
+      run: | # zizmor: ignore[template-injection] trusted consumer input
         echo "${{ inputs.images }}" | grep -v "^$" | while read -r a;
         do
           cosign attest -y --type spdxjson --predicate ${{ inputs.output }} $a;

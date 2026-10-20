@@ -27,10 +27,14 @@ runs:
   steps:
     - name: Commit files
       shell: sh
-      run: |
+      run: | # zizmor: ignore[template-injection] trusted consumer input
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "chore: release ${{ inputs.version }}" -a
+        if git diff --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore: release ${{ inputs.version }}" -a
+        fi
 
     - name: Push changes
       uses: ad-m/github-push-action@4cc74773234f74829a8c21bc4d69dd4be9cfa599
@@ -38,8 +42,8 @@ runs:
         github_token: ${{ inputs.pat }}
         branch: ${{ inputs.branch }}
 
-    - name: Create release
-      uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe
+    - name: Create release # zizmor: ignore[superfluous-actions] intentional for pre-gh compatibility
+      uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2.6.1
       with:
         name: ${{ inputs.version }}
         tag_name: ${{ inputs.version }}

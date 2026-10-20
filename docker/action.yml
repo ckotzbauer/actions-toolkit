@@ -56,37 +56,45 @@ inputs:
     description: "Sign image with cosign"
     required: false
     default: 'false'
-  verify:
-    description: "Verify image with cosign"
-    required: false
-    default: 'false'
   cosign-repository:
     description: Custom cosign-repository
     required: false
     default: ""
+  # provenance
+  provenance:
+    description: "Generate buildx SLSA provenance attestation for the image. Only works when pushing to a registry."
+    required: false
+    default: 'false'
 runs:
   using: "composite"
   steps:
+    # QEMU is only needed when building for foreign architectures (multi-arch).
     - name: Set up QEMU
       id: qemu
-      uses: docker/setup-qemu-action@b99055d79363ee29ab720d5409f9c7007360c18b
+      if: ${{ inputs.platforms != 'linux/amd64' && inputs.platforms != '' }}
+      uses: docker/setup-qemu-action@b99055d79363ee29ab720d5409f9c7007360c18b # v4.0.0
 
     - name: Set up Docker Buildx
       id: buildx
-      uses: docker/setup-buildx-action@8016837eba79c3b51bf2025379f48b6fc50f1236
+      uses: docker/setup-buildx-action@8016837eba79c3b51bf2025379f48b6fc50f1236 # v4.0.0
 
     - name: GHCR Login
       if: ${{ inputs.ghcr-password }}
-      run: docker login -u ${{ github.actor }} -p ${{ inputs.ghcr-password }} ghcr.io
+      env:
+        GHCR_PASSWORD: ${{ inputs.ghcr-password }}
+      run: echo "$GHCR_PASSWORD" | docker login -u ${{ github.actor }} --password-stdin ghcr.io # zizmor: ignore[template-injection] trusted input
       shell: sh
 
     - name: DockerHub Login
       if: ${{ inputs.dockerhub-password }}
-      run: docker login -u ${{ inputs.dockerhub-user }} -p ${{ inputs.dockerhub-password }}
+      env:
+        DOCKERHUB_USER: ${{ inputs.dockerhub-user }}
+        DOCKERHUB_PASSWORD: ${{ inputs.dockerhub-password }}
+      run: echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USER" --password-stdin
       shell: sh
 
     - name: Build image
-      uses: docker/build-push-action@1031bc45c52785b1a3a0db59db1e207f047a88c5
+      uses: docker/build-push-action@1031bc45c52785b1a3a0db59db1e207f047a88c5 # v7.0.0
       env:
         DOCKER_BUILD_RECORD_UPLOAD: false
       with:
@@ -101,18 +109,11 @@ runs:
         tags: ${{ inputs.tags }}
         cache-from: ${{ inputs.cache-from }}
         cache-to: ${{ inputs.cache-to }}
+        provenance: ${{ inputs.provenance }}
 
     - name: Sign image
       if: ${{ inputs.sign == 'true' }}
-      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign sign -y -r $a; done
+      run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign sign -y -r $a; done # zizmor: ignore[template-injection] trusted input
       shell: sh
       env:
         COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
-
-    #- name: Verify image
-    #  if: ${{ inputs.verify == 'true' }}
-    #  # TODO:
-    #  run: echo "${{ inputs.tags }}" | grep -v "^$" | while read -r a; do cosign verify --certificate-identity TODO --certificate-oidc-issuer https://token.actions.githubusercontent.com $a; done
-    #  shell: sh
-    #  env:
-    #    COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}

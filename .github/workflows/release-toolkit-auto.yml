@@ -1,0 +1,24 @@
+name: Auto-Release Toolkit
+
+# Dogfooding: this repository releases itself through its own auto-release
+# workflow. Trigger manually; the calculated version is passed to
+# release-toolkit.yml via `gh workflow run`.
+#
+# Note: `secrets.REPO_ACCESS` must be a PAT with permission to dispatch
+# workflows (classic PAT: `repo` scope; fine-grained: `actions: write`),
+# so that `gh workflow run` can trigger release-toolkit.yml.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  auto-release:
+    uses: ./.github/workflows/toolkit-auto-release.yml # zizmor: ignore[self-repository] actionlint (v1.7.12) does not support the $/ syntax yet
+    with:
+      release-workflow: release-toolkit.yml
+      branch: main
+    secrets:
+      token: ${{ secrets.REPO_ACCESS }}

@@ -1,0 +1,32 @@
+# zizmor configuration.
+#
+# Design notes:
+# - template-injection: these are shared workflows/actions where consumers pass
+#   build commands and config as `inputs.*`. The values come from the calling
+#   repository's own workflow file (trusted), not from attacker-controlled
+#   event payloads. This is the documented trust model of this toolkit.
+#   Composite action findings are ignored inline in the action files instead
+#   (zizmor cannot ignore action files via config).
+# - unpinned-uses: this repository references its own actions/workflows by
+#   immutable semver tag (e.g. ckotzbauer/actions-toolkit/docker@0.56.0), the
+#   release mechanism documented in the README. Third-party actions are pinned
+#   by SHA.
+rules:
+  template-injection:
+    ignore:
+      - toolkit-auto-release.yml
+      - toolkit-build-test.yml
+      - toolkit-lint.yml
+      - toolkit-release-goreleaser.yml
+      - toolkit-release-nodejs.yml
+      - toolkit-release-oci.yml
+      - toolkit-scan.yml
+  unpinned-uses:
+    ignore:
+      - release-toolkit.yml
+      - toolkit-build-test.yml
+      - toolkit-lint.yml
+      - toolkit-release-goreleaser.yml
+      - toolkit-release-nodejs.yml
+      - toolkit-release-oci.yml
+      - toolkit-scan.yml

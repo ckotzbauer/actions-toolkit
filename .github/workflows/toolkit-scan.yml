@@ -26,11 +26,13 @@ jobs:
       GHCR_PASSWORD: ${{ secrets.ghcr-password }}
     steps:
       - name: Checkout
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: GHCR Login
         if: ${{ env.GHCR_PASSWORD != '' }}
-        run: docker login -u ${{ github.actor }} -p "$GHCR_PASSWORD" ghcr.io
+        run: echo "$GHCR_PASSWORD" | docker login -u ${{ github.actor }} --password-stdin ghcr.io
         shell: sh
 
       - name: Scan image

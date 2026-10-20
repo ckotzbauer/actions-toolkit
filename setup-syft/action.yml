@@ -17,6 +17,6 @@ runs:
 
     - name: Setup Syft
       if: steps.cache-syft.outputs.cache-hit != 'true'
-      run: |
-        curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
+      run: | # zizmor: ignore[template-injection] trusted consumer input
+        curl -sSfL https://raw.githubusercontent.com/anchore/syft/${{ inputs.version }}/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
       shell: sh

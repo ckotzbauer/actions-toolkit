@@ -25,6 +25,10 @@ inputs:
     description: "Config-File"
     required: false
     default: ""
+  yq-version:
+    description: "YQ version to install."
+    required: false
+    default: "v4.54.1"
   scan-target:
     description: "Target to scan"
     required: true
@@ -40,8 +44,8 @@ runs:
 
     - name: Setup Grype
       if: steps.cache-grype.outputs.cache-hit != 'true'
-      run: |
-        curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
+      run: | # zizmor: ignore[template-injection] trusted consumer input
+        curl -sSfL https://raw.githubusercontent.com/anchore/grype/${{ inputs.version }}/install.sh | sh -s -- -b /usr/local/bin ${{ inputs.version }}
       shell: sh
 
     - name: Cache YQ binary
@@ -50,19 +54,20 @@ runs:
       uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       with:
         path: /usr/local/bin/yq
-        key: yq-latest-${{ runner.os }}
+        key: yq-${{ inputs.yq-version }}-${{ runner.os }}
 
     - name: Setup YQ
       if: ${{ inputs.install-only != 'true' && steps.cache-yq.outputs.cache-hit != 'true' }}
-      run: |
-        curl -sSfL https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 > /usr/local/bin/yq
+      run: | # zizmor: ignore[template-injection] trusted consumer input
+        curl -sSfL https://github.com/mikefarah/yq/releases/download/${{ inputs.yq-version }}/yq_linux_amd64 > /usr/local/bin/yq
         chmod +x /usr/local/bin/yq
       shell: sh
 
     - name: Scan for vulnerabilities
       if: ${{ inputs.install-only != 'true' }}
-      run: |
-        curl -sSfL https://raw.githubusercontent.com/ckotzbauer/actions-toolkit/main/.github/grype.yaml > base.yaml
+      run: | # zizmor: ignore[template-injection] trusted consumer input
+        # Config is read from the pinned action checkout, not from a mutable branch.
+        cp "${{ github.action_path }}/../.github/grype.yaml" base.yaml
 
         OUTPUT_FLAG=""
         if [ -n "${{ inputs.output }}" ]; then
