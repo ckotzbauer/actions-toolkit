@@ -94,7 +94,7 @@ runs:
       shell: sh
 
     - name: Build image
-      uses: docker/build-push-action@1031bc45c52785b1a3a0db59db1e207f047a88c5 # v7.0.0
+      uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
       env:
         DOCKER_BUILD_RECORD_UPLOAD: false
       with:
