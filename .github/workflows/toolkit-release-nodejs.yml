@@ -208,7 +208,7 @@ jobs:
 
       - name: Setup Node
         if: ${{ inputs.npm == true }}
-        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.56.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-nodejs@0.57.0
         with:
           version: ${{ inputs.node-version }}
           cache: ""
