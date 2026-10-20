@@ -1,8 +1,8 @@
 name: Auto-Release Toolkit
 
 # Dogfooding: this repository releases itself through its own auto-release
-# workflow. Trigger manually; the calculated version is passed to
-# release-toolkit.yml via `gh workflow run`.
+# workflow. Runs on schedule (Tuesday morning) and manually; the calculated
+# version is passed to release-toolkit.yml via `gh workflow run`.
 #
 # Note: `secrets.REPO_ACCESS` must be a PAT with permission to dispatch
 # workflows (classic PAT: `repo` scope; fine-grained: `actions: write`),
@@ -10,6 +10,9 @@ name: Auto-Release Toolkit
 
 on:
   workflow_dispatch:
+  schedule:
+    # Tuesday 07:00 UTC = Tuesday morning (08:00-09:00) Europe/Berlin
+    - cron: '0 7 * * 2'
 
 permissions:
   actions: read
