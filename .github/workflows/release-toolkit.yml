@@ -29,8 +29,8 @@ jobs:
         run: |
           LAST_TAG=$(git describe --abbrev=0 --tags)
           find .github/workflows/toolkit-*.yml | while read -r a; do
-              sed -i "s#@${LAST_TAG}#@${NEW_VERSION}#g" $a;
-              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${NEW_VERSION}\"#g" $a;
+              sed -i "s#@${LAST_TAG}#@${NEW_VERSION}#g" "$a";
+              sed -i "s#action-sha: \"${LAST_TAG}\"#action-sha: \"${NEW_VERSION}\"#g" "$a";
           done
           sed -i "s#@${LAST_TAG}#@${NEW_VERSION}#g" .github/workflows/release-toolkit.yml;
 

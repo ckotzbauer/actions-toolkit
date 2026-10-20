@@ -160,7 +160,7 @@ jobs:
         id: hash
         run: |
           cd ${{ inputs.artifact-path }}
-          echo "hashes=$(find . -type f | xargs sha256sum | base64 -w0)" >> $GITHUB_OUTPUT
+          echo "hashes=$(find . -type f -print0 | xargs -0 sha256sum | base64 -w0)" >> "$GITHUB_OUTPUT"
 
       - name: Upload assets
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0

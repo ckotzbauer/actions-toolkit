@@ -88,7 +88,7 @@ jobs:
           echo "Last tag: $LAST_TAG"
 
           # Strip prefix to get the version number
-          LAST_VERSION="${LAST_TAG#$PREFIX}"
+          LAST_VERSION="${LAST_TAG#"$PREFIX"}"
           echo "previous-version=$LAST_VERSION" >> "$GITHUB_OUTPUT"
 
           # Check for commits since last tag

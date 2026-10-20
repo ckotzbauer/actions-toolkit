@@ -66,7 +66,7 @@ jobs:
 
           # Filter out noisy/generated files that bloat the diff
           EXCLUDE_PATTERNS='go\.sum|go\.mod|vendor/|\.lock$|package-lock\.json|yarn\.lock|\.pb\.go|_generated\.|\.gen\.go'
-          DIFF=$(cat /tmp/pr.diff | awk -v pat="$EXCLUDE_PATTERNS" '
+          DIFF=$(awk -v pat="$EXCLUDE_PATTERNS" '
               /^diff --git/ {
                   skip = 0
                   file = $0
@@ -74,7 +74,7 @@ jobs:
                   if (match(file, pat)) skip = 1
               }
               !skip { print }
-          ')
+          ' /tmp/pr.diff)
 
           SYSTEM_PROMPT=$(cat <<'SYSPROMPT'
           You are a precise, senior code reviewer. You review ONLY the changed lines in a pull request diff.
