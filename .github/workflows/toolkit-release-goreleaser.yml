@@ -108,7 +108,7 @@ jobs:
       - name: Run GoReleaser
         # Binaries are signed by GoReleaser's built-in cosign integration (COSIGN_REPOSITORY
         # env). The OCI image and SBOM are handled separately by the toolkit actions below.
-        uses: goreleaser/goreleaser-action@4be059cdedc660b9567bdf0a6f2824c3d2fe653f # v7.0.0
+        uses: goreleaser/goreleaser-action@ec59f474b9834571250b370d4735c50f8e2d1e29 # v7.0.0
         with:
           version: ${{ inputs.goreleaser-version }}
           args: release --clean ${{ inputs.goreleaser-args }}
