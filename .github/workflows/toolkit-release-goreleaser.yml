@@ -91,7 +91,7 @@ jobs:
           token: ${{ secrets.pat }}
 
       - name: Setup Go
-        uses: ckotzbauer/actions-toolkit/setup-go@0.57.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-go@0.58.0 # 0.54.3
         with:
           version: ${{ inputs.go-version }}
           cache-dependency-path: ${{ inputs.go-cache-dependency-path }}
@@ -103,7 +103,7 @@ jobs:
           cosign-release: "v3.1.3"
 
       - name: Setup Syft
-        uses: ckotzbauer/actions-toolkit/setup-syft@0.57.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/setup-syft@0.58.0 # 0.54.3
 
       - name: Run GoReleaser
         # Binaries are signed by GoReleaser's built-in cosign integration (COSIGN_REPOSITORY
@@ -118,7 +118,7 @@ jobs:
           COSIGN_REPOSITORY: ${{ inputs.cosign-repository }}
 
       - name: Build and push image
-        uses: ckotzbauer/actions-toolkit/docker@0.57.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/docker@0.58.0 # 0.54.3
         with:
           ghcr-password: ${{ secrets.ghcr-password }}
           dockerhub-user: ${{ secrets.dockerhub-user }}
@@ -135,7 +135,7 @@ jobs:
 
       - name: Generate SBOM
         if: ${{ inputs.sbom == true }}
-        uses: ckotzbauer/actions-toolkit/sbom@0.57.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/sbom@0.58.0 # 0.54.3
         with:
           images: ${{ inputs.docker-tags }}
           sign: ${{ inputs.sign }}
@@ -194,7 +194,7 @@ jobs:
           path: output
 
       - name: Push release
-        uses: ckotzbauer/actions-toolkit/push-release@0.57.0 # 0.54.3
+        uses: ckotzbauer/actions-toolkit/push-release@0.58.0 # 0.54.3
         with:
           version: ${{ inputs.version }}
           branch: ${{ inputs.branch }}

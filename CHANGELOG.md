@@ -1,3 +1,41 @@
+## Version 0.58.0 (2026-10-20)
+
+### Features and improvements
+
+* [[`a08cf7e6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a08cf7e6)] - **feat**: various enhancements and hardenings
+
+### Bug fixes
+
+* [[`8edaa9bb`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8edaa9bb)] - **fix**: linting
+
+### Build and testing
+
+* [[`b71a2f31`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b71a2f31)] - **build**: add schedule
+* [[`05a6cc74`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/05a6cc74)] - **build**: update permission
+
+### Dependency updates
+
+* [[`226708de`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/226708de)] - **deps**: update azure&#x2F;setup-kubectl action to v5.2.0 (#1893)
+* [[`f107399d`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/f107399d)] - **deps**: update github&#x2F;codeql-action action to v4.39.0 (#1894)
+* [[`5b09e905`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5b09e905)] - **deps**: update actions&#x2F;download-artifact action to v8.0.2 (#1903)
+* [[`d1835c8c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d1835c8c)] - **deps**: update actions&#x2F;upload-artifact action to v7.0.2 (#1904)
+* [[`600a2840`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/600a2840)] - **deps**: update ckotzbauer&#x2F;actions-toolkit action to v0.57.0 (#1912)
+* [[`c7c98ec1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/c7c98ec1)] - **deps**: update docker&#x2F;build-push-action action to v7.4.0 (#1913)
+* [[`6a778b20`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6a778b20)] - **deps**: update docker&#x2F;setup-buildx-action action to v4.4.1 (#1914)
+* [[`28612b39`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/28612b39)] - **deps**: update docker&#x2F;setup-qemu-action action to v4.4.0 (#1915)
+* [[`e21d5893`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/e21d5893)] - **deps**: update goreleaser&#x2F;goreleaser-action action to v7.3.0 (#1916)
+* [[`d3bea986`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/d3bea986)] - **deps**: update zizmorcore&#x2F;zizmor-action action to v0.7.1 (#1917)
+* [[`115040d6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/115040d6)] - **deps**: update actions&#x2F;checkout action to v7 (#1918)
+* [[`a9735a76`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/a9735a76)] - **deps**: update actions&#x2F;setup-dotnet action to v6 (#1919)
+* [[`3b58f4ef`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/3b58f4ef)] - **deps**: update actions&#x2F;setup-go action to v7 (#1920)
+* [[`0a756ff1`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0a756ff1)] - **deps**: update actions&#x2F;setup-node action to v7 (#1921)
+* [[`0f306781`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0f306781)] - **deps**: update actions&#x2F;setup-python action to v7 (#1922)
+* [[`70de39b7`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/70de39b7)] - **deps**: update codecov&#x2F;codecov-action action to v7 (#1923)
+* [[`42e8d987`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/42e8d987)] - **deps**: update softprops&#x2F;action-gh-release action to v3 (#1924)
+* [[`0dc4ac4c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/0dc4ac4c)] - **deps**: update github&#x2F;codeql-action action to v4.38.2 (#1892)
+* [[`b4cbf722`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/b4cbf722)] - **deps**: update github&#x2F;codeql-action action to v4.37.8 (#1891)
+
+
 ## Version 0.57.0 (2026-08-23)
 
 ### Features and improvements
