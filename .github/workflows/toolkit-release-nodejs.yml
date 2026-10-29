@@ -180,7 +180,8 @@ jobs:
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@f7dd8c54c2067bafc12ca7a55595d5ee9b75204a # v2.1.0
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
-      compile-generator: false
+      # Must stay true while pinned by SHA: with false the generator downloads a prebuilt binary from a tag ref and SHA pins fail.
+      compile-generator: true
       private-repository: true
 
   release:
