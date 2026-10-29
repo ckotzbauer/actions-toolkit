@@ -1,3 +1,10 @@
+## Version 0.58.1 (2026-10-29)
+
+### Common changes
+
+* [[`8cc42330`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/8cc42330)] - **ci**: keep compile-generator true for SHA-pinned slsa generator (#1929)
+
+
 ## Version 0.58.0 (2026-10-20)
 
 ### Features and improvements
