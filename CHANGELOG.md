@@ -1,3 +1,16 @@
+## Version 0.58.2 (2026-11-10)
+
+### Dependency updates
+
+* [[`75d19dcc`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/75d19dcc)] - **deps**: update github&#x2F;codeql-action action to v4.39.2 (#1932)
+* [[`5c40b460`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5c40b460)] - **deps**: update actions&#x2F;setup-dotnet action to v6.1.0 (#1931)
+* [[`86990456`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/86990456)] - **deps**: update zizmorcore&#x2F;zizmor-action action to v0.8.1 (#1930)
+* [[`5634165b`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/5634165b)] - **deps**: update dependency sigstore&#x2F;cosign to v3.1.4 (#1925)
+* [[`6170f06c`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6170f06c)] - **deps**: update actions&#x2F;setup-python action to v7.1.0 (#1927)
+* [[`384ebd39`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/384ebd39)] - **deps**: update zizmorcore&#x2F;zizmor-action action to v0.8.0 (#1928)
+* [[`9b912fe6`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9b912fe6)] - **deps**: update github&#x2F;codeql-action action to v4.39.1 (#1926)
+
+
 ## Version 0.58.1 (2026-10-29)
 
 ### Common changes
