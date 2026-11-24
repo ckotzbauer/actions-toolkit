@@ -1,3 +1,14 @@
+## Version 0.58.3 (2026-11-24)
+
+### Dependency updates
+
+* [[`9c102b14`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/9c102b14)] - **deps**: update github&#x2F;codeql-action action to v4.39.4 (#1937)
+* [[`63dfcac8`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/63dfcac8)] - **deps**: update github&#x2F;codeql-action action to v4.39.3 (#1933)
+* [[`07247681`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/07247681)] - **deps**: update sigstore&#x2F;cosign-installer action to v4.1.3 (#1934)
+* [[`6705c467`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/6705c467)] - **deps**: update softprops&#x2F;action-gh-release action to v3.0.4 (#1935)
+* [[`ddf51da0`](https://github.com/ckotzbauer&#x2F;actions-toolkit/commit/ddf51da0)] - **deps**: update actions&#x2F;setup-go action to v7.1.0 (#1936)
+
+
 ## Version 0.58.2 (2026-11-10)
 
 ### Dependency updates
